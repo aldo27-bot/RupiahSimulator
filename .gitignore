@@ -1,0 +1,16 @@
+# Godot 4+
+.godot/
+
+# Export / build
+export/
+exports/
+android/
+ios/
+
+# Cache / import
+.import/
+*.import
+
+# System files (optional)
+.DS_Store
+Thumbs.db
