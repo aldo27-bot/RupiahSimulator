@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dvielrnfjy5pu"]
+
+[ext_resource type="Texture2D" uid="uid://bjtwhadbso7dw" path="res://assets/customer/customer.png" id="1_8noaa"]
+[ext_resource type="Script" uid="uid://cmqvot4fp7oav" path="res://scripts/customer/customer.gd" id="1_duem0"]
+
+[node name="Customer" type="CharacterBody2D" unique_id=142463988]
+position = Vector2(30, 305)
+script = ExtResource("1_duem0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1579160877]
+position = Vector2(100, 0)
+scale = Vector2(0.5770053, 0.39969966)
+texture = ExtResource("1_8noaa")
+
+[node name="RequestLabel" type="Label" parent="." unique_id=636517125]
+offset_left = 174.0
+offset_top = -71.0
+offset_right = 257.0
+offset_bottom = -22.0
+theme_override_colors/font_color = Color(0.99646384, 0.99646395, 0.99646395, 1)
+text = "
+"
