@@ -9,7 +9,7 @@ extends CanvasLayer
 @onready var sell_button = $InventoryPanel/SellButton
 @onready var close_button = $InventoryPanel/CloseButton
 
-@onready var money_label = $BottomPanel/MarginContainer/HBoxContainer/MoneyLabel
+@onready var money_label = $BottomPanel/MarginContainer/HBoxContainer/MoneyFrame/CenterContainer/MoneyLabel
 @onready var rupiah_label = $BottomPanel/MarginContainer/HBoxContainer/RupiahLabel
 @onready var level_label = $LevelLabel
 @onready var background = $Background
@@ -18,7 +18,21 @@ extends CanvasLayer
 # AUDIO
 @onready var sfx_player = $SFXPlayer
 
+# ======================
+# Format uang
+# ======================
+func format_rupiah(angka: int) -> String:
+	var text = str(angka)
+	var hasil = ""
 
+	while text.length() > 3:
+		hasil = "." + text.substr(text.length() - 3, 3) + hasil
+		text = text.substr(0, text.length() - 3)
+
+	hasil = text + hasil
+
+	return "Rp " + hasil
+	
 # ======================
 # STATE
 # ======================
@@ -30,7 +44,7 @@ var customer_spawn_position = Vector2(30, 350)
 var cart = {
 	"kopi": 0,
 	"beras": 0,
-	"gula": 0
+	"gula": 0,
 }
 
 
@@ -51,9 +65,9 @@ func _ready():
 		Economy.rupiah_strength = save_data["rupiah"]
 
 		Market.items = save_data["items"]
-
+		
 		cart = save_data["cart"]
-
+			
 		last_rupiah = Economy.rupiah_strength
 
 	# ======================
@@ -78,7 +92,9 @@ func _ready():
 	update_level_label()
 	update_background()
 	
-
+	if level_toko >= 2:
+		Market.unlock_level_2_items()
+	
 # ======================
 # SIGNAL
 # ======================
@@ -99,18 +115,27 @@ func _on_stock_changed(_i, _s):
 # ======================
 func update_hud():
 
-	money_label.text = "Rp " + str(Economy.uang)
+	money_label.text = format_rupiah(Economy.uang)
 	
 	# LEVEL 2
-	if Economy.uang >= 100000 and level_toko == 1:
+	if Economy.uang >= 150000 and level_toko == 1:
 
 		level_toko = 2
 
+		Market.unlock_level_2_items()
+
+		cart["mie"] = 0
+		cart["susu"] = 0
+
 		update_level_label()
 		update_background()
-		show_notify("🎉 TOKO NAIK KE LEVEL 2!")
+		refresh_items()
 
-		play_sfx("res://assets/audio/shopbell.ogg")
+		show_notify(
+			"🎉 TOKO NAIK KE LEVEL 2!\nMie dan Susu sekarang tersedia!"
+		)
+
+	play_sfx("res://assets/audio/shopbell.ogg")
 
 	rupiah_label.text = (
 		"Rupiah: "
@@ -339,7 +364,10 @@ func _on_buy_cart():
 	refresh_items()
 	refresh_cart()
 
-	SaveManager.save_game(cart)
+	SaveManager.save_game(
+	cart,
+	level_toko
+)
 
 	show_notify("✅ Berhasil membeli barang")
 
@@ -401,7 +429,10 @@ func _on_sell_cart():
 	refresh_cart()
 	update_hud()
 
-	SaveManager.save_game(cart)
+	SaveManager.save_game(
+	cart,
+	level_toko
+	)
 
 	# ======================
 	# CUSTOMER PERGI

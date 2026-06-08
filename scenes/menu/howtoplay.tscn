@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c8glg1kybh2nf"]
+
+[ext_resource type="Texture2D" uid="uid://dojja6ycy8pq4" path="res://assets/images/bg_howtoplay.png" id="1_rbygi"]
+[ext_resource type="Script" uid="uid://dfyju2858eknh" path="res://scripts/ui/how_to_play.gd" id="1_rsre1"]
+
+[node name="Howtoplay" type="Node" unique_id=50625724]
+
+[node name="howtomenu" type="Control" parent="." unique_id=113076759]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_rsre1")
+
+[node name="TextureRect" type="TextureRect" parent="howtomenu" unique_id=956908273]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 651.0
+texture = ExtResource("1_rbygi")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BackButton" type="Button" parent="howtomenu" unique_id=989873038]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 20.0
+offset_right = 143.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 23
+text = "← Kembali"

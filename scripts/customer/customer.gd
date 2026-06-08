@@ -24,6 +24,13 @@ func random_request():
 		"gula"
 	]
 
+	# LEVEL 2
+	if Market.items.has("mie"):
+		items.append("mie")
+
+	if Market.items.has("susu"):
+		items.append("susu")
+
 	request_item = items.pick_random()
 
 	request_label.text = (

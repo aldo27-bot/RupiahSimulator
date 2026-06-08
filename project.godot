@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GameRupiah"
-run/main_scene="uid://cdh38ec3a2dcc"
+run/main_scene="uid://ctll01rmqx14o"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

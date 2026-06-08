@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://ctll01rmqx14o"]
+
+[ext_resource type="Script" uid="uid://ccdkwerlxv4bq" path="res://scripts/ui/home_menu.gd" id="1_r1yp5"]
+[ext_resource type="Texture2D" uid="uid://swgjjxwua44o" path="res://assets/images/bg_home.png" id="2_nm2ns"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nm2ns"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g7t7q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iek61"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7kbt2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pp6bh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1hqet"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n0s4l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3npvg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qcyet"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yqjvl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fcu6y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r3ne6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jjt5v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6jco0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_86grx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jkfxq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l01m6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y6spu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lhdtw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qt7s5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sf7k0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g5jwl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ma2fm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_818n3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wsbj3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nm2ns"]
+bg_color = Color(0.2755662, 0.65169156, 0.7882912, 1)
+
+[node name="Home" type="Node2D" unique_id=492266266]
+
+[node name="HomeMenu" type="Control" parent="." unique_id=1663741912]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_r1yp5")
+
+[node name="Background" type="TextureRect" parent="HomeMenu" unique_id=1256076085]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1112.0
+offset_bottom = 609.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nm2ns")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TitleLabel" type="Label" parent="HomeMenu" unique_id=39565964]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HomeMenu" unique_id=1886714903]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 197.0
+offset_right = 778.0
+offset_bottom = 631.0
+theme_override_constants/separation = 10
+
+[node name="PlayButton" type="Button" parent="HomeMenu/VBoxContainer" unique_id=1702430489]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nm2ns")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g7t7q")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_iek61")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7kbt2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pp6bh")
+
+[node name="HowToPlayButton" type="Button" parent="HomeMenu/VBoxContainer" unique_id=1041399119]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1hqet")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n0s4l")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3npvg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qcyet")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yqjvl")
+
+[node name="AboutButton" type="Button" parent="HomeMenu/VBoxContainer" unique_id=861261183]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fcu6y")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_r3ne6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jjt5v")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6jco0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_86grx")
+
+[node name="SettingButton" type="Button" parent="HomeMenu/VBoxContainer" unique_id=2089670908]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jkfxq")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l01m6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_y6spu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_lhdtw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qt7s5")
+
+[node name="ExitButton" type="Button" parent="HomeMenu/VBoxContainer" unique_id=293068449]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sf7k0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g5jwl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ma2fm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_818n3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wsbj3")
+
+[node name="ResetButton" type="Button" parent="HomeMenu" unique_id=1531526647]
+layout_mode = 0
+offset_left = 1021.0
+offset_top = 598.0
+offset_right = 1127.0
+offset_bottom = 629.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_nm2ns")
+text = "Reset
+"
