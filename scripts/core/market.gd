@@ -3,27 +3,13 @@ extends Node
 var items = {
 	"kopi": {"stok": 0, "base_price": 1000},
 	"beras": {"stok": 0, "base_price": 15000},
-	"gula": {"stok": 0, "base_price": 12000}
+	"gula": {"stok": 0, "base_price": 12000},
+
+	"mie": {"stok": 0, "base_price": 3500},
+	"susu": {"stok": 0, "base_price": 8000}
 }
 
 signal stok_berubah(item, stok)
-
-# ======================
-# UNLOCK ITEM LEVEL 2
-# ======================
-func unlock_level_2_items():
-
-	if not items.has("mie"):
-		items["mie"] = {
-			"stok": 0,
-			"base_price": 3500
-		}
-
-	if not items.has("susu"):
-		items["susu"] = {
-			"stok": 0,
-			"base_price": 8000
-		}
 
 # ======================
 # HARGA JUAL DINAMIS

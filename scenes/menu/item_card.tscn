@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dxy7wd8jrty77"]
+
+[ext_resource type="Script" uid="uid://bmhnjwardfrme" path="res://scripts/ui/item_card.gd" id="1_dbein"]
+[ext_resource type="Texture2D" uid="uid://bnip035gjxk1a" path="res://assets/images/frameitem.png" id="1_ivwt3"]
+[ext_resource type="Texture2D" uid="uid://becagp5wvgauk" path="res://assets/images/iconkopi.png" id="2_dbein"]
+
+[node name="ItemCard" type="Control" unique_id=928045332]
+custom_minimum_size = Vector2(100, 160)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dbein")
+
+[node name="Frame" type="TextureRect" parent="." unique_id=2145555391]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_ivwt3")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=825835542]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" unique_id=87567312]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("2_dbein")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Nama" type="Label" parent="VBoxContainer" unique_id=1768226096]
+layout_mode = 2
+text = "Beras"
+horizontal_alignment = 1
+
+[node name="Stok" type="Label" parent="VBoxContainer" unique_id=1593750424]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Harga" type="Label" parent="VBoxContainer" unique_id=1465018524]
+layout_mode = 2
+horizontal_alignment = 1

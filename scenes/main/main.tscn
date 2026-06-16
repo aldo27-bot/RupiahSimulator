@@ -1,26 +1,19 @@
 [gd_scene format=3 uid="uid://cdh38ec3a2dcc"]
 
 [ext_resource type="Script" uid="uid://r110jarca6ck" path="res://scripts/ui/ui.gd" id="1_hyk8p"]
-[ext_resource type="Texture2D" uid="uid://k5ydp3r3x64k" path="res://assets/images/rupiahbg.png" id="2_iuonh"]
+[ext_resource type="Texture2D" uid="uid://cheerges0lksf" path="res://assets/images/bg_game_baru.png" id="2_l3cfh"]
 [ext_resource type="PackedScene" uid="uid://dvielrnfjy5pu" path="res://scenes/customer/customer.tscn" id="3_k2fmo"]
 [ext_resource type="Texture2D" uid="uid://dith821l8hnk8" path="res://assets/images/frame_label.png" id="3_l3cfh"]
+[ext_resource type="Texture2D" uid="uid://cikrpusjme64m" path="res://assets/images/icontoko.png" id="5_6q06x"]
+[ext_resource type="Texture2D" uid="uid://p7lwbtur3ih7" path="res://assets/images/icongudang.png" id="6_ow5a4"]
 
 [sub_resource type="FontVariation" id="FontVariation_k2fmo"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iuonh"]
-bg_color = Color(0.25, 0.116666675, 0, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l3cfh"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k2fmo"]
-bg_color = Color(0.24313726, 0.13725491, 0.0627451, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.6117647, 0.39215687, 0.101960786, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6q06x"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_l3cfh"]
 
 [node name="Main" type="Node2D" unique_id=92383756]
 
@@ -43,54 +36,49 @@ offset_right = 1.0
 offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_iuonh")
+texture = ExtResource("2_l3cfh")
 expand_mode = 1
 
+[node name="SpawnPoint" type="Marker2D" parent="UI" unique_id=314040803]
+position = Vector2(558, 250)
+
+[node name="CashierPoint" type="Marker2D" parent="UI" unique_id=1194771046]
+position = Vector2(820, 280)
+
+[node name="ExitPoint" type="Marker2D" parent="UI" unique_id=966225342]
+position = Vector2(560, 250)
+
 [node name="LevelLabel" type="Label" parent="UI" unique_id=2114443042]
-offset_left = 500.0
-offset_top = 70.0
-offset_right = 628.0
-offset_bottom = 104.0
-theme_override_colors/font_color = Color(0.59, 0, 0, 1)
+offset_left = 502.0
+offset_top = 17.0
+offset_right = 630.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0.59, 0.59, 0.59, 1)
 theme_override_fonts/font = SubResource("FontVariation_k2fmo")
 theme_override_font_sizes/font_size = 20
 
-[node name="BottomPanel" type="Panel" parent="UI" unique_id=1129996685]
-custom_minimum_size = Vector2(0, 80)
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_iuonh")
+[node name="Customer" parent="UI" unique_id=142463988 instance=ExtResource("3_k2fmo")]
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/BottomPanel" unique_id=1669876692]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/BottomPanel/MarginContainer" unique_id=398150955]
-layout_mode = 2
-theme_override_constants/separation = 30
-
-[node name="MoneyFrame" type="NinePatchRect" parent="UI/BottomPanel/MarginContainer/HBoxContainer" unique_id=1282208929]
+[node name="MoneyFrame" type="NinePatchRect" parent="UI" unique_id=1282208929]
 custom_minimum_size = Vector2(250, 80)
-layout_mode = 2
+offset_top = 568.0
+offset_right = 250.0
+offset_bottom = 648.0
 texture = ExtResource("3_l3cfh")
 
-[node name="CenterContainer" type="CenterContainer" parent="UI/BottomPanel/MarginContainer/HBoxContainer/MoneyFrame" unique_id=546664858]
+[node name="CenterContainer" type="CenterContainer" parent="UI/MoneyFrame" unique_id=546664858]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -3.0
+offset_right = -4.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MoneyLabel" type="Label" parent="UI/BottomPanel/MarginContainer/HBoxContainer/MoneyFrame/CenterContainer" unique_id=660229711]
+[node name="MoneyLabel" type="Label" parent="UI/MoneyFrame/CenterContainer" unique_id=660229711]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -100,58 +88,83 @@ text = "Rp 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RupiahLabel" type="Label" parent="UI/BottomPanel/MarginContainer/HBoxContainer" unique_id=1729910182]
+[node name="RupiahLabel" type="Label" parent="UI" unique_id=1729910182]
 custom_minimum_size = Vector2(20, 55)
-layout_mode = 2
+offset_left = 381.0
+offset_top = 583.0
+offset_right = 666.0
+offset_bottom = 638.0
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 text = "Rupiah: 1.00 (Stabil)"
 horizontal_alignment = 1
 
-[node name="InventoryButton" type="Button" parent="UI/BottomPanel/MarginContainer/HBoxContainer" unique_id=1235185104]
-custom_minimum_size = Vector2(180, 50)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_k2fmo")
-text = "INVENTORY
-"
+[node name="InventoryFrame" type="NinePatchRect" parent="UI" unique_id=751482162]
+offset_left = 982.0
+offset_top = 548.0
+offset_right = 1107.0
+offset_bottom = 638.0
+texture = ExtResource("5_6q06x")
 
-[node name="Customer" parent="UI" unique_id=142463988 instance=ExtResource("3_k2fmo")]
-position = Vector2(-7, 46)
+[node name="InventoryButton" type="Button" parent="UI/InventoryFrame" unique_id=1235185104]
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 0
+offset_left = 18.0
+offset_top = 11.0
+offset_right = 112.0
+offset_bottom = 81.0
+theme_override_colors/font_color = Color(0.16470589, 0.078431375, 0.003921569, 1)
+theme_override_colors/font_hover_color = Color(0.15294118, 0.07450981, 0.007843138, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_l3cfh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6q06x")
+theme_override_styles/hover = SubResource("StyleBoxLine_l3cfh")
 
 [node name="InventoryPanel" type="Panel" parent="UI" unique_id=999889200]
-offset_left = 223.0
-offset_top = 40.0
-offset_right = 971.0
-offset_bottom = 614.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -374.0
+offset_top = -204.5
+offset_right = 374.0
+offset_bottom = 204.5
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="ItemList" type="VBoxContainer" parent="UI/InventoryPanel" unique_id=618632699]
-layout_mode = 0
-offset_left = 52.0
-offset_top = 8.0
-offset_right = 695.0
-offset_bottom = 557.0
+[node name="ItemList" type="GridContainer" parent="UI/InventoryPanel" unique_id=1286884817]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 10
+columns = 6
 
 [node name="CartList" type="VBoxContainer" parent="UI/InventoryPanel" unique_id=495540311]
 layout_mode = 0
-offset_left = 12.0
-offset_top = 354.0
-offset_right = 482.0
-offset_bottom = 565.0
+offset_left = 25.0
+offset_top = 283.0
+offset_right = 235.0
+offset_bottom = 390.0
 
 [node name="BuyButton" type="Button" parent="UI/InventoryPanel" unique_id=1844683921]
 layout_mode = 0
-offset_left = 571.0
-offset_top = 527.0
-offset_right = 632.0
-offset_bottom = 558.0
+offset_left = 542.0
+offset_top = 368.0
+offset_right = 603.0
+offset_bottom = 399.0
 text = "Beli"
 
 [node name="SellButton" type="Button" parent="UI/InventoryPanel" unique_id=374682104]
 layout_mode = 0
-offset_left = 443.0
-offset_top = 526.0
-offset_right = 539.0
-offset_bottom = 557.0
+offset_left = 423.0
+offset_top = 368.0
+offset_right = 519.0
+offset_bottom = 399.0
 text = "Jual Barang"
 
 [node name="CloseButton" type="Button" parent="UI/InventoryPanel" unique_id=469228035]
@@ -161,10 +174,10 @@ anchor_left = 0.416
 anchor_top = 0.022000002
 anchor_right = 0.416
 anchor_bottom = 0.022000002
-offset_left = 341.832
-offset_top = 513.372
-offset_right = 412.832
-offset_bottom = 548.372
+offset_left = 316.832
+offset_top = 356.002
+offset_right = 387.832
+offset_bottom = 391.002
 text = "Kembali"
 
 [node name="NotificationLabel" type="Label" parent="UI/InventoryPanel" unique_id=980744339]
@@ -177,6 +190,78 @@ offset_top = -40.0
 offset_right = -1.0
 offset_bottom = -17.0
 grow_horizontal = 2
+
+[node name="GudangFrame" type="Panel" parent="UI" unique_id=1567339567]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GudangButton" type="TextureButton" parent="UI/GudangFrame" unique_id=135857835]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = 849.00006
+offset_top = 553.00006
+offset_right = 1440.0
+offset_bottom = 970.00006
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("6_ow5a4")
+texture_pressed = ExtResource("6_ow5a4")
+texture_hover = ExtResource("6_ow5a4")
+stretch_mode = 0
+
+[node name="GudangPanel" type="Panel" parent="UI" unique_id=1467137504]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -337.5
+offset_top = -192.0
+offset_right = 337.5
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="UI/GudangPanel" unique_id=973312830]
+layout_mode = 0
+offset_left = 548.5
+offset_right = 644.5
+offset_bottom = 36.0
+theme_type_variation = &"GraphFrameTitleLabel"
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_outline_size = 5
+text = "GUDANG"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/GudangPanel" unique_id=1620573490]
+layout_mode = 0
+offset_right = 670.5
+offset_bottom = 382.0
+
+[node name="GudangItemList" type="GridContainer" parent="UI/GudangPanel/ScrollContainer" unique_id=333472663]
+layout_mode = 2
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 10
+columns = 4
+
+[node name="CloseButton" type="Button" parent="UI/GudangPanel" unique_id=326062077]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.080000006
+anchor_bottom = 0.081
+offset_left = 560.5
+offset_top = 344.0
+offset_right = 599.5
+offset_bottom = 343.896
+text = "Tutup"
+
+[node name="ButtonDesa" type="Button" parent="UI" unique_id=551590411]
+offset_left = 12.0
+offset_top = 532.0
+offset_right = 146.0
+offset_bottom = 563.0
+theme_override_colors/font_outline_color = Color(0.78039217, 0, 0, 1)
+theme_override_constants/outline_size = 8
+text = "Kembali ke desa"
 
 [node name="World" type="Node2D" parent="." unique_id=529508931]
 

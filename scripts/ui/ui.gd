@@ -4,19 +4,31 @@ extends CanvasLayer
 @onready var item_list = $InventoryPanel/ItemList
 @onready var cart_list = $InventoryPanel/CartList
 
-@onready var inventory_button = $BottomPanel/MarginContainer/HBoxContainer/InventoryButton
+@onready var inventory_button = $InventoryFrame/InventoryButton
 @onready var buy_button = $InventoryPanel/BuyButton
 @onready var sell_button = $InventoryPanel/SellButton
 @onready var close_button = $InventoryPanel/CloseButton
 
-@onready var money_label = $BottomPanel/MarginContainer/HBoxContainer/MoneyFrame/CenterContainer/MoneyLabel
-@onready var rupiah_label = $BottomPanel/MarginContainer/HBoxContainer/RupiahLabel
+@onready var gudang_button = $GudangFrame/GudangButton
+@onready var gudang_panel = $GudangPanel
+@onready var gudang_item_list = $GudangPanel/ScrollContainer/GudangItemList
+@onready var gudang_close_button = $GudangPanel/CloseButton
+
+@onready var money_label = $MoneyFrame/CenterContainer/MoneyLabel
+@onready var rupiah_label = $RupiahLabel
 @onready var level_label = $LevelLabel
 @onready var background = $Background
 # CUSTOMER
 @onready var customer = $Customer
+@onready var spawn_point = $SpawnPoint
+@onready var cashier_point = $CashierPoint
+@onready var exit_point = $ExitPoint
 # AUDIO
 @onready var sfx_player = $SFXPlayer
+
+@onready var item_card_scene = preload("res://scenes/menu/item_card.tscn")
+
+@onready var button_desa = $ButtonDesa
 
 # ======================
 # Format uang
@@ -39,7 +51,6 @@ func format_rupiah(angka: int) -> String:
 var selected_item := "kopi"
 var level_toko := 1
 var last_rupiah := 1.0
-var customer_spawn_position = Vector2(30, 350)
 
 var cart = {
 	"kopi": 0,
@@ -65,6 +76,18 @@ func _ready():
 		Economy.rupiah_strength = save_data["rupiah"]
 
 		Market.items = save_data["items"]
+
+		if not Market.items.has("mie"):
+			Market.items["mie"] = {
+				"stok": 0,
+				"base_price": 3500
+			}
+
+		if not Market.items.has("susu"):
+			Market.items["susu"] = {
+				"stok": 0,
+				"base_price": 8000
+			}
 		
 		cart = save_data["cart"]
 			
@@ -74,11 +97,16 @@ func _ready():
 	# UI
 	# ======================
 	inventory_panel.visible = false
+	gudang_panel.visible = false
 
 	inventory_button.pressed.connect(_on_open_inventory)
 	buy_button.pressed.connect(_on_buy_cart)
 	sell_button.pressed.connect(_on_sell_cart)
 	close_button.pressed.connect(_on_back_pressed)
+	button_desa.pressed.connect(_on_btn_desa_pressed)
+	
+	gudang_button.pressed.connect(_on_open_gudang)
+	gudang_close_button.pressed.connect(_on_close_gudang)
 
 	Economy.uang_berubah.connect(_on_money_changed)
 	Market.stok_berubah.connect(_on_stock_changed)
@@ -86,8 +114,13 @@ func _ready():
 	update_hud()
 	refresh_items()
 	refresh_cart()
-	# POSISI AWAL CUSTOMER
-	customer.position = customer_spawn_position
+# POSISI AWAL CUSTOMER
+	customer.global_position = spawn_point.global_position
+	customer.get_node("Sprite2D").flip_h = false
+	customer.target_position = cashier_point.global_position
+	customer.reached_target.connect(
+		_on_customer_reached
+)
 	# LEVEL DAN BACKGROUND AWAL
 	update_level_label()
 	update_background()
@@ -95,6 +128,22 @@ func _ready():
 	if level_toko >= 2:
 		Market.unlock_level_2_items()
 	
+func _on_customer_reached():
+
+	if customer == null:
+		return
+
+	if customer.is_leaving:
+
+		customer.queue_free()
+
+		await get_tree().create_timer(1).timeout
+
+		spawn_new_customer()
+
+	else:
+
+		customer.random_request()
 # ======================
 # SIGNAL
 # ======================
@@ -107,6 +156,7 @@ func _on_stock_changed(_i, _s):
 
 	refresh_items()
 	refresh_cart()
+	refresh_gudang()
 	update_hud()
 
 
@@ -130,6 +180,7 @@ func update_hud():
 		update_level_label()
 		update_background()
 		refresh_items()
+		refresh_gudang()
 
 		show_notify(
 			"🎉 TOKO NAIK KE LEVEL 2!\nMie dan Susu sekarang tersedia!"
@@ -157,34 +208,56 @@ func update_background():
 	if level_toko == 1:
 
 		background.texture = load(
-			"res://assets/images/rupiahbg.png"
+			"res://assets/images/bg_game_baru.png"
 		)
 
 	elif level_toko == 2:
 
 		background.texture = load(
-			"res://assets/images/rupiahbg_lv2.png"
+			"res://assets/images/bg_game_baru.png"
 		)
 # ======================
-# OPEN PANEL
+# OPEN Inventory
 # ======================
 func _on_open_inventory():
 
 	play_sfx("res://assets/audio/button_click.ogg")
-	inventory_panel.visible = true
+	inventory_panel.visible = !inventory_panel.visible
 
-	refresh_items()
-	refresh_cart()
-
+	if inventory_panel.visible:
+		gudang_panel.visible=false
+		refresh_items()
+		refresh_cart()
 
 # ======================
-# CLOSE PANEL
+# CLOSE Inventory
 # ======================
 func _on_back_pressed():
 
 	play_sfx("res://assets/audio/button_click.ogg")
 	inventory_panel.visible = false
+	
+# ======================
+# OPEN Gudang
+# ======================
+func _on_open_gudang():
 
+	play_sfx("res://assets/audio/button_click.ogg")
+
+	gudang_panel.visible = !gudang_panel.visible
+
+	if gudang_panel.visible:
+		inventory_panel.visible = false
+		refresh_gudang()
+
+# ======================
+# CLOSE Gudang
+# ======================
+func _on_close_gudang():
+
+	play_sfx("res://assets/audio/button_click.ogg")
+
+	gudang_panel.visible = false
 
 # ======================
 # ITEM LIST
@@ -195,22 +268,16 @@ func refresh_items():
 		c.queue_free()
 
 	for item_name in Market.items.keys():
+		if item_name == "mie" and level_toko < 2:
+			continue
+		if item_name == "susu" and level_toko < 2:
+			continue
 
-		var row = HBoxContainer.new()
+		var card = item_card_scene.instantiate()
 
-		var btn = Button.new()
-
-		btn.text = item_name.capitalize()
-
-		btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-
-		btn.pressed.connect(func():
-
-			selected_item = item_name
-		)
 
 		# ======================
-		# PRICE
+		# PRICE DINAMIS
 		# ======================
 		var base_price = Supplier.get_price(item_name)
 
@@ -218,63 +285,101 @@ func refresh_items():
 			base_price * Economy.rupiah_strength
 		)
 
-		var price = Label.new()
+		# ======================
+		# ICON
+		# ======================
+		var icon = null
 
-		price.text = "Rp " + str(dynamic_price)
-
-		price.custom_minimum_size.x = 100
+		match item_name:
+			"beras":
+				icon = preload("res://assets/images/iconberas.png")
+			"gula":
+				icon = preload("res://assets/images/icongula.jpg")
+			"kopi":
+				icon = preload("res://assets/images/iconkopi.png")
 
 		# ======================
-		# STOCK
+		# SET KE CARD
 		# ======================
-		var stock = Label.new()
-
-		stock.text = (
-			"Stok: "
-			+ str(int(Market.items[item_name]["stok"]))
-		)
-
-		stock.custom_minimum_size.x = 90
-
-		# ======================
-		# PLUS BUTTON
-		# ======================
-		var plus = Button.new()
-
-		plus.text = "+"
-
-		plus.pressed.connect(func():
-
-			cart[item_name] += 1
-
-			refresh_cart()
+		card.set_item(
+			item_name.capitalize(),
+			dynamic_price,
+			icon,
+			Market.items[item_name]["stok"]
 		)
 
 		# ======================
-		# MINUS BUTTON
+		# KLIK CARD → TAMBAH CART
 		# ======================
-		var minus = Button.new()
-
-		minus.text = "-"
-
-		minus.pressed.connect(func():
-
-			if cart[item_name] > 0:
-
-				cart[item_name] -= 1
-
+		card.gui_input.connect(func(event):
+			if event is InputEventMouseButton and event.pressed:
+				cart[item_name] += 1
 				refresh_cart()
 		)
 
-		row.add_child(btn)
-		row.add_child(price)
-		row.add_child(stock)
-		row.add_child(minus)
-		row.add_child(plus)
+		item_list.add_child(card)
 
-		item_list.add_child(row)
+# ======================
+# Refresh Gudang
+# ======================
+func refresh_gudang():
 
+	for child in gudang_item_list.get_children():
+		child.queue_free()
 
+	for item_name in Market.items.keys():
+
+		var card = item_card_scene.instantiate()
+
+		var stock = Market.items[item_name]["stok"]
+
+		var dynamic_price = int(
+			Supplier.get_price(item_name)
+			* Economy.rupiah_strength
+		)
+
+		var icon = null
+
+		match item_name:
+
+			"beras":
+				icon = preload(
+					"res://assets/images/iconberas.png"
+				)
+
+			"gula":
+				icon = preload(
+					"res://assets/images/icongula.jpg"
+				)
+
+			"kopi":
+				icon = preload(
+					"res://assets/images/iconkopi.png"
+				)
+
+		card.set_item(
+			item_name.capitalize(),
+			dynamic_price,
+			icon,
+			stock
+		)
+
+		if item_name == "mie" and level_toko < 2:
+
+			card.modulate = Color(0.4, 0.4, 0.4)
+
+			card.get_node("VBoxContainer/Harga").text = \
+				"🔒 Level 2"
+
+		if item_name == "susu" and level_toko < 2:
+
+			card.modulate = Color(0.4, 0.4, 0.4)
+
+			card.get_node("VBoxContainer/Harga").text = \
+				"🔒 Level 2"
+
+		gudang_item_list.add_child(card)
+		
 # ======================
 # CART TOTAL
 # ======================
@@ -362,6 +467,7 @@ func _on_buy_cart():
 	update_level_label()
 	
 	refresh_items()
+	refresh_gudang()
 	refresh_cart()
 
 	SaveManager.save_game(
@@ -437,7 +543,10 @@ func _on_sell_cart():
 	# ======================
 	# CUSTOMER PERGI
 	# ======================
-	customer.queue_free()
+	customer.request_label.hide()
+	customer.is_leaving = true
+	customer.get_node("Sprite2D").flip_h = true
+	customer.target_position = exit_point.global_position
 
 	show_notify(
 		"💰 Berhasil menjual "
@@ -445,25 +554,6 @@ func _on_sell_cart():
 		+ " +Rp "
 		+ str(income)
 	)
-
-	# ======================
-	# SPAWN CUSTOMER BARU
-	# ======================
-	await get_tree().create_timer(2).timeout
-
-	var customer_scene = preload(
-		"res://scenes/customer/customer.tscn"
-	)
-
-	var new_customer = customer_scene.instantiate()
-	play_sfx("res://assets/audio/shopbell.ogg")
-
-	new_customer.position = customer_spawn_position
-	play_sfx("res://assets/audio/shopbell.ogg")
-
-	add_child(new_customer)
-
-	customer = new_customer
 
 # ======================
 # AUDIO SYSTEM
@@ -560,5 +650,41 @@ func _on_timer_timeout():
 
 	refresh_items()
 	refresh_cart()
+	refresh_gudang()
 
 	print("Rupiah:", Economy.rupiah_strength)
+	
+func spawn_new_customer():
+
+	var customer_scene = preload(
+		"res://scenes/customer/customer.tscn"
+	)
+
+	var new_customer = customer_scene.instantiate()
+
+	new_customer.global_position = spawn_point.global_position
+
+	new_customer.get_node("Sprite2D").flip_h = false
+
+	new_customer.target_position = cashier_point.global_position
+
+	add_child(new_customer)
+
+	move_child(
+		new_customer,
+		background.get_index() + 1
+	)
+
+	customer = new_customer
+
+	customer.reached_target.connect(
+		_on_customer_reached
+	)
+
+	play_sfx(
+		"res://assets/audio/shopbell.ogg"
+	)
+
+func _on_btn_desa_pressed():
+	get_tree().change_scene_to_file("res://scenes/menu/desa.tscn")
+	

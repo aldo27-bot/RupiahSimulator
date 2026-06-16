@@ -13,10 +13,10 @@ scale = Vector2(0.5770053, 0.39969966)
 texture = ExtResource("1_8noaa")
 
 [node name="RequestLabel" type="Label" parent="." unique_id=636517125]
-offset_left = 174.0
-offset_top = -71.0
-offset_right = 257.0
-offset_bottom = -22.0
+offset_left = 61.0
+offset_top = -10.0
+offset_right = 144.0
+offset_bottom = 39.0
 theme_override_colors/font_color = Color(0.99646384, 0.99646395, 0.99646395, 1)
 text = "
 "
