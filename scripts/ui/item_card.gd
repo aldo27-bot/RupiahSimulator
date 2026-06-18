@@ -1,5 +1,16 @@
 extends Control
 
+var mode := "shop"
+
+func set_mode(new_mode: String):
+	mode = new_mode
+
+	if mode == "gudang":
+		$VBoxContainer/MinusButton.visible = false
+	else:
+		$VBoxContainer/MinusButton.visible = true
+
+
 func set_item(nama, harga, icon, stok = -1):
 
 	$VBoxContainer/Nama.text = nama

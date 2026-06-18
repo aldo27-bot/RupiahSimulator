@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://c1s1tewijarrc"]
+
+[ext_resource type="Script" uid="uid://c55nt4hsjsp3i" path="res://scripts/tentang_game.gd" id="1_52d5l"]
+[ext_resource type="Texture2D" uid="uid://cu3utl7j6l1ct" path="res://assets/images/TentangGame/tentang_game.png" id="2_xmpch"]
+[ext_resource type="Texture2D" uid="uid://3vyrgcx0846w" path="res://assets/images/CaraMain/keluar.png" id="3_nnmbm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nnmbm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1r48d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yhtx2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_te5y3"]
+
+[node name="TentangGame" type="Control" unique_id=757257576]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_52d5l")
+
+[node name="TentangGame" type="TextureRect" parent="." unique_id=1131236402]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xmpch")
+expand_mode = 1
+
+[node name="keluar" type="Button" parent="." unique_id=1179568688]
+layout_mode = 0
+offset_left = 998.0
+offset_top = 40.0
+offset_right = 1075.0
+offset_bottom = 131.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nnmbm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1r48d")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yhtx2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_te5y3")
+icon = ExtResource("3_nnmbm")
+
+[connection signal="pressed" from="keluar" to="." method="_on_keluar_pressed"]

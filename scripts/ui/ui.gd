@@ -274,6 +274,7 @@ func refresh_items():
 			continue
 
 		var card = item_card_scene.instantiate()
+		card.set_mode("shop")
 
 
 		# ======================
@@ -284,7 +285,17 @@ func refresh_items():
 		var dynamic_price = int(
 			base_price * Economy.rupiah_strength
 		)
+		
+		# ======================
+		# Minus barang
+		# ======================
+		var minus_btn = card.get_node("VBoxContainer/MinusButton")
 
+		minus_btn.pressed.connect(func():
+			if cart[item_name] > 0:
+				cart[item_name] -= 1
+				refresh_cart()
+		)
 		# ======================
 		# ICON
 		# ======================
@@ -330,6 +341,7 @@ func refresh_gudang():
 	for item_name in Market.items.keys():
 
 		var card = item_card_scene.instantiate()
+		card.set_mode("gudang")
 
 		var stock = Market.items[item_name]["stok"]
 

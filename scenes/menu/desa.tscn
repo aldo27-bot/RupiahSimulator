@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://qmx04vuvg7bv" path="res://scripts/ui/warung.gd" id="3_fv1l2"]
 [ext_resource type="Texture2D" uid="uid://ct55uw73qtkbh" path="res://assets/images/bank.png" id="4_fv1l2"]
 [ext_resource type="PackedScene" uid="uid://db43lppi1hnja" path="res://scenes/menu/npc.tscn" id="6_26lf3"]
+[ext_resource type="PackedScene" uid="uid://bet771eirqt4o" path="res://scenes/menu/npc_talk.tscn" id="10_jlftl"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_f8obf"]
 vertices = PackedVector2Array(252.84375, 405.97656, 183.3125, 447.32813, 180.40625, 389.89844, 713.9375, 404, 454.95313, 407.9922, 508, 386, 863.21875, 390, 896.8594, 404, 990.3125, 381.46094, 983.75, 400.1328, 1023.1094, 364.35156, 1025.9375, 283.2422, 986.15625, 280.04688, 1017.02344, 258.53125, 503.07813, 184.96875, 977.28906, 186.96094, 977.7031, 197.96875, 573, 197, 477, 189.02344, 477, 84.203125, 502.0703, 84.8125, 198.85156, 198, 60.476563, 202.72656, 59.53125, 188.02344)
@@ -147,25 +148,7 @@ position = Vector2(875, 186)
 [node name="NPC3" parent="." unique_id=2094785801 instance=ExtResource("6_26lf3")]
 position = Vector2(504, 382)
 
-[node name="TargetRumah1" type="Marker2D" parent="." unique_id=1867389961]
-position = Vector2(310, 191)
-
-[node name="TargetRumah2" type="Marker2D" parent="." unique_id=707683657]
-position = Vector2(615, 184)
-
-[node name="TargetRumah3" type="Marker2D" parent="." unique_id=1714199651]
-position = Vector2(889, 186)
-
-[node name="TargetRumah4" type="Marker2D" parent="." unique_id=1038013930]
-position = Vector2(243, 392)
-
-[node name="TargetRumah5" type="Marker2D" parent="." unique_id=1045366557]
-position = Vector2(438, 393)
-
-[node name="TargetWarung" type="Marker2D" parent="." unique_id=2027626486]
-position = Vector2(659, 393)
-
-[node name="TargetBank" type="Marker2D" parent="." unique_id=1149843161]
-position = Vector2(864, 392)
-
 [node name="UI" type="CanvasLayer" parent="." unique_id=1700838898]
+
+[node name="NPC_Talk" parent="." unique_id=1704157545 instance=ExtResource("10_jlftl")]
+position = Vector2(313, 498)

@@ -1,0 +1,309 @@
+[gd_scene format=3 uid="uid://c5frbwnqtvcw"]
+
+[ext_resource type="Script" uid="uid://ciesnke00gvvg" path="res://scripts/main_menu.gd" id="1_oa1go"]
+[ext_resource type="Texture2D" uid="uid://k8caem1roved" path="res://assets/images/bg.png" id="2_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://vpjj8ptvy4km" path="res://assets/images/Mulai/mulai.png" id="3_lgwnu"]
+[ext_resource type="Texture2D" uid="uid://bp1fri246hvlj" path="res://assets/images/Mulai/carabermain.png" id="4_flqon"]
+[ext_resource type="Texture2D" uid="uid://dg5vgvhy208qj" path="res://assets/images/Mulai/tentanggame.png" id="5_rcqid"]
+[ext_resource type="Texture2D" uid="uid://cwm55c00mfsql" path="res://assets/images/Mulai/pengaturan.png" id="6_1ajci"]
+[ext_resource type="Texture2D" uid="uid://l40lq7sybssm" path="res://assets/images/Mulai/keluar.png" id="7_7b55j"]
+[ext_resource type="Texture2D" uid="uid://78x1280ijtag" path="res://assets/images/Keluar/popup.png" id="8_5pajh"]
+[ext_resource type="Texture2D" uid="uid://cqa8im6p77esj" path="res://assets/images/Keluar/iya.png" id="9_j7ex8"]
+[ext_resource type="Texture2D" uid="uid://b28pavo5eo71i" path="res://assets/images/Keluar/tidak.png" id="10_a8gd2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nlkkf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qe12f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8qtwp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dy7ct"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0o4t1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0k4wn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5v2v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iotk1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lgwnu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_flqon"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rcqid"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ajci"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oa1go"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tbmy8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jk1qb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5dd4i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7b55j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5pajh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j7ex8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8gd2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hstxw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8egab"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gw5y6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_svtp6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1dfpl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qywvv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3wgol"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1acrt"]
+
+[node name="MainMenu" type="Control" unique_id=420619140]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oa1go")
+
+[node name="BackgroundWarung" type="TextureRect" parent="." unique_id=2014043714]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5dd4i")
+expand_mode = 1
+
+[node name="MulaiContainer" type="Control" parent="." unique_id=1112942424]
+anchors_preset = 0
+offset_left = 292.0
+offset_top = 124.0
+offset_right = 542.9999
+offset_bottom = 183.0
+pivot_offset = Vector2(125.5, 29.5)
+
+[node name="CardMulai" type="TextureRect" parent="MulaiContainer" unique_id=1629125726]
+layout_mode = 0
+offset_left = 581.0
+offset_top = 148.0
+offset_right = 841.0
+offset_bottom = 228.0
+texture = ExtResource("3_lgwnu")
+expand_mode = 1
+
+[node name="ButtonMain" type="Button" parent="MulaiContainer" unique_id=512599553]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.138
+anchor_top = 4.578
+anchor_right = 2.138
+anchor_bottom = 4.578
+offset_left = 52.362244
+offset_top = -112.10199
+offset_right = 295.36224
+offset_bottom = -56.10199
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nlkkf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qe12f")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8qtwp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dy7ct")
+
+[node name="CaraMainContainer" type="Control" parent="." unique_id=1634834111]
+anchors_preset = 0
+offset_left = 154.0
+offset_top = 406.0
+offset_right = 194.035
+offset_bottom = 446.0
+
+[node name="CardCaraMain" type="TextureRect" parent="CaraMainContainer" unique_id=1496838566]
+layout_mode = 0
+offset_left = 719.0
+offset_top = -61.0
+offset_right = 979.0
+offset_bottom = 19.0
+texture = ExtResource("4_flqon")
+expand_mode = 1
+
+[node name="ButtonCaraMain" type="Button" parent="CaraMainContainer" unique_id=2078485294]
+layout_mode = 0
+offset_left = 724.0
+offset_top = -48.0
+offset_right = 977.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0o4t1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_0k4wn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j5v2v")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_iotk1")
+
+[node name="TentangGameContainer" type="Control" parent="." unique_id=192616619]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CardTentangGame" type="TextureRect" parent="TentangGameContainer" unique_id=1797284104]
+layout_mode = 0
+offset_left = 873.0
+offset_top = 429.0
+offset_right = 1133.0
+offset_bottom = 505.0
+texture = ExtResource("5_rcqid")
+expand_mode = 1
+
+[node name="ButtonTentangGame" type="Button" parent="TentangGameContainer" unique_id=758814666]
+layout_mode = 0
+offset_left = 875.0
+offset_top = 433.0
+offset_right = 1129.0
+offset_bottom = 497.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lgwnu")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_flqon")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rcqid")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1ajci")
+
+[node name="PengaturanContainer" type="Control" parent="." unique_id=1030420990]
+anchors_preset = 0
+offset_left = 1158.0
+offset_top = 605.0
+offset_right = 1198.0
+offset_bottom = 645.0
+
+[node name="CardPengaturan" type="TextureRect" parent="PengaturanContainer" unique_id=943454136]
+layout_mode = 0
+offset_left = -108.0
+offset_top = -589.0
+offset_right = -19.0
+offset_bottom = -502.0
+texture = ExtResource("6_1ajci")
+expand_mode = 1
+
+[node name="ButtonPengaturan" type="Button" parent="PengaturanContainer" unique_id=560500612]
+layout_mode = 0
+offset_left = -104.0
+offset_top = -590.0
+offset_right = -19.0
+offset_bottom = -509.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tbmy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jk1qb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5dd4i")
+
+[node name="KeluarContainer" type="Control" parent="." unique_id=53620807]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CardKeluar" type="TextureRect" parent="KeluarContainer" unique_id=1523365505]
+layout_mode = 0
+offset_left = 873.0
+offset_top = 505.0
+offset_right = 1133.0
+offset_bottom = 585.0
+texture = ExtResource("7_7b55j")
+expand_mode = 1
+
+[node name="ButtonKeluar" type="Button" parent="KeluarContainer" unique_id=2071550641]
+layout_mode = 0
+offset_left = 877.0
+offset_top = 515.0
+offset_right = 1126.0
+offset_bottom = 576.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7b55j")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5pajh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j7ex8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_a8gd2")
+
+[node name="PopupKeluar" type="Control" parent="." unique_id=2011109641]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PopupImage" type="TextureRect" parent="PopupKeluar" unique_id=1793021548]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 131.0
+offset_right = 1050.0
+offset_bottom = 636.0
+texture = ExtResource("8_5pajh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Iya" type="TextureRect" parent="PopupKeluar/PopupImage" unique_id=963878745]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 264.0
+offset_right = 346.0
+offset_bottom = 416.0
+texture = ExtResource("9_j7ex8")
+expand_mode = 1
+
+[node name="BtnIya" type="Button" parent="PopupKeluar/PopupImage/Iya" unique_id=1173158287]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 46.0
+offset_right = 169.0
+offset_bottom = 95.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hstxw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8egab")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gw5y6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_svtp6")
+
+[node name="Tidak" type="TextureRect" parent="PopupKeluar/PopupImage" unique_id=1434546546]
+layout_mode = 0
+offset_left = 492.0
+offset_top = 263.0
+offset_right = 709.0
+offset_bottom = 415.0
+texture = ExtResource("10_a8gd2")
+expand_mode = 1
+
+[node name="BtnTidak" type="Button" parent="PopupKeluar/PopupImage/Tidak" unique_id=1872135496]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 46.0
+offset_right = 186.0
+offset_bottom = 101.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1dfpl")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qywvv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3wgol")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1acrt")
+
+[connection signal="button_down" from="MulaiContainer/ButtonMain" to="." method="_on_button_mulai_button_down"]
+[connection signal="button_up" from="MulaiContainer/ButtonMain" to="." method="_on_button_mulai_button_up"]
+[connection signal="pressed" from="MulaiContainer/ButtonMain" to="." method="_on_button_mulai_pressed"]
+[connection signal="button_down" from="CaraMainContainer/ButtonCaraMain" to="." method="_on_button_cara_main_button_down"]
+[connection signal="button_up" from="CaraMainContainer/ButtonCaraMain" to="." method="_on_button_cara_main_button_up"]
+[connection signal="mouse_entered" from="CaraMainContainer/ButtonCaraMain" to="." method="_on_button_cara_main_mouse_entered"]
+[connection signal="mouse_exited" from="CaraMainContainer/ButtonCaraMain" to="." method="_on_button_cara_main_mouse_exited"]
+[connection signal="pressed" from="CaraMainContainer/ButtonCaraMain" to="." method="_on_button_cara_main_pressed"]
+[connection signal="button_down" from="TentangGameContainer/ButtonTentangGame" to="." method="_on_button_tentang_game_button_down"]
+[connection signal="button_up" from="TentangGameContainer/ButtonTentangGame" to="." method="_on_button_tentang_game_button_up"]
+[connection signal="mouse_entered" from="TentangGameContainer/ButtonTentangGame" to="." method="_on_button_tentang_game_mouse_entered"]
+[connection signal="mouse_exited" from="TentangGameContainer/ButtonTentangGame" to="." method="_on_button_tentang_game_mouse_exited"]
+[connection signal="pressed" from="TentangGameContainer/ButtonTentangGame" to="." method="_on_button_tentang_game_pressed"]
+[connection signal="button_down" from="PengaturanContainer/ButtonPengaturan" to="." method="_on_button_pengaturan_button_down"]
+[connection signal="button_up" from="PengaturanContainer/ButtonPengaturan" to="." method="_on_button_pengaturan_button_up"]
+[connection signal="mouse_entered" from="PengaturanContainer/ButtonPengaturan" to="." method="_on_button_pengaturan_mouse_entered"]
+[connection signal="mouse_exited" from="PengaturanContainer/ButtonPengaturan" to="." method="_on_button_pengaturan_mouse_exited"]
+[connection signal="pressed" from="PengaturanContainer/ButtonPengaturan" to="." method="_on_button_pengaturan_pressed"]
+[connection signal="button_down" from="KeluarContainer/ButtonKeluar" to="." method="_on_button_keluar_button_down"]
+[connection signal="button_up" from="KeluarContainer/ButtonKeluar" to="." method="_on_button_keluar_button_up"]
+[connection signal="mouse_entered" from="KeluarContainer/ButtonKeluar" to="." method="_on_button_keluar_mouse_entered"]
+[connection signal="mouse_exited" from="KeluarContainer/ButtonKeluar" to="." method="_on_button_keluar_mouse_exited"]
+[connection signal="pressed" from="KeluarContainer/ButtonKeluar" to="." method="_on_button_keluar_pressed"]
+[connection signal="button_down" from="PopupKeluar/PopupImage/Iya/BtnIya" to="." method="_on_btn_iya_button_down"]
+[connection signal="button_up" from="PopupKeluar/PopupImage/Iya/BtnIya" to="." method="_on_btn_iya_button_up"]
+[connection signal="pressed" from="PopupKeluar/PopupImage/Iya/BtnIya" to="." method="_on_btn_iya_pressed"]
+[connection signal="button_down" from="PopupKeluar/PopupImage/Tidak/BtnTidak" to="." method="_on_btn_tidak_button_down"]
+[connection signal="button_up" from="PopupKeluar/PopupImage/Tidak/BtnTidak" to="." method="_on_btn_tidak_button_up"]
+[connection signal="pressed" from="PopupKeluar/PopupImage/Tidak/BtnTidak" to="." method="_on_btn_tidak_pressed"]

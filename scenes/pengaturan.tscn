@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dwb216iyo44yx"]
+
+[ext_resource type="Script" uid="uid://copnej657i1lj" path="res://scripts/pengaturan.gd" id="1_w2tea"]
+[ext_resource type="Texture2D" uid="uid://dlaspgqcw6km8" path="res://assets/images/Pengaturan/pengaturan.png" id="2_qltlc"]
+[ext_resource type="Texture2D" uid="uid://3vyrgcx0846w" path="res://assets/images/CaraMain/keluar.png" id="3_w2tea"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qltlc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w2tea"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ineob"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qp0ps"]
+
+[node name="Pengaturan" type="Control" unique_id=1240399040]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w2tea")
+
+[node name="pengaturan" type="TextureRect" parent="." unique_id=226355488]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qltlc")
+expand_mode = 1
+
+[node name="keluar" type="Button" parent="." unique_id=279241835]
+layout_mode = 0
+offset_left = 991.0
+offset_top = 44.0
+offset_right = 1082.0
+offset_bottom = 143.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qltlc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_w2tea")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ineob")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qp0ps")
+icon = ExtResource("3_w2tea")
+
+[connection signal="pressed" from="keluar" to="." method="_on_keluar_pressed"]

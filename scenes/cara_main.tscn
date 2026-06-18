@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://c2babwligwr3u"]
+
+[ext_resource type="Script" uid="uid://bx7ipr4nop6lj" path="res://scripts/cara_main.gd" id="1_4nhiv"]
+[ext_resource type="Texture2D" uid="uid://bru6w83kl6u1l" path="res://assets/images/CaraMain/caramain0.png" id="1_ux7ar"]
+[ext_resource type="Texture2D" uid="uid://b02dpxpy3lv24" path="res://assets/images/CaraMain/caramain1.png" id="2_4nhiv"]
+[ext_resource type="Texture2D" uid="uid://b17t0gqquo3e6" path="res://assets/images/CaraMain/caramain2.png" id="3_asfrt"]
+[ext_resource type="Texture2D" uid="uid://sti4ahdn5e4s" path="res://assets/images/CaraMain/caramain3.png" id="4_7j0rr"]
+[ext_resource type="Texture2D" uid="uid://bttg3ki4j06bx" path="res://assets/images/CaraMain/lanjut.png" id="5_kcclb"]
+[ext_resource type="Texture2D" uid="uid://cvdutdmk7c1op" path="res://assets/images/CaraMain/kembali.png" id="6_ra81c"]
+[ext_resource type="Texture2D" uid="uid://3vyrgcx0846w" path="res://assets/images/CaraMain/keluar.png" id="7_7ds6l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kad2p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cuxjw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ux7ar"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4nhiv"]
+
+[node name="CaraMain" type="Control" unique_id=213176177]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4nhiv")
+
+[node name="Caramain0" type="TextureRect" parent="." unique_id=927259808]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_ux7ar")
+expand_mode = 1
+
+[node name="Caramain1" type="TextureRect" parent="." unique_id=260284118]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_4nhiv")
+expand_mode = 1
+
+[node name="Caramain2" type="TextureRect" parent="." unique_id=1584139107]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_asfrt")
+expand_mode = 1
+
+[node name="Caramain3" type="TextureRect" parent="." unique_id=1772001259]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_7j0rr")
+expand_mode = 1
+
+[node name="lanjut" type="Button" parent="." unique_id=896072291]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 666.0
+offset_top = 504.0
+offset_right = 826.0
+offset_bottom = 579.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kad2p")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cuxjw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ux7ar")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4nhiv")
+icon = ExtResource("5_kcclb")
+
+[node name="kembali" type="Button" parent="." unique_id=1985674471]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 315.0
+offset_top = 502.0
+offset_right = 475.0
+offset_bottom = 577.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kad2p")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cuxjw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ux7ar")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4nhiv")
+icon = ExtResource("6_ra81c")
+
+[node name="keluar" type="Button" parent="." unique_id=527954886]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 891.0
+offset_top = 40.0
+offset_right = 982.0
+offset_bottom = 131.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kad2p")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cuxjw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ux7ar")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4nhiv")
+icon = ExtResource("7_7ds6l")
+
+[connection signal="pressed" from="lanjut" to="." method="_on_lanjut_pressed"]
+[connection signal="pressed" from="kembali" to="." method="_on_kembali_pressed"]
+[connection signal="pressed" from="keluar" to="." method="_on_keluar_pressed"]

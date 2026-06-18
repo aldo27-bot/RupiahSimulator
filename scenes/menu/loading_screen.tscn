@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bf7s1icdjgpa"]
+
+[ext_resource type="Script" uid="uid://7ag7jakkhyk6" path="res://scripts/ui/loading_screen.gd" id="1_76jna"]
+[ext_resource type="Texture2D" uid="uid://db4usaaixkuhv" path="res://assets/images/background_loading.png" id="2_l6aes"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76jna"]
+
+[node name="LoadingScreen" type="Control" unique_id=1276262710]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_76jna")
+
+[node name="Background" type="TextureRect" parent="." unique_id=860128373]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_l6aes")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="LoadingText" type="Label" parent="." unique_id=1493811622]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -39.5
+offset_top = -82.0
+offset_right = 39.5
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Memuat..."
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1905648903]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -59.0
+offset_right = 300.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/fill = SubResource("StyleBoxFlat_76jna")

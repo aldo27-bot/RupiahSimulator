@@ -1,7 +1,56 @@
 [gd_scene format=3 uid="uid://ctll01rmqx14o"]
 
-[ext_resource type="Script" uid="uid://ccdkwerlxv4bq" path="res://scripts/ui/home_menu.gd" id="1_r1yp5"]
+[ext_resource type="AudioStream" uid="uid://ba1ys0m6hfphk" path="res://assets/audio/mainsound.ogg" id="1_g7t7q"]
 [ext_resource type="Texture2D" uid="uid://swgjjxwua44o" path="res://assets/images/bg_home.png" id="2_nm2ns"]
+
+[sub_resource type="GDScript" id="GDScript_nm2ns"]
+script/source = "extends Control
+
+@onready var play_button = $VBoxContainer/PlayButton
+@onready var howto_button = $VBoxContainer/HowToPlayButton
+@onready var about_button = $VBoxContainer/AboutButton
+@onready var setting_button = $VBoxContainer/SettingButton
+@onready var exit_button = $VBoxContainer/ExitButton
+@onready var reset_button = $ResetButton
+@onready var bgm = $BGM
+
+func _ready():
+	
+	bgm.play()
+	
+	play_button.pressed.connect(_on_play_pressed)
+	howto_button.pressed.connect(_on_howto_pressed)
+	#about_button.pressed.connect(_on_about_pressed)
+	#setting_button.pressed.connect(_on_setting_pressed)
+	#exit_button.pressed.connect(_on_exit_pressed)
+	reset_button.pressed.connect(_on_reset_pressed)
+
+func _on_play_pressed():
+
+	var loading = preload(
+		\"res://scenes/menu/loading_screen.tscn\"
+	).instantiate()
+
+	get_tree().root.add_child(loading)
+
+	loading.start_loading(
+		\"res://scenes/menu/desa.tscn\",
+		\"Masuk Desa...\"
+	)
+	
+func _on_howto_pressed():
+	
+	get_tree().change_scene_to_file(
+		\"res://scenes/menu/howtoplay.tscn\"
+		)
+		
+func _on_reset_pressed():
+
+	SaveManager.reset_save()
+
+	print(\"SAVE BERHASIL DIRESET\")
+	get_tree().reload_current_scene()
+"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nm2ns"]
 
@@ -63,7 +112,13 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_r1yp5")
+script = SubResource("GDScript_nm2ns")
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="HomeMenu" unique_id=1286664749]
+stream = ExtResource("1_g7t7q")
+volume_db = -11.375
+autoplay = true
+parameters/looping = true
 
 [node name="Background" type="TextureRect" parent="HomeMenu" unique_id=1256076085]
 layout_mode = 1
