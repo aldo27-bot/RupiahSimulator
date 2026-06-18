@@ -1,25 +1,34 @@
 extends Control
 
 @onready var progress_bar = $ProgressBar
-@onready var percent_label = $PercentLabel
-@onready var loading_text = $LoadingText
+@onready var coin = $Coin
 
 var target_scene := ""
+var flip_time := 0.0
 
 func _ready():
 
 	progress_bar.min_value = 0
 	progress_bar.max_value = 100
 
+	# Titik putar koin di tengah
+	await get_tree().process_frame
+	coin.pivot_offset = coin.size / 2
+
+func _process(delta):
+
+	# Efek koin berputar horizontal
+	flip_time += delta * 6.0
+
+	coin.scale.x = cos(flip_time)
+
 func start_loading(scene_path:String, text_loading:String) -> void:
 
 	target_scene = scene_path
-	loading_text.text = text_loading
 
 	await get_tree().process_frame
 	await get_tree().process_frame
 	await load_animation()
-
 
 func load_animation() -> void:
 
@@ -29,10 +38,23 @@ func load_animation() -> void:
 
 		progress_bar.value = i
 
-		print(i)
+		# Koin mengikuti progress bar
+		var ratio = float(i) / 100.0
 
-		await get_tree().create_timer(0.03).timeout
+		coin.position = Vector2(
+			lerp(
+				progress_bar.position.x,
+				progress_bar.position.x + progress_bar.size.x,
+				ratio
+			),
+			progress_bar.position.y - 40
+		)
+
+		await get_tree().create_timer(0.025).timeout
 
 	print("GAME LOADED")
 
-	get_tree().change_scene_to_file(target_scene)
+	var error = get_tree().change_scene_to_file(target_scene)
+
+	if error == OK:
+		queue_free()

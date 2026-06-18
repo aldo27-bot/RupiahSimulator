@@ -73,7 +73,16 @@ func _on_button_mulai_pressed():
 
 	await get_tree().create_timer(0.10).timeout
 
-	get_tree().change_scene_to_file("res://scenes/menu/desa.tscn")
+	var loading = preload(
+		"res://scenes/menu/loading_screen.tscn"
+	).instantiate()
+
+	get_tree().root.add_child(loading)
+
+	loading.start_loading(
+		"res://scenes/menu/desa.tscn",
+		"Memasuki Desa..."
+	)
 
 
 # ==================================================

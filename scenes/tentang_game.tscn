@@ -33,10 +33,10 @@ expand_mode = 1
 
 [node name="keluar" type="Button" parent="." unique_id=1179568688]
 layout_mode = 0
-offset_left = 998.0
-offset_top = 40.0
-offset_right = 1075.0
-offset_bottom = 131.0
+offset_left = 911.0
+offset_top = 26.0
+offset_right = 988.0
+offset_bottom = 117.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_nnmbm")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_1r48d")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_yhtx2")
