@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GameRupiah"
-run/main_scene="uid://c5frbwnqtvcw"
+run/main_scene="uid://cyre30t8m3236"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -21,6 +21,8 @@ Economy="*uid://c5s1r05xnebjp"
 Market="*uid://crdeo5ffsofo0"
 Supplier="*uid://djqh56vttsgcf"
 SaveManager="*uid://bpca4lrqmumom"
+Weathermanager="*uid://vadld7mnbmea"
+BusinessData="*uid://c5r2toilhuowe"
 
 [display]
 

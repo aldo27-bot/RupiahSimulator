@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://clh8b1lb1avjp"]
+
+[ext_resource type="Texture2D" uid="uid://dfxiikl3fpm5g" path="res://assets/images/popup/popup_beliwarung.png" id="1_3c75l"]
+[ext_resource type="Script" uid="uid://cttquvd5tc4d0" path="res://scripts/desa2/warung_popup.gd" id="1_ihrvn"]
+[ext_resource type="Texture2D" uid="uid://cgy430yctr52t" path="res://assets/images/popup/buttonbeliwarung.png" id="3_sbjcc"]
+[ext_resource type="Texture2D" uid="uid://nqnk7q05vail" path="res://assets/images/popup/buttontutup.png" id="4_ewlbt"]
+[ext_resource type="Texture2D" uid="uid://x8korerxuclk" path="res://assets/images/popup/buttonklaim.png" id="4_sbjcc"]
+
+[node name="WarungPopup" type="CanvasLayer" unique_id=1123968663]
+script = ExtResource("1_ihrvn")
+
+[node name="DarkBackground" type="ColorRect" parent="." unique_id=51796644]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="Popup" type="TextureRect" parent="." unique_id=93455220]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -279.0
+offset_top = -223.5
+offset_right = 279.0
+offset_bottom = 223.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3c75l")
+stretch_mode = 2
+
+[node name="BuyButton" type="TextureButton" parent="Popup" unique_id=1020466473]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 413.5
+offset_right = 241.0
+offset_bottom = 450.5
+texture_normal = ExtResource("3_sbjcc")
+texture_pressed = ExtResource("3_sbjcc")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ClaimButton" type="TextureButton" parent="Popup" unique_id=1473257977]
+visible = false
+layout_mode = 0
+offset_left = 91.0
+offset_top = 413.5
+offset_right = 241.0
+offset_bottom = 450.5
+texture_normal = ExtResource("4_sbjcc")
+texture_pressed = ExtResource("4_sbjcc")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CloseButton" type="TextureButton" parent="Popup" unique_id=1917858532]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 413.5
+offset_right = 465.0
+offset_bottom = 450.5
+texture_normal = ExtResource("4_ewlbt")
+texture_pressed = ExtResource("4_ewlbt")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="Popup/BuyButton" to="." method="_on_buy_button_pressed"]
+[connection signal="pressed" from="Popup/ClaimButton" to="." method="_on_claim_button_pressed"]
+[connection signal="pressed" from="Popup/CloseButton" to="." method="_on_close_button_pressed"]

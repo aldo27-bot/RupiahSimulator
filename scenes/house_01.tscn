@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://bon6ucka3kt8w"]
+
+[ext_resource type="Texture2D" uid="uid://b15ly42gpadc3" path="res://assets/images/assetbaru/exterior.png" id="1_u7ecm"]
+[ext_resource type="Texture2D" uid="uid://dy3utcn6dayuj" path="res://assets/images/assetbaru/Smoke_animation.png" id="2_4dxfy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yemhc"]
+atlas = ExtResource("2_4dxfy")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcm2c"]
+atlas = ExtResource("2_4dxfy")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nyvf"]
+atlas = ExtResource("2_4dxfy")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k45lc"]
+atlas = ExtResource("2_4dxfy")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mu28"]
+atlas = ExtResource("2_4dxfy")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytpdu"]
+atlas = ExtResource("2_4dxfy")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gga1j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yemhc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bcm2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nyvf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k45lc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mu28")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytpdu")
+}],
+"loop": true,
+"name": &"smoke_1",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2bvqo"]
+size = Vector2(121, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7t6br"]
+size = Vector2(121, 46)
+
+[node name="House_01" type="Node2D" unique_id=88047486]
+position = Vector2(173, 134)
+
+[node name="SpriteRumah" type="Sprite2D" parent="." unique_id=709185828]
+texture = ExtResource("1_u7ecm")
+region_enabled = true
+region_rect = Rect2(8.3280945, 0.9012909, 136.13545, 126.80528)
+
+[node name="Smoke" type="AnimatedSprite2D" parent="." unique_id=23905846]
+position = Vector2(-37, -56)
+sprite_frames = SubResource("SpriteFrames_gga1j")
+animation = &"smoke_1"
+autoplay = "smoke_1"
+frame_progress = 0.20659378
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1441664713]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1373671766]
+position = Vector2(3.5, 48.5)
+shape = SubResource("RectangleShape2D_2bvqo")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=502672722]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1401729541]
+position = Vector2(3.5, 59)
+shape = SubResource("RectangleShape2D_7t6br")

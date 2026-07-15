@@ -1,0 +1,493 @@
+[gd_scene format=3 uid="uid://cyre30t8m3236"]
+
+[ext_resource type="Script" uid="uid://c0a26omtco84s" path="res://scripts/desa2/desa_2.gd" id="1_5ibfl"]
+[ext_resource type="Texture2D" uid="uid://cusre670x8wa8" path="res://assets/images/assetbaru/desa2.png" id="1_v880q"]
+[ext_resource type="PackedScene" uid="uid://bon6ucka3kt8w" path="res://scenes/house_01.tscn" id="2_swvef"]
+[ext_resource type="Texture2D" uid="uid://qu5swuderhip" path="res://assets/images/assetbaru/balaidesa.png" id="3_5ibfl"]
+[ext_resource type="Texture2D" uid="uid://dr7ja5xi5jnx5" path="res://assets/images/rumah.png" id="4_07116"]
+[ext_resource type="Texture2D" uid="uid://cgvubfst3mix" path="res://assets/images/assetbaru/sumurdesa.png" id="5_tg01b"]
+[ext_resource type="Texture2D" uid="uid://bqcmd36phsyvq" path="res://assets/images/assetbaru/papaninformasidesa.png" id="6_157w0"]
+[ext_resource type="Texture2D" uid="uid://bhsqug4gkl7lh" path="res://assets/images/assetbaru/rumahdepan.png" id="7_o3tbx"]
+[ext_resource type="Texture2D" uid="uid://btdbxutci0ivm" path="res://assets/images/assetbaru/rumahserong.png" id="8_whsoh"]
+[ext_resource type="Texture2D" uid="uid://dpn4hm8s6lrue" path="res://assets/images/assetbaru/rumahbelakang.png" id="9_rn34w"]
+[ext_resource type="Texture2D" uid="uid://8d5opl36kuni" path="res://assets/images/assetbaru/rumahsultan.png" id="10_tttgx"]
+[ext_resource type="Texture2D" uid="uid://ct55uw73qtkbh" path="res://assets/images/bank.png" id="10_x44po"]
+[ext_resource type="Texture2D" uid="uid://debuhn864cuck" path="res://assets/images/assetbaru/kebunwortel.png" id="12_osxbh"]
+[ext_resource type="Texture2D" uid="uid://cwhws06sldsmd" path="res://assets/images/assetbaru/kiosbiru.png" id="13_ccfyb"]
+[ext_resource type="Texture2D" uid="uid://cftvy6nftsb63" path="res://assets/images/assetbaru/kiosmerah.png" id="14_2kjeu"]
+[ext_resource type="Texture2D" uid="uid://beoc66y2twpyi" path="res://assets/images/assetbaru/kebuntomat.png" id="15_0pla3"]
+[ext_resource type="Texture2D" uid="uid://ct80bmqaleq5n" path="res://assets/images/assetbaru/bonekasawah.png" id="16_vaiil"]
+[ext_resource type="Texture2D" uid="uid://c8qly2ja2lxvx" path="res://assets/images/assetbaru/lampudesa.png" id="17_cddag"]
+[ext_resource type="Script" uid="uid://dwkaisvfotl8o" path="res://scripts/desa2/camera_2d.gd" id="18_kmmv2"]
+[ext_resource type="PackedScene" uid="uid://k15r8id61ukf" path="res://scenes/desa2/warung2.tscn" id="18_tg01b"]
+[ext_resource type="Texture2D" uid="uid://dxim2fnyuxcac" path="res://assets/images/assetbaru/Trees_animation.png" id="19_q0j0k"]
+[ext_resource type="Script" uid="uid://ds4yaxyuru20l" path="res://scripts/desa2/bird_spawner.gd" id="20_2ewah"]
+[ext_resource type="PackedScene" uid="uid://d272w1xq4kqfy" path="res://scenes/desa2/bird.tscn" id="21_mm6k6"]
+[ext_resource type="PackedScene" uid="uid://dy2ltw5gylmyp" path="res://scenes/weather/weather.tscn" id="23_07116"]
+[ext_resource type="Texture2D" uid="uid://jr04bghpmx1a" path="res://assets/images/assetbaru/kereta_kuda.png" id="24_07116"]
+[ext_resource type="PackedScene" uid="uid://d2iddvysw5kba" path="res://scenes/desa2/travel_popup.tscn" id="26_o3tbx"]
+[ext_resource type="PackedScene" uid="uid://clh8b1lb1avjp" path="res://scenes/desa2/warung_popup.tscn" id="27_o3tbx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26acp"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ft2ts"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(0, 80, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gabqf"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(0, 160, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sj21"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(0, 240, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4mhu"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(0, 320, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v3tu"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(0, 400, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ba7cf"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(0, 480, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cn4mr"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(0, 560, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gygs"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(0, 640, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1jqa"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(0, 720, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pbev"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(0, 800, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82s2d"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(0, 880, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgcj5"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(0, 960, 64, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jisn3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26acp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ft2ts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gabqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4sj21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4mhu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v3tu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ba7cf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cn4mr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gygs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1jqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pbev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82s2d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgcj5")
+}],
+"loop": true,
+"name": &"pohon1",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpq8h"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(192, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jisn3"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(192, 80, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irgnt"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(192, 160, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnx1l"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(192, 240, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5e4a"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(192, 320, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0acs"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(192, 400, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4df3"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(192, 480, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vawch"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(192, 560, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kghn"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(192, 640, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cpj5"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(192, 720, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqo3o"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(192, 800, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnu8o"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(192, 880, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s13et"]
+atlas = ExtResource("19_q0j0k")
+region = Rect2(192, 960, 64, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0vyct"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpq8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jisn3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irgnt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnx1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5e4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0acs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4df3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vawch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kghn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cpj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqo3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnu8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s13et")
+}],
+"loop": true,
+"name": &"pohon2",
+"speed": 5.0
+}]
+
+[node name="Desa2" type="Node2D" unique_id=1605411252]
+script = ExtResource("1_5ibfl")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1500746693]
+z_index = -10
+position = Vector2(577, 328)
+texture = ExtResource("1_v880q")
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=845231119]
+
+[node name="Buildings" type="Node2D" parent="." unique_id=1091539753]
+
+[node name="House_01" parent="Buildings" unique_id=88047486 instance=ExtResource("2_swvef")]
+position = Vector2(77, 182)
+
+[node name="balaidesa" type="Sprite2D" parent="Buildings" unique_id=1110684895]
+position = Vector2(641.00006, 196)
+scale = Vector2(0.5857142, 0.52500004)
+texture = ExtResource("3_5ibfl")
+
+[node name="rumahbiasa" type="Sprite2D" parent="Buildings" unique_id=1688121780]
+position = Vector2(370.99997, 52.99999)
+scale = Vector2(0.354857, 0.38850003)
+texture = ExtResource("4_07116")
+
+[node name="sumur" type="Sprite2D" parent="Buildings" unique_id=373002004]
+position = Vector2(178, 158)
+scale = Vector2(0.17017543, 0.1875)
+texture = ExtResource("5_tg01b")
+
+[node name="sumur4" type="Sprite2D" parent="Buildings" unique_id=962837284]
+position = Vector2(615.625, -109.5)
+scale = Vector2(0.13070166, 0.16319446)
+texture = ExtResource("5_tg01b")
+
+[node name="sumur3" type="Sprite2D" parent="Buildings" unique_id=1912967460]
+position = Vector2(718, 89)
+scale = Vector2(0.17017543, 0.1875)
+texture = ExtResource("5_tg01b")
+
+[node name="sumur2" type="Sprite2D" parent="Buildings" unique_id=322255787]
+position = Vector2(338.99997, 675)
+scale = Vector2(0.11315786, 0.16666667)
+texture = ExtResource("5_tg01b")
+
+[node name="sumur5" type="Sprite2D" parent="Buildings" unique_id=878588534]
+position = Vector2(448.00003, 74)
+scale = Vector2(0.10263152, 0.13541657)
+texture = ExtResource("5_tg01b")
+
+[node name="papandesa" type="Sprite2D" parent="Buildings" unique_id=256830578]
+position = Vector2(486, 224)
+scale = Vector2(0.26754388, 0.26636374)
+texture = ExtResource("6_157w0")
+
+[node name="rumahdepan" type="Sprite2D" parent="Buildings" unique_id=294561296]
+position = Vector2(682, -98.00001)
+scale = Vector2(0.5560065, 0.635)
+texture = ExtResource("7_o3tbx")
+
+[node name="rumahserong" type="Sprite2D" parent="Buildings" unique_id=1586006723]
+position = Vector2(914, 11.000001)
+scale = Vector2(0.39421427, 0.38318193)
+texture = ExtResource("8_whsoh")
+
+[node name="rumahbelakang" type="Sprite2D" parent="Buildings" unique_id=1669455890]
+position = Vector2(415.3443, 677.03925)
+scale = Vector2(0.5441851, 0.63137245)
+texture = ExtResource("9_rn34w")
+
+[node name="rumahsultan" type="Sprite2D" parent="Buildings" unique_id=1334992939]
+position = Vector2(276.99997, 336)
+scale = Vector2(0.9762284, 0.6611535)
+texture = ExtResource("10_tttgx")
+
+[node name="bank" type="Sprite2D" parent="Buildings" unique_id=1532124055]
+position = Vector2(657, 516.20386)
+scale = Vector2(0.6829464, 0.5892346)
+texture = ExtResource("10_x44po")
+
+[node name="kebunwortel" type="Sprite2D" parent="Buildings" unique_id=645011624]
+position = Vector2(1055, 314)
+scale = Vector2(0.46988246, 0.5019084)
+texture = ExtResource("12_osxbh")
+
+[node name="kebunwortel3" type="Sprite2D" parent="Buildings" unique_id=627336509]
+position = Vector2(201, 578)
+scale = Vector2(0.46988198, 0.5477099)
+texture = ExtResource("12_osxbh")
+
+[node name="kebunwortel4" type="Sprite2D" parent="Buildings" unique_id=1852355293]
+position = Vector2(1033, 480)
+scale = Vector2(0.46988198, 0.5477099)
+texture = ExtResource("12_osxbh")
+
+[node name="kios1" type="Sprite2D" parent="Buildings" unique_id=1999234310]
+position = Vector2(1108, 83)
+texture = ExtResource("13_ccfyb")
+
+[node name="kios2" type="Sprite2D" parent="Buildings" unique_id=79903517]
+position = Vector2(444, 556.625)
+scale = Vector2(0.8701456, 0.76902205)
+texture = ExtResource("14_2kjeu")
+
+[node name="kebuntomat2" type="Sprite2D" parent="Buildings" unique_id=272738458]
+position = Vector2(890, -69)
+scale = Vector2(0.32777765, 0.2895303)
+texture = ExtResource("15_0pla3")
+
+[node name="bonekasawah" type="Sprite2D" parent="Buildings" unique_id=1304356446]
+position = Vector2(169, 521)
+scale = Vector2(0.33495146, 0.3677686)
+texture = ExtResource("16_vaiil")
+
+[node name="bonekasawah3" type="Sprite2D" parent="Buildings" unique_id=1352650260]
+position = Vector2(954, 254)
+scale = Vector2(0.34101924, 0.41838858)
+texture = ExtResource("16_vaiil")
+
+[node name="bonekasawah4" type="Sprite2D" parent="Buildings" unique_id=622622842]
+position = Vector2(997, 172)
+scale = Vector2(0.34101924, 0.41838858)
+texture = ExtResource("16_vaiil")
+
+[node name="lampudesa" type="Sprite2D" parent="Buildings" unique_id=528813795]
+position = Vector2(383, 298)
+scale = Vector2(0.6944444, 0.5771608)
+texture = ExtResource("17_cddag")
+
+[node name="lampudesa2" type="Sprite2D" parent="Buildings" unique_id=554442671]
+position = Vector2(391, 167)
+scale = Vector2(0.6944444, 0.5771608)
+texture = ExtResource("17_cddag")
+
+[node name="lampudesa4" type="Sprite2D" parent="Buildings" unique_id=1149403197]
+position = Vector2(282, -55)
+scale = Vector2(0.6944444, 0.5771608)
+texture = ExtResource("17_cddag")
+
+[node name="lampudesa12" type="Sprite2D" parent="Buildings" unique_id=1575354054]
+position = Vector2(60, 325)
+scale = Vector2(0.6944444, 0.5771608)
+texture = ExtResource("17_cddag")
+
+[node name="lampudesa9" type="Sprite2D" parent="Buildings" unique_id=2047950110]
+position = Vector2(748, 349.00003)
+scale = Vector2(0.6944444, 0.5771608)
+texture = ExtResource("17_cddag")
+
+[node name="lampudesa10" type="Sprite2D" parent="Buildings" unique_id=2145990822]
+position = Vector2(941.00006, 197)
+scale = Vector2(0.6944444, 0.5771608)
+texture = ExtResource("17_cddag")
+
+[node name="lampudesa16" type="Sprite2D" parent="Buildings" unique_id=284564486]
+position = Vector2(1013, 108.000015)
+scale = Vector2(0.6944444, 0.5771608)
+texture = ExtResource("17_cddag")
+
+[node name="lampudesa17" type="Sprite2D" parent="Buildings" unique_id=1043069532]
+position = Vector2(1056, -62.999985)
+scale = Vector2(0.6944444, 0.5771608)
+texture = ExtResource("17_cddag")
+
+[node name="lampudesa11" type="Sprite2D" parent="Buildings" unique_id=127931601]
+position = Vector2(712, 23)
+scale = Vector2(0.6944444, 0.5771608)
+texture = ExtResource("17_cddag")
+
+[node name="lampudesa5" type="Sprite2D" parent="Buildings" unique_id=1220064568]
+position = Vector2(522, 615)
+scale = Vector2(0.90277755, 0.67129624)
+texture = ExtResource("17_cddag")
+
+[node name="lampudesa13" type="Sprite2D" parent="Buildings" unique_id=955621973]
+position = Vector2(309, 482.99997)
+scale = Vector2(0.90277755, 0.67129624)
+texture = ExtResource("17_cddag")
+
+[node name="lampudesa15" type="Sprite2D" parent="Buildings" unique_id=1599950089]
+position = Vector2(-26, 204.99997)
+scale = Vector2(0.90277755, 0.67129624)
+texture = ExtResource("17_cddag")
+
+[node name="lampudesa14" type="Sprite2D" parent="Buildings" unique_id=118093641]
+position = Vector2(630, 279.99997)
+scale = Vector2(0.90277755, 0.67129624)
+texture = ExtResource("17_cddag")
+
+[node name="lampudesa6" type="Sprite2D" parent="Buildings" unique_id=1984217184]
+position = Vector2(291, 707)
+scale = Vector2(0.6944444, 0.5771608)
+texture = ExtResource("17_cddag")
+
+[node name="lampudesa7" type="Sprite2D" parent="Buildings" unique_id=302885077]
+position = Vector2(870.00006, 673)
+scale = Vector2(0.6944444, 0.5771608)
+texture = ExtResource("17_cddag")
+
+[node name="lampudesa18" type="Sprite2D" parent="Buildings" unique_id=934341595]
+position = Vector2(813, 552.00006)
+scale = Vector2(0.6944444, 0.5771608)
+texture = ExtResource("17_cddag")
+
+[node name="lampudesa19" type="Sprite2D" parent="Buildings" unique_id=1694087087]
+position = Vector2(944.00006, 516)
+scale = Vector2(0.6944444, 0.5771608)
+texture = ExtResource("17_cddag")
+
+[node name="lampudesa8" type="Sprite2D" parent="Buildings" unique_id=1988468587]
+position = Vector2(1066, 584.00006)
+scale = Vector2(0.6944444, 0.5771608)
+texture = ExtResource("17_cddag")
+
+[node name="Warung" parent="Buildings" unique_id=877122181 instance=ExtResource("18_tg01b")]
+position = Vector2(833, 340)
+
+[node name="NPC" type="Node2D" parent="." unique_id=1657082054]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=172964273]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=706081681 node_paths=PackedStringArray("background")]
+position = Vector2(577, 324)
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0
+script = ExtResource("18_kmmv2")
+background = NodePath("../Background")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1981643719]
+
+[node name="pohon" type="AnimatedSprite2D" parent="." unique_id=1144669858]
+position = Vector2(834.00006, 610)
+scale = Vector2(1.3867188, 1.6031253)
+sprite_frames = SubResource("SpriteFrames_jisn3")
+animation = &"pohon1"
+autoplay = "pohon1"
+
+[node name="pohon2" type="AnimatedSprite2D" parent="." unique_id=1322471181]
+position = Vector2(167, 31)
+scale = Vector2(1.3828125, 1.5437497)
+sprite_frames = SubResource("SpriteFrames_0vyct")
+animation = &"pohon2"
+autoplay = "pohon2"
+
+[node name="pohon3" type="AnimatedSprite2D" parent="." unique_id=1108081788]
+position = Vector2(426, 363.99997)
+scale = Vector2(1.765625, 1.6625)
+sprite_frames = SubResource("SpriteFrames_0vyct")
+animation = &"pohon2"
+autoplay = "pohon2"
+
+[node name="BirdSpawner" type="Node2D" parent="." unique_id=1341452052]
+script = ExtResource("20_2ewah")
+bird_scene = ExtResource("21_mm6k6")
+
+[node name="Weather" parent="." unique_id=2046910540 instance=ExtResource("23_07116")]
+
+[node name="Cart" type="Sprite2D" parent="." unique_id=2007015169]
+position = Vector2(1360.7501, 341.62503)
+scale = Vector2(0.2847226, 0.22419348)
+texture = ExtResource("24_07116")
+
+[node name="TravelPopup" parent="." unique_id=606015553 instance=ExtResource("26_o3tbx")]
+
+[node name="WarungPopup" parent="." unique_id=1123968663 instance=ExtResource("27_o3tbx")]

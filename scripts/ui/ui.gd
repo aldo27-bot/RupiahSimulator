@@ -67,15 +67,9 @@ func _ready():
 	# ======================
 	# SAVE DATA
 	# ======================
-	var save_data = SaveManager.load_game()
+	var save_data = SaveManager.apply_loaded_data()
 
 	if save_data != null:
-
-		Economy.uang = save_data["uang"]
-
-		Economy.rupiah_strength = save_data["rupiah"]
-
-		Market.items = save_data["items"]
 
 		if not Market.items.has("mie"):
 			Market.items["mie"] = {
@@ -88,9 +82,10 @@ func _ready():
 				"stok": 0,
 				"base_price": 8000
 			}
-		
+
 		cart = save_data["cart"]
-			
+		level_toko = save_data["level_toko"]
+
 		last_rupiah = Economy.rupiah_strength
 
 	# ======================
@@ -127,6 +122,8 @@ func _ready():
 	
 	if level_toko >= 2:
 		Market.unlock_level_2_items()
+		refresh_items()
+		refresh_gudang()
 	
 func _on_customer_reached():
 
@@ -482,7 +479,7 @@ func _on_buy_cart():
 	refresh_gudang()
 	refresh_cart()
 
-	SaveManager.save_game(
+	SaveManager.save_current(
 	cart,
 	level_toko
 )
@@ -547,10 +544,10 @@ func _on_sell_cart():
 	refresh_cart()
 	update_hud()
 
-	SaveManager.save_game(
+	SaveManager.save_current(
 	cart,
 	level_toko
-	)
+)
 
 	# ======================
 	# CUSTOMER PERGI

@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://d272w1xq4kqfy"]
+
+[ext_resource type="Script" uid="uid://bx30i5hqjhdkq" path="res://scripts/desa2/bird.gd" id="1_0c4pj"]
+[ext_resource type="Texture2D" uid="uid://dyhcwhapdi5h2" path="res://assets/images/assetbaru/bird_fly_animation.png" id="1_63s61"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4v08"]
+atlas = ExtResource("1_63s61")
+region = Rect2(0, 825, 144, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6i2jn"]
+atlas = ExtResource("1_63s61")
+region = Rect2(288, 825, 144, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0c63"]
+atlas = ExtResource("1_63s61")
+region = Rect2(0, 891, 144, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opc7q"]
+atlas = ExtResource("1_63s61")
+region = Rect2(288, 891, 144, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwmcb"]
+atlas = ExtResource("1_63s61")
+region = Rect2(0, 957, 144, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onaw7"]
+atlas = ExtResource("1_63s61")
+region = Rect2(288, 957, 144, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p6pcl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4v08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6i2jn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0c63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opc7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwmcb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onaw7")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 15.0
+}]
+
+[node name="Bird" type="Node2D" unique_id=748032965]
+script = ExtResource("1_0c4pj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1793677737]
+position = Vector2(31.999992, 106.54464)
+scale = Vector2(0.75000024, 1.1185066)
+sprite_frames = SubResource("SpriteFrames_p6pcl")
+animation = &"fly"
+autoplay = "fly"
+frame = 3
+frame_progress = 0.6889332
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1687934636]

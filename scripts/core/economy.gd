@@ -1,6 +1,6 @@
 extends Node
 
-var uang: int = 100000
+var uang: int = 150000
 var rupiah_strength: float = 1.0
 
 signal uang_berubah(jumlah)
