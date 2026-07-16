@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://k15r8id61ukf"]
+
+[ext_resource type="Texture2D" uid="uid://yk20jmrm3i1i" path="res://assets/images/assetbaru/warung2.png" id="1_ocrai"]
+[ext_resource type="Script" uid="uid://dr64exyil20y6" path="res://scripts/desa2/warung_2.gd" id="1_st8l1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_st8l1"]
+size = Vector2(326.66663, 366.66666)
+
+[node name="Warung" type="Area2D" unique_id=877122181]
+script = ExtResource("1_st8l1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1651036262]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_ocrai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=229999492]
+position = Vector2(-0.99999714, 7.0000005)
+scale = Vector2(0.3, 0.3)
+shape = SubResource("RectangleShape2D_st8l1")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

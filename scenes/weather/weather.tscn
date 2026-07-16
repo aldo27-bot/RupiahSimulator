@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dy2ltw5gylmyp"]
+
+[ext_resource type="Script" uid="uid://cluf4tolni1qk" path="res://scripts/weather/weathercontroller.gd" id="1_4ccal"]
+[ext_resource type="Texture2D" uid="uid://h6r6nvp8i7ip" path="res://assets/images/assetbaru/rintikhujan.png" id="2_4ccal"]
+[ext_resource type="AudioStream" uid="uid://24shmldybqwf" path="res://assets/audio/suara_hujan.ogg" id="3_rprqq"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_s2cte"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(2200, 1000, 1)
+angle_min = -36.49999
+angle_max = 18.20001
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_max = 689.87
+gravity = Vector3(0, 300, 0)
+
+[node name="WeatherController" type="CanvasLayer" unique_id=1287816165]
+script = ExtResource("1_4ccal")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=52444809]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="RainParticles" type="GPUParticles2D" parent="." unique_id=509263920]
+amount = 500
+texture = ExtResource("2_4ccal")
+lifetime = 2.0
+randomness = 0.5
+visibility_rect = Rect2(-960, -540, 1920, 1080)
+process_material = SubResource("ParticleProcessMaterial_s2cte")
+
+[node name="RainAudio" type="AudioStreamPlayer2D" parent="." unique_id=1596465675]
+stream = ExtResource("3_rprqq")

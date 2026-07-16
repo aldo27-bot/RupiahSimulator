@@ -13,7 +13,15 @@ func save_game(cart_data, level_toko):
 		"rupiah": Economy.rupiah_strength,
 		"items": Market.items,
 		"cart": cart_data,
-		"level_toko": level_toko
+		"level_toko": level_toko,
+
+		"businesses": {
+			"warung": {
+				"owned": BusinessData.businesses["warung"]["owned"],
+				"stored_profit": BusinessData.businesses["warung"]["stored_profit"],
+				"last_collect_time": BusinessData.businesses["warung"]["last_collect_time"]
+			}
+		}
 	}
 
 	var file = FileAccess.open(
@@ -85,6 +93,14 @@ func reset_save():
 				"stok": 0,
 				"base_price": 12000
 			}
+		},
+		
+		"businesses": {
+			"warung": {
+				"owned": false,
+				"stored_profit": 0,
+				"last_collect_time": 0
+			}
 		}
 	}
 
@@ -98,3 +114,84 @@ func reset_save():
 	)
 
 	print("GAME RESET")
+	
+# ======================
+# APPLY SAVE DATA
+# ======================
+func apply_loaded_data():
+
+	var data = load_game()
+
+	if data == null:
+		return null
+
+	# Economy
+	Economy.uang = data["uang"]
+	Economy.rupiah_strength = data["rupiah"]
+
+	# Market
+	Market.items = data["items"]
+
+	# Business
+	if data.has("businesses"):
+
+		var warung = data["businesses"]["warung"]
+
+		BusinessData.businesses["warung"]["owned"] = warung["owned"]
+		BusinessData.businesses["warung"]["stored_profit"] = warung["stored_profit"]
+		BusinessData.businesses["warung"]["last_collect_time"] = warung["last_collect_time"]
+
+	return data
+
+# ======================
+# SAVE CURRENT GAME
+# ======================
+func save_current(cart_data, level_toko):
+
+	save_game(cart_data, level_toko)
+
+# ======================
+# SAVE BUSINESS ONLY
+# ======================
+func save_business():
+
+	var data = load_game()
+
+	if data == null:
+
+		data = {
+			"uang": Economy.uang,
+			"rupiah": Economy.rupiah_strength,
+			"items": Market.items,
+			"cart": {},
+			"level_toko": 1
+		}
+
+	data["uang"] = Economy.uang
+
+	data["businesses"] = {
+
+		"warung": {
+
+			"owned": BusinessData.businesses["warung"]["owned"],
+
+			"stored_profit":
+			BusinessData.businesses["warung"]["stored_profit"],
+
+			"last_collect_time":
+			BusinessData.businesses["warung"]["last_collect_time"]
+
+		}
+
+	}
+
+	var file = FileAccess.open(
+		SAVE_PATH,
+		FileAccess.WRITE
+	)
+
+	file.store_string(
+		JSON.stringify(data)
+	)
+
+	print("BUSINESS SAVED")
