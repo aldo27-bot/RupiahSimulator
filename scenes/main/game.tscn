@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://wamyxho4e31k"]
+
+[ext_resource type="Texture2D" uid="uid://dvffpg6p83ycn" path="res://assets/images/Main/warung.png" id="1_e64el"]
+[ext_resource type="Script" uid="uid://be7s35y4uwj5v" path="res://scripts/main/game.gd" id="1_ma5rq"]
+
+[node name="Main" type="Control" unique_id=2108841668]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ma5rq")
+
+[node name="Background" type="TextureRect" parent="." unique_id=26304618]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_e64el")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TopBar" type="PanelContainer" parent="." unique_id=1006929500]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 80.0
+grow_horizontal = 2
+
+[node name="Margin" type="MarginContainer" parent="TopBar" unique_id=642984054]
+layout_mode = 2
+
+[node name="TopHBox" type="HBoxContainer" parent="TopBar/Margin" unique_id=2022193514]
+layout_mode = 2
+
+[node name="HariPanel" type="PanelContainer" parent="TopBar/Margin/TopHBox" unique_id=608452671]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TopBar/Margin/TopHBox/HariPanel" unique_id=1616446877]
+layout_mode = 2
+
+[node name="IconHari" type="TextureRect" parent="TopBar/Margin/TopHBox/HariPanel/HBoxContainer" unique_id=1474693876]
+layout_mode = 2
+
+[node name="HariLabel" type="Label" parent="TopBar/Margin/TopHBox/HariPanel/HBoxContainer" unique_id=1675381275]
+layout_mode = 2
+text = "Hari 1"
+
+[node name="JamPanel" type="PanelContainer" parent="TopBar/Margin/TopHBox" unique_id=941845988]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TopBar/Margin/TopHBox/JamPanel" unique_id=587474681]
+layout_mode = 2
+
+[node name="IconJam" type="TextureRect" parent="TopBar/Margin/TopHBox/JamPanel/HBoxContainer" unique_id=714406892]
+layout_mode = 2
+
+[node name="JamLabel" type="Label" parent="TopBar/Margin/TopHBox/JamPanel/HBoxContainer" unique_id=523160722]
+layout_mode = 2
+text = "08:00"
+
+[node name="Spacer" type="Control" parent="TopBar/Margin/TopHBox" unique_id=805772349]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SaldoPanel" type="PanelContainer" parent="TopBar/Margin/TopHBox" unique_id=1374379615]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TopBar/Margin/TopHBox/SaldoPanel" unique_id=90971652]
+layout_mode = 2
+
+[node name="IconCoin" type="TextureRect" parent="TopBar/Margin/TopHBox/SaldoPanel/HBoxContainer" unique_id=2124343152]
+layout_mode = 2
+
+[node name="SaldoLabel" type="Label" parent="TopBar/Margin/TopHBox/SaldoPanel/HBoxContainer" unique_id=1255379712]
+layout_mode = 2
+text = "100 Coin"
+
+[node name="GameTimer" type="Timer" parent="." unique_id=1830065877]
+autostart = true
+
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]

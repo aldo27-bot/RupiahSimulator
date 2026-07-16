@@ -11,6 +11,6 @@ func _input_event(viewport, event, shape_idx):
 			get_tree().root.add_child(loading)
 
 			loading.start_loading(
-				"res://scenes/main/main.tscn",
+				"res://scenes/main/game.tscn",
 				"Masuk Warung..."
 			)
