@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var sprite = $AnimatedSprite2D
 @onready var agent = $NavigationAgent2D
 
-var speed = 50.0
+var speed = 30.0
 
 func _ready():
 	randomize()

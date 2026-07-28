@@ -3,6 +3,7 @@ extends Camera2D
 @export var speed := 500.0
 @export var background: Sprite2D
 
+var camera_locked := false
 var min_x
 var max_x
 var min_y
@@ -27,6 +28,9 @@ func _ready():
 
 
 func _process(delta):
+
+	if camera_locked:
+		return
 
 	var dir := Vector2.ZERO
 

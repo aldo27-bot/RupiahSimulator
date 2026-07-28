@@ -2,12 +2,17 @@
 
 [ext_resource type="Script" uid="uid://c0a26omtco84s" path="res://scripts/desa2/desa_2.gd" id="1_5ibfl"]
 [ext_resource type="Texture2D" uid="uid://cusre670x8wa8" path="res://assets/images/assetbaru/desa2.png" id="1_v880q"]
+[ext_resource type="AudioStream" uid="uid://dmenh5rfc16db" path="res://assets/audio/Audiodesa2.ogg" id="2_2kjeu"]
 [ext_resource type="PackedScene" uid="uid://bon6ucka3kt8w" path="res://scenes/house_01.tscn" id="2_swvef"]
 [ext_resource type="Texture2D" uid="uid://qu5swuderhip" path="res://assets/images/assetbaru/balaidesa.png" id="3_5ibfl"]
+[ext_resource type="PackedScene" uid="uid://db43lppi1hnja" path="res://scenes/menu/npc.tscn" id="3_ccfyb"]
 [ext_resource type="Texture2D" uid="uid://dr7ja5xi5jnx5" path="res://assets/images/rumah.png" id="4_07116"]
 [ext_resource type="Texture2D" uid="uid://cgvubfst3mix" path="res://assets/images/assetbaru/sumurdesa.png" id="5_tg01b"]
+[ext_resource type="Texture2D" uid="uid://bjlamvj5fihnn" path="res://assets/images/popup/popup_balaidesa.png" id="5_whsoh"]
 [ext_resource type="Texture2D" uid="uid://bqcmd36phsyvq" path="res://assets/images/assetbaru/papaninformasidesa.png" id="6_157w0"]
+[ext_resource type="Texture2D" uid="uid://3vyrgcx0846w" path="res://assets/images/CaraMain/keluar.png" id="6_rn34w"]
 [ext_resource type="Texture2D" uid="uid://bhsqug4gkl7lh" path="res://assets/images/assetbaru/rumahdepan.png" id="7_o3tbx"]
+[ext_resource type="Texture2D" uid="uid://60hre3f8k4ia" path="res://assets/images/popup/popup_rumahkecil.png" id="8_ui0ib"]
 [ext_resource type="Texture2D" uid="uid://btdbxutci0ivm" path="res://assets/images/assetbaru/rumahserong.png" id="8_whsoh"]
 [ext_resource type="Texture2D" uid="uid://dpn4hm8s6lrue" path="res://assets/images/assetbaru/rumahbelakang.png" id="9_rn34w"]
 [ext_resource type="Texture2D" uid="uid://8d5opl36kuni" path="res://assets/images/assetbaru/rumahsultan.png" id="10_tttgx"]
@@ -15,9 +20,11 @@
 [ext_resource type="Texture2D" uid="uid://debuhn864cuck" path="res://assets/images/assetbaru/kebunwortel.png" id="12_osxbh"]
 [ext_resource type="Texture2D" uid="uid://cwhws06sldsmd" path="res://assets/images/assetbaru/kiosbiru.png" id="13_ccfyb"]
 [ext_resource type="Texture2D" uid="uid://cftvy6nftsb63" path="res://assets/images/assetbaru/kiosmerah.png" id="14_2kjeu"]
+[ext_resource type="Texture2D" uid="uid://ca70s414iwajx" path="res://assets/images/popup/popup_rumahbesar.png" id="14_x44po"]
 [ext_resource type="Texture2D" uid="uid://beoc66y2twpyi" path="res://assets/images/assetbaru/kebuntomat.png" id="15_0pla3"]
 [ext_resource type="Texture2D" uid="uid://ct80bmqaleq5n" path="res://assets/images/assetbaru/bonekasawah.png" id="16_vaiil"]
 [ext_resource type="Texture2D" uid="uid://c8qly2ja2lxvx" path="res://assets/images/assetbaru/lampudesa.png" id="17_cddag"]
+[ext_resource type="PackedScene" uid="uid://cdbfpii4ojbr2" path="res://scenes/menu/popup_bank.tscn" id="17_osxbh"]
 [ext_resource type="Script" uid="uid://dwkaisvfotl8o" path="res://scripts/desa2/camera_2d.gd" id="18_kmmv2"]
 [ext_resource type="PackedScene" uid="uid://k15r8id61ukf" path="res://scenes/desa2/warung2.tscn" id="18_tg01b"]
 [ext_resource type="Texture2D" uid="uid://dxim2fnyuxcac" path="res://assets/images/assetbaru/Trees_animation.png" id="19_q0j0k"]
@@ -27,6 +34,11 @@
 [ext_resource type="Texture2D" uid="uid://jr04bghpmx1a" path="res://assets/images/assetbaru/kereta_kuda.png" id="24_07116"]
 [ext_resource type="PackedScene" uid="uid://d2iddvysw5kba" path="res://scenes/desa2/travel_popup.tscn" id="26_o3tbx"]
 [ext_resource type="PackedScene" uid="uid://clh8b1lb1avjp" path="res://scenes/desa2/warung_popup.tscn" id="27_o3tbx"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_2kjeu"]
+vertices = PackedVector2Array(1259.5, 704.7422, 1295.4688, 729.77344, 1248.9688, 715.1328, 968.40625, 680.4922, 997.97656, 692.89844, 1310.3906, 363.5, 1319.1328, 367.28906, 1270.2109, 403.60938, 1270.1172, 394.20313, 1010.89844, 769.40625, 988.9375, 766.65625, 723.2422, -2.671875, 696.4297, -44.460938, 708.0078, -48.203125, 738.3594, -4.46875, 836.21875, 150.04688, 871.53125, 123.02344, 894.3672, 150.78906, 920.46875, 253.11719, 235.53906, -127.09375, 259.82813, -124.39844, 233.39844, -39.601563, 210.47656, -28.648438, 204.67188, 777.5703, 182.71094, 769, 300.4297, 574.72656, 335.64844, 552.7578, 311.85938, 520.4297, 563.97656, 375.79688, 1142.9922, 388.9297, 1092.4766, 383.9297, 960.7969, 410.4297, 959.6172, 350.45313, 927.2031, 371.2578, 658.8203, 357.8672, 564.02344, 364.25, 613.3828, 345.9922, 309.52344, 152.75, 295.3125, 186.84375, 430.42188, 266.47656, 392.67188, 264.72656, 683.9219, 342.3672, 803.35156, 249.97656, 825.89844, 247.71094, 831.6875, 457.52344, 819.25, 472.46094, 828.21094, 166.54688, 850.5703, 212.78125, 1107.1016, -120.359375, 1128.9688, -114.75, 1107.0703, -23.648438, 1036.6172, 10.953125, 898.78906, 102.14844, 899.40625, 143.65625, 824.53906, 158.97656, 857.75, 436.5, 875.71094, 483.35938, 847.3672, 469.7422, 897.78906, 622.1875, 839.6797, 494.34375, 271.52344, 509.5703, 265.78125, 560.22656, 253.54688, 527.28906, 101.28906, 293.5703, 246.82031, 156.70313, 262.8203, 190.63281, 160.54688, 285.1875, 85.03906, 314.65625, 129.29688, 363.3203, 113.63281, 397.3672, -125.109375, 219.82813, -119.52344, 206.07031, -9.6796875, 251.29688)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 0, 2, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(4, 9, 10, 3), PackedInt32Array(11, 12, 13, 14, 15), PackedInt32Array(15, 14, 16, 17, 18), PackedInt32Array(19, 20, 21, 22), PackedInt32Array(23, 24, 25, 26), PackedInt32Array(26, 25, 27, 28), PackedInt32Array(8, 7, 29), PackedInt32Array(30, 8, 29), PackedInt32Array(30, 29, 31), PackedInt32Array(32, 30, 31, 33), PackedInt32Array(34, 26, 28), PackedInt32Array(34, 28, 35, 36), PackedInt32Array(22, 21, 37, 38), PackedInt32Array(38, 37, 39, 40), PackedInt32Array(35, 40, 39, 36), PackedInt32Array(41, 34, 36, 42, 43), PackedInt32Array(41, 44, 45, 34), PackedInt32Array(43, 42, 46, 47), PackedInt32Array(48, 49, 50, 51), PackedInt32Array(52, 51, 50, 53, 16), PackedInt32Array(16, 53, 17), PackedInt32Array(46, 54, 15, 18), PackedInt32Array(47, 46, 18), PackedInt32Array(33, 47, 18, 32), PackedInt32Array(55, 33, 31, 56, 57), PackedInt32Array(58, 59, 57, 56, 3, 10), PackedInt32Array(60, 61, 62), PackedInt32Array(63, 64, 65, 66), PackedInt32Array(67, 63, 66, 68, 69), PackedInt32Array(70, 71, 72, 67), PackedInt32Array(67, 72, 63), PackedInt32Array(69, 68, 60, 62)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(273, -133, 244, -40, 318, 147, 436, 258, 673, 361, 343, 560, 209, 790, 168, 774, 291, 571, 303, 514, 554, 370, 387, 273, 287, 193, 200, -28, 228, -138), PackedVector2Array(-125, 193, -6, 242, 99, 282, 250, 140, 275, 193, 169, 291, 141, 361, 282, 506, 271, 603, 245, 533, 105, 403, 77, 322, -138, 225), PackedVector2Array(1141, -122, 1116, -18, 905, 152, 930, 250, 967, 342, 1094, 374, 1267, 384, 1309, 352, 1339, 365, 1273, 414, 1143, 399, 965, 420, 888, 486, 975, 671, 1263, 695, 1355, 759, 1247, 725, 1010, 704, 1023, 781, 983, 776, 889, 627, 829, 495, 849, 431, 915, 369, 812, 156, 893, 94, 1029, 4, 1102, -132), PackedVector2Array(712, -60, 746, -11, 910, 146, 833, 255, 701, 343, 846, 456, 821, 486, 611, 336, 795, 243, 823, 149, 715, 3, 681, -50)])
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_26acp"]
 atlas = ExtResource("19_q0j0k")
@@ -229,12 +241,29 @@ animations = [{
 [node name="Desa2" type="Node2D" unique_id=1605411252]
 script = ExtResource("1_5ibfl")
 
+[node name="BGM" type="AudioStreamPlayer2D" parent="." unique_id=214783497]
+stream = ExtResource("2_2kjeu")
+autoplay = true
+parameters/looping = true
+
 [node name="Background" type="Sprite2D" parent="." unique_id=1500746693]
 z_index = -10
 position = Vector2(577, 328)
 texture = ExtResource("1_v880q")
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=845231119]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=490110245]
+navigation_polygon = SubResource("NavigationPolygon_2kjeu")
+
+[node name="NPC2" parent="." unique_id=215069646 instance=ExtResource("3_ccfyb")]
+position = Vector2(249, 508)
+
+[node name="NPC3" parent="." unique_id=845023077 instance=ExtResource("3_ccfyb")]
+position = Vector2(864, 487.99997)
+
+[node name="NPC4" parent="." unique_id=1069336038 instance=ExtResource("3_ccfyb")]
+position = Vector2(622, 360.00006)
 
 [node name="Buildings" type="Node2D" parent="." unique_id=1091539753]
 
@@ -445,8 +474,6 @@ position = Vector2(833, 340)
 
 [node name="NPC" type="Node2D" parent="." unique_id=1657082054]
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=172964273]
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=706081681 node_paths=PackedStringArray("background")]
 position = Vector2(577, 324)
 position_smoothing_enabled = true
@@ -482,6 +509,7 @@ script = ExtResource("20_2ewah")
 bird_scene = ExtResource("21_mm6k6")
 
 [node name="Weather" parent="." unique_id=2046910540 instance=ExtResource("23_07116")]
+visible = false
 
 [node name="Cart" type="Sprite2D" parent="." unique_id=2007015169]
 position = Vector2(1360.7501, 341.62503)
@@ -489,5 +517,93 @@ scale = Vector2(0.2847226, 0.22419348)
 texture = ExtResource("24_07116")
 
 [node name="TravelPopup" parent="." unique_id=606015553 instance=ExtResource("26_o3tbx")]
+visible = false
 
 [node name="WarungPopup" parent="." unique_id=1123968663 instance=ExtResource("27_o3tbx")]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1623392031]
+
+[node name="Popup" parent="CanvasLayer" unique_id=915567038 instance=ExtResource("17_osxbh")]
+visible = false
+offset_left = -284.0
+offset_top = -198.0
+offset_right = 338.0
+offset_bottom = 164.0
+
+[node name="PopupBalai" type="Control" parent="CanvasLayer" unique_id=1578886460]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PopupImage" type="Sprite2D" parent="CanvasLayer/PopupBalai" unique_id=2012425749]
+visible = false
+z_index = 100
+position = Vector2(578.50006, 331)
+scale = Vector2(1.0669935, 1.0294119)
+texture = ExtResource("5_whsoh")
+
+[node name="BtnTutup" type="TextureButton" parent="CanvasLayer/PopupBalai" unique_id=680258691]
+visible = false
+z_index = 100
+layout_mode = 0
+offset_left = 860.99994
+offset_top = 135.00002
+offset_right = 937.99994
+offset_bottom = 226.00002
+texture_normal = ExtResource("6_rn34w")
+texture_pressed = ExtResource("6_rn34w")
+
+[node name="PopupRumahSultan" type="Control" parent="CanvasLayer" unique_id=445355141]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PopupImage" type="Sprite2D" parent="CanvasLayer/PopupRumahSultan" unique_id=286685683]
+visible = false
+z_index = 100
+position = Vector2(598.9999, 325.99997)
+scale = Vector2(1.1942205, 1.0905335)
+texture = ExtResource("14_x44po")
+
+[node name="BtnTutup" type="TextureButton" parent="CanvasLayer/PopupRumahSultan" unique_id=1588226210]
+visible = false
+z_index = 100
+layout_mode = 0
+offset_left = 895.0
+offset_top = 122.0
+offset_right = 972.0
+offset_bottom = 213.0
+texture_normal = ExtResource("6_rn34w")
+texture_pressed = ExtResource("6_rn34w")
+
+[node name="PopupRumahBiasa" type="Control" parent="CanvasLayer" unique_id=883385447]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PopupImage" type="Sprite2D" parent="CanvasLayer/PopupRumahBiasa" unique_id=1096906969]
+visible = false
+z_index = 100
+position = Vector2(591.99994, 329)
+scale = Vector2(0.99557704, 1.0235957)
+texture = ExtResource("8_ui0ib")
+
+[node name="BtnTutup" type="TextureButton" parent="CanvasLayer/PopupRumahBiasa" unique_id=723536380]
+visible = false
+z_index = 100
+layout_mode = 0
+offset_left = 830.0
+offset_top = 118.0
+offset_right = 913.0
+offset_bottom = 209.0
+texture_normal = ExtResource("6_rn34w")
+texture_pressed = ExtResource("6_rn34w")
+stretch_mode = 0
+
+[connection signal="pressed" from="CanvasLayer/PopupBalai/BtnTutup" to="." method="_on_btn_tutup_pressed"]
+[connection signal="pressed" from="CanvasLayer/PopupRumahSultan/BtnTutup" to="." method="_on_btn_tutup_rumah_sultan_pressed"]
+[connection signal="pressed" from="CanvasLayer/PopupRumahBiasa/BtnTutup" to="." method="_on_btn_tutup_rumah_biasa_pressed"]

@@ -17,7 +17,7 @@ var dialogs = [
 	},
 	{
 		"speaker": "B",
-		"text": "Iya, rupiah sedang melemah."
+		"text": "Iyanih, coin sedang melemah."
 	},
 	{
 		"speaker": "A",

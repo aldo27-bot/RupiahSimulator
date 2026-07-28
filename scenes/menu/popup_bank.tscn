@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cdbfpii4ojbr2"]
+
+[ext_resource type="Script" uid="uid://chya8u5wtyft4" path="res://scripts/ui/popup_bank.gd" id="1_2uxgg"]
+[ext_resource type="Texture2D" uid="uid://prsng7fyoyd7" path="res://assets/images/popup/popup_bank.png" id="1_pyykv"]
+[ext_resource type="Texture2D" uid="uid://3vyrgcx0846w" path="res://assets/images/CaraMain/keluar.png" id="2_fqjqe"]
+
+[node name="Popup" type="Control" unique_id=915567038]
+z_index = 100
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -303.0
+offset_top = -170.0
+offset_right = 305.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2uxgg")
+
+[node name="PopupImage" type="TextureRect" parent="." unique_id=1221086983]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -330.0
+offset_top = -207.5
+offset_right = 330.0
+offset_bottom = 207.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pyykv")
+
+[node name="BtnTutup" type="TextureButton" parent="." unique_id=1764760289]
+layout_mode = 1
+offset_left = 553.0
+offset_top = -20.0
+offset_right = 627.0
+offset_bottom = 67.0
+texture_normal = ExtResource("2_fqjqe")
+texture_pressed = ExtResource("2_fqjqe")
+ignore_texture_size = true
+
+[connection signal="pressed" from="BtnTutup" to="." method="_on_btn_tutup_pressed"]
