@@ -8,7 +8,7 @@ extends Node2D
 @onready var house_popup = $CanvasLayer/Popup3
 @onready var bank_popup = $CanvasLayer/Popup
 
-@onready var popup_kembali = $PopupKembali
+@onready var popup_kembali = $CanvasLayer/PopupKembali
 
 var waypoints = []
 var jalan_markers = []
