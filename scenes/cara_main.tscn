@@ -26,40 +26,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4nhiv")
 
-[node name="Caramain0" type="TextureRect" parent="." unique_id=927259808]
+[node name="TutorialPanel" type="Control" parent="." unique_id=864341198]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("1_ux7ar")
-expand_mode = 1
 
-[node name="Caramain1" type="TextureRect" parent="." unique_id=260284118]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("2_4nhiv")
-expand_mode = 1
-
-[node name="Caramain2" type="TextureRect" parent="." unique_id=1584139107]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("3_asfrt")
-expand_mode = 1
-
-[node name="Caramain3" type="TextureRect" parent="." unique_id=1772001259]
+[node name="Caramain3" type="TextureRect" parent="TutorialPanel" unique_id=1772001259]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -70,45 +45,101 @@ mouse_filter = 2
 texture = ExtResource("4_7j0rr")
 expand_mode = 1
 
-[node name="lanjut" type="Button" parent="." unique_id=896072291]
+[node name="Caramain2" type="TextureRect" parent="TutorialPanel" unique_id=1584139107]
 layout_mode = 1
-anchors_preset = -1
-offset_left = 666.0
-offset_top = 504.0
-offset_right = 826.0
-offset_bottom = 579.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_asfrt")
+expand_mode = 1
+
+[node name="Caramain1" type="TextureRect" parent="TutorialPanel" unique_id=260284118]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_4nhiv")
+expand_mode = 1
+
+[node name="Caramain0" type="TextureRect" parent="TutorialPanel" unique_id=927259808]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_ux7ar")
+expand_mode = 1
+
+[node name="Navigation" type="Control" parent="TutorialPanel" unique_id=172741757]
+custom_minimum_size = Vector2(1152, 648)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="lanjut" type="Button" parent="TutorialPanel/Navigation" unique_id=896072291]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -493.0
+offset_top = -143.0
+offset_right = -333.0
+offset_bottom = -68.0
+grow_horizontal = 0
+grow_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_kad2p")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_cuxjw")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_ux7ar")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_4nhiv")
 icon = ExtResource("5_kcclb")
+expand_icon = true
 
-[node name="kembali" type="Button" parent="." unique_id=1985674471]
+[node name="kembali" type="Button" parent="TutorialPanel/Navigation" unique_id=1985674471]
 layout_mode = 1
-anchors_preset = -1
-offset_left = 315.0
-offset_top = 502.0
-offset_right = 475.0
-offset_bottom = 577.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 343.0
+offset_top = -145.0
+offset_right = 503.0
+offset_bottom = -70.0
+grow_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_kad2p")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_cuxjw")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_ux7ar")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_4nhiv")
 icon = ExtResource("6_ra81c")
+expand_icon = true
 
-[node name="keluar" type="Button" parent="." unique_id=527954886]
+[node name="keluar" type="Button" parent="TutorialPanel/Navigation" unique_id=527954886]
 layout_mode = 1
-anchors_preset = -1
-offset_left = 891.0
-offset_top = 40.0
-offset_right = 982.0
-offset_bottom = 131.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -255.0
+offset_top = 38.0
+offset_right = -178.0
+offset_bottom = 129.0
+grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_kad2p")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_cuxjw")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_ux7ar")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_4nhiv")
 icon = ExtResource("7_7ds6l")
 
-[connection signal="pressed" from="lanjut" to="." method="_on_lanjut_pressed"]
-[connection signal="pressed" from="kembali" to="." method="_on_kembali_pressed"]
-[connection signal="pressed" from="keluar" to="." method="_on_keluar_pressed"]
+[connection signal="pressed" from="TutorialPanel/Navigation/lanjut" to="." method="_on_lanjut_pressed"]
+[connection signal="pressed" from="TutorialPanel/Navigation/kembali" to="." method="_on_kembali_pressed"]
+[connection signal="pressed" from="TutorialPanel/Navigation/keluar" to="." method="_on_keluar_pressed"]

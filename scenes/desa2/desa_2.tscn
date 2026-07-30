@@ -34,6 +34,8 @@
 [ext_resource type="Texture2D" uid="uid://jr04bghpmx1a" path="res://assets/images/assetbaru/kereta_kuda.png" id="24_07116"]
 [ext_resource type="PackedScene" uid="uid://d2iddvysw5kba" path="res://scenes/desa2/travel_popup.tscn" id="26_o3tbx"]
 [ext_resource type="PackedScene" uid="uid://clh8b1lb1avjp" path="res://scenes/desa2/warung_popup.tscn" id="27_o3tbx"]
+[ext_resource type="PackedScene" uid="uid://mefhya5smb5u" path="res://scenes/menu/popup_kembali.tscn" id="35_0pla3"]
+[ext_resource type="Texture2D" uid="uid://cvdutdmk7c1op" path="res://assets/images/CaraMain/kembali.png" id="35_vaiil"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_2kjeu"]
 vertices = PackedVector2Array(1259.5, 704.7422, 1295.4688, 729.77344, 1248.9688, 715.1328, 968.40625, 680.4922, 997.97656, 692.89844, 1310.3906, 363.5, 1319.1328, 367.28906, 1270.2109, 403.60938, 1270.1172, 394.20313, 1010.89844, 769.40625, 988.9375, 766.65625, 723.2422, -2.671875, 696.4297, -44.460938, 708.0078, -48.203125, 738.3594, -4.46875, 836.21875, 150.04688, 871.53125, 123.02344, 894.3672, 150.78906, 920.46875, 253.11719, 235.53906, -127.09375, 259.82813, -124.39844, 233.39844, -39.601563, 210.47656, -28.648438, 204.67188, 777.5703, 182.71094, 769, 300.4297, 574.72656, 335.64844, 552.7578, 311.85938, 520.4297, 563.97656, 375.79688, 1142.9922, 388.9297, 1092.4766, 383.9297, 960.7969, 410.4297, 959.6172, 350.45313, 927.2031, 371.2578, 658.8203, 357.8672, 564.02344, 364.25, 613.3828, 345.9922, 309.52344, 152.75, 295.3125, 186.84375, 430.42188, 266.47656, 392.67188, 264.72656, 683.9219, 342.3672, 803.35156, 249.97656, 825.89844, 247.71094, 831.6875, 457.52344, 819.25, 472.46094, 828.21094, 166.54688, 850.5703, 212.78125, 1107.1016, -120.359375, 1128.9688, -114.75, 1107.0703, -23.648438, 1036.6172, 10.953125, 898.78906, 102.14844, 899.40625, 143.65625, 824.53906, 158.97656, 857.75, 436.5, 875.71094, 483.35938, 847.3672, 469.7422, 897.78906, 622.1875, 839.6797, 494.34375, 271.52344, 509.5703, 265.78125, 560.22656, 253.54688, 527.28906, 101.28906, 293.5703, 246.82031, 156.70313, 262.8203, 190.63281, 160.54688, 285.1875, 85.03906, 314.65625, 129.29688, 363.3203, 113.63281, 397.3672, -125.109375, 219.82813, -119.52344, 206.07031, -9.6796875, 251.29688)
@@ -604,6 +606,24 @@ texture_normal = ExtResource("6_rn34w")
 texture_pressed = ExtResource("6_rn34w")
 stretch_mode = 0
 
+[node name="Kembali" type="TextureButton" parent="CanvasLayer" unique_id=1712577919]
+offset_right = 160.0
+offset_bottom = 52.0
+texture_normal = ExtResource("35_vaiil")
+texture_pressed = ExtResource("35_vaiil")
+
+[node name="PopupKembali" parent="CanvasLayer" unique_id=560142824 instance=ExtResource("35_0pla3")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -575.0
+offset_top = -326.0
+offset_right = 570.0
+offset_bottom = 324.0
+
 [connection signal="pressed" from="CanvasLayer/PopupBalai/BtnTutup" to="." method="_on_btn_tutup_pressed"]
 [connection signal="pressed" from="CanvasLayer/PopupRumahSultan/BtnTutup" to="." method="_on_btn_tutup_rumah_sultan_pressed"]
 [connection signal="pressed" from="CanvasLayer/PopupRumahBiasa/BtnTutup" to="." method="_on_btn_tutup_rumah_biasa_pressed"]
+[connection signal="pressed" from="CanvasLayer/Kembali" to="." method="_on_kembali_pressed"]

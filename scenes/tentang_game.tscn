@@ -21,7 +21,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_52d5l")
 
-[node name="TentangGame" type="TextureRect" parent="." unique_id=1131236402]
+[node name="Panel" type="Control" parent="." unique_id=1368641165]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TentangGame" type="TextureRect" parent="Panel" unique_id=1131236402]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,16 +39,20 @@ grow_vertical = 2
 texture = ExtResource("2_xmpch")
 expand_mode = 1
 
-[node name="keluar" type="Button" parent="." unique_id=1179568688]
-layout_mode = 0
-offset_left = 911.0
-offset_top = 26.0
-offset_right = 988.0
-offset_bottom = 117.0
+[node name="keluar" type="Button" parent="Panel/TentangGame" unique_id=1179568688]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -235.0
+offset_top = 19.0
+offset_right = -158.0
+offset_bottom = 110.0
+grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_nnmbm")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_1r48d")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_yhtx2")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_te5y3")
 icon = ExtResource("3_nnmbm")
 
-[connection signal="pressed" from="keluar" to="." method="_on_keluar_pressed"]
+[connection signal="pressed" from="Panel/TentangGame/keluar" to="." method="_on_keluar_pressed"]

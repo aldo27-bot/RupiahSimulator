@@ -8,6 +8,8 @@ extends Node2D
 @onready var house_popup = $CanvasLayer/Popup3
 @onready var bank_popup = $CanvasLayer/Popup
 
+@onready var popup_kembali = $PopupKembali
+
 var waypoints = []
 var jalan_markers = []
 
@@ -86,3 +88,7 @@ func _on_bank_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> 
 	and event.pressed:
 
 		bank_popup.visible = true
+
+
+func _on_kembali_pressed():
+	popup_kembali.buka()

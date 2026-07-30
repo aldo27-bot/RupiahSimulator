@@ -5,8 +5,13 @@ extends Camera2D
 var min_zoom = 1.0
 var max_zoom = 3.0
 
+# Drag PC
 var drag_camera = false
-var last_mouse_pos = Vector2.ZERO
+
+# Touch Android
+var touches = {}
+var last_distance = 0.0
+
 
 func _ready():
 
@@ -27,40 +32,92 @@ func _ready():
 	limit_right = int(bg_size.x)
 	limit_bottom = int(bg_size.y)
 
+
 func _unhandled_input(event):
 
-	# Mouse Button
+	# ===================================================
+	# PC : Mouse Wheel Zoom
+	# ===================================================
 	if event is InputEventMouseButton:
 
-		# Zoom In
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed:
 
 			zoom *= 0.9
 
-			if zoom.x < min_zoom:
-				zoom = Vector2(min_zoom, min_zoom)
+			zoom.x = clamp(zoom.x, min_zoom, max_zoom)
+			zoom.y = zoom.x
 
-		# Zoom Out
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN and event.pressed:
 
 			zoom *= 1.1
 
-			if zoom.x > max_zoom:
-				zoom = Vector2(max_zoom, max_zoom)
+			zoom.x = clamp(zoom.x, min_zoom, max_zoom)
+			zoom.y = zoom.x
 
-		# Drag Kamera
 		elif event.button_index == MOUSE_BUTTON_LEFT:
 
-			if event.pressed:
-				drag_camera = true
-			else:
-				drag_camera = false
+			drag_camera = event.pressed
 
-	# Geser Kamera
-	elif event is InputEventMouseMotion and drag_camera:
 
-		global_position -= event.relative / zoom.x
-		
+	# ===================================================
+	# PC : Drag Camera
+	# ===================================================
+	elif event is InputEventMouseMotion:
+
+		if drag_camera:
+
+			global_position -= event.relative / zoom.x
+
+
+	# ===================================================
+	# Android : Touch Start / End
+	# ===================================================
+	elif event is InputEventScreenTouch:
+
+		if event.pressed:
+			touches[event.index] = event.position
+		else:
+			touches.erase(event.index)
+
+			if touches.size() < 2:
+				last_distance = 0.0
+
+
+	# ===================================================
+	# Android : Drag & Pinch Zoom
+	# ===================================================
+	elif event is InputEventScreenDrag:
+
+		touches[event.index] = event.position
+
+		# Geser kamera dengan satu jari
+		if touches.size() == 1:
+
+			global_position -= event.relative / zoom.x
+
+		# Zoom dengan dua jari
+		elif touches.size() == 2:
+
+			var points = touches.values()
+
+			var distance = points[0].distance_to(points[1])
+
+			if last_distance > 0:
+
+				var delta = distance - last_distance
+
+				if abs(delta) > 2:
+
+					var zoom_factor = 1.0 - delta * 0.0015
+
+					zoom *= zoom_factor
+
+					zoom.x = clamp(zoom.x, min_zoom, max_zoom)
+					zoom.y = zoom.x
+
+			last_distance = distance
+
+
 func _process(delta):
 
 	var speed = 500
@@ -80,4 +137,3 @@ func _process(delta):
 
 	if dir != Vector2.ZERO:
 		global_position += dir.normalized() * speed * delta
-		

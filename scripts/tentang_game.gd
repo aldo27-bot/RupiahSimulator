@@ -1,21 +1,21 @@
 extends Control
 
 func _on_keluar_pressed():
-	$keluar.scale = Vector2.ONE
+	$Panel/TentangGame/keluar.scale = Vector2.ONE
 
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.set_ease(Tween.EASE_OUT)
 
 	tween.tween_property(
-		$keluar,
+		$Panel/TentangGame/keluar,
 		"scale",
 		Vector2(0.9, 0.9),
 		0.08
 	)
 
 	tween.tween_property(
-		$keluar,
+		$Panel/TentangGame/keluar,
 		"scale",
 		Vector2.ONE,
 		0.08

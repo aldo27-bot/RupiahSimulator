@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cxkxjm0duyiys" path="res://assets/images/background_desa.png" id="1_i0r7b"]
 [ext_resource type="Texture2D" uid="uid://dr7ja5xi5jnx5" path="res://assets/images/rumah.png" id="2_6jddu"]
 [ext_resource type="Script" uid="uid://cidg0263g1ksy" path="res://scripts/ui/camera.gd" id="2_ff3rr"]
-[ext_resource type="AudioStream" uid="uid://ba1ys0m6hfphk" path="res://assets/audio/mainsound.ogg" id="2_kstxu"]
+[ext_resource type="AudioStream" uid="uid://gdod4i4v535v" path="res://assets/audio/audioutama.ogg" id="3_0r27t"]
 [ext_resource type="Texture2D" uid="uid://by0rfxp36dwtg" path="res://assets/images/warung.png" id="3_6jmnn"]
 [ext_resource type="Script" uid="uid://qmx04vuvg7bv" path="res://scripts/ui/warung.gd" id="3_fv1l2"]
 [ext_resource type="Texture2D" uid="uid://ct55uw73qtkbh" path="res://assets/images/bank.png" id="4_fv1l2"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://jr04bghpmx1a" path="res://assets/images/assetbaru/kereta_kuda.png" id="11_wisia"]
 [ext_resource type="PackedScene" uid="uid://d2iddvysw5kba" path="res://scenes/desa2/travel_popup.tscn" id="12_1irik"]
 [ext_resource type="PackedScene" uid="uid://cdbfpii4ojbr2" path="res://scenes/menu/popup_bank.tscn" id="13_0r27t"]
+[ext_resource type="PackedScene" uid="uid://mefhya5smb5u" path="res://scenes/menu/popup_kembali.tscn" id="18_gdi3u"]
+[ext_resource type="Texture2D" uid="uid://cvdutdmk7c1op" path="res://assets/images/CaraMain/kembali.png" id="18_to33n"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_f8obf"]
 vertices = PackedVector2Array(252.84375, 405.97656, 183.3125, 447.32813, 180.40625, 389.89844, 713.9375, 404, 454.95313, 407.9922, 508, 386, 863.21875, 390, 896.8594, 404, 990.3125, 381.46094, 983.75, 400.1328, 1023.1094, 364.35156, 1025.9375, 283.2422, 986.15625, 280.04688, 1017.02344, 258.53125, 503.07813, 184.96875, 977.28906, 186.96094, 977.7031, 197.96875, 573, 197, 477, 189.02344, 477, 84.203125, 502.0703, 84.8125, 198.85156, 198, 60.476563, 202.72656, 59.53125, 188.02344)
@@ -58,7 +60,7 @@ script = ExtResource("2_ff3rr")
 navigation_polygon = SubResource("NavigationPolygon_f8obf")
 
 [node name="BGM" type="AudioStreamPlayer" parent="." unique_id=483451279]
-stream = ExtResource("2_kstxu")
+stream = ExtResource("3_0r27t")
 volume_db = -11.916
 autoplay = true
 parameters/looping = true
@@ -156,15 +158,16 @@ position = Vector2(875, 186)
 position = Vector2(504, 382)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1700838898]
-visible = false
 
 [node name="Popup" parent="CanvasLayer" unique_id=915567038 instance=ExtResource("13_0r27t")]
+visible = false
 offset_left = -308.0
 offset_top = -178.0
 offset_right = 300.0
 offset_bottom = 177.0
 
 [node name="Popup2" type="Control" parent="CanvasLayer" unique_id=1716770981]
+visible = false
 z_index = 100
 custom_minimum_size = Vector2(900, 620)
 layout_mode = 3
@@ -220,11 +223,20 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Popup3" type="Control" parent="CanvasLayer" unique_id=1070210457]
+visible = false
 z_index = 100
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -283.5
+offset_top = -185.0
+offset_right = 283.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PopupImage" type="TextureRect" parent="CanvasLayer/Popup3" unique_id=983059533]
 layout_mode = 1
@@ -233,24 +245,41 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 324.0
-offset_top = 145.0
-offset_right = 811.0
-offset_bottom = 477.0
+offset_left = -243.5
+offset_top = -166.0
+offset_right = 243.5
+offset_bottom = 166.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_0r27t")
 
 [node name="BtnTutup" type="TextureButton" parent="CanvasLayer/Popup3" unique_id=360817697]
 layout_mode = 0
-offset_left = 776.0
-offset_top = 183.0
-offset_right = 832.0
-offset_bottom = 231.0
+offset_left = 473.5
+offset_top = 38.0
+offset_right = 529.5
+offset_bottom = 86.0
 texture_normal = ExtResource("10_t1xe0")
 texture_pressed = ExtResource("10_t1xe0")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="Kembali" type="TextureButton" parent="CanvasLayer" unique_id=1235928964]
+offset_right = 160.0
+offset_bottom = 52.0
+texture_normal = ExtResource("18_to33n")
+texture_pressed = ExtResource("18_to33n")
+
+[node name="PopupKembali" parent="CanvasLayer" unique_id=560142824 instance=ExtResource("18_gdi3u")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -564.0
+offset_top = -332.0
+offset_right = 589.0
+offset_bottom = 319.0
 
 [node name="NPC_Talk" parent="." unique_id=1704157545 instance=ExtResource("10_jlftl")]
 position = Vector2(313, 498)
@@ -272,3 +301,4 @@ visible = false
 [connection signal="pressed" from="CanvasLayer/Popup2/BtnMasuk" to="Warung" method="_on_btn_masuk_pressed"]
 [connection signal="pressed" from="CanvasLayer/Popup2/BtnTutup" to="Warung" method="_on_btn_tutup_pressed"]
 [connection signal="pressed" from="CanvasLayer/Popup3/BtnTutup" to="." method="_on_btn_tutup_pressed"]
+[connection signal="pressed" from="CanvasLayer/Kembali" to="." method="_on_kembali_pressed"]

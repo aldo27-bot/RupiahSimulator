@@ -3,13 +3,14 @@ extends Control
 var halaman = 1
 var current_tween: Tween
 
-@onready var p1 = $Caramain0
-@onready var p2 = $Caramain1
-@onready var p3 = $Caramain2
-@onready var p4 = $Caramain3
+@onready var p1 = $TutorialPanel/Caramain0
+@onready var p2 = $TutorialPanel/Caramain1
+@onready var p3 = $TutorialPanel/Caramain2
+@onready var p4 = $TutorialPanel/Caramain3
 
-@onready var btn_lanjut = $lanjut
-@onready var btn_kembali = $kembali
+@onready var btn_lanjut = $TutorialPanel/Navigation/lanjut
+@onready var btn_kembali = $TutorialPanel/Navigation/kembali
+@onready var btn_keluar = $TutorialPanel/Navigation/keluar
 
 func _ready():
 	update_halaman()
@@ -102,21 +103,21 @@ func _on_kembali_pressed():
 # =====================
 
 func _on_keluar_pressed():
-	$keluar.scale = Vector2.ONE
+	btn_keluar.scale = Vector2.ONE
 
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.set_ease(Tween.EASE_OUT)
 
 	tween.tween_property(
-		$keluar,
+		btn_keluar,
 		"scale",
 		Vector2(0.9, 0.9),
 		0.08
 	)
 
 	tween.tween_property(
-		$keluar,
+		btn_keluar,
 		"scale",
 		Vector2.ONE,
 		0.08
@@ -124,4 +125,4 @@ func _on_keluar_pressed():
 
 	await tween.finished
 
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn") 

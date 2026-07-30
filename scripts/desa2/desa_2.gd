@@ -22,6 +22,8 @@ extends Node2D
 @onready var bank = $Buildings/bank
 @onready var bank_popup = $CanvasLayer/Popup
 
+@onready var popup_kembali = $CanvasLayer/PopupKembali
+
 var popup_open := false
 
 func _ready():
@@ -313,3 +315,7 @@ func unlock_camera():
 func _on_bank_popup_closed():
 
 	unlock_camera()
+
+
+func _on_kembali_pressed():
+	popup_kembali.buka()

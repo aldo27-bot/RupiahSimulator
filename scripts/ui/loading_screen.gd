@@ -1,7 +1,7 @@
 extends Control
 
-@onready var progress_bar = $ProgressBar
-@onready var coin = $Coin
+@onready var progress_bar = $MenuPanel/ProgressBar
+@onready var coin = $MenuPanel/Coin
 
 var target_scene := ""
 var flip_time := 0.0

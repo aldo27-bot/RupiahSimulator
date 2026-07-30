@@ -12,6 +12,7 @@ config_version=5
 
 config/name="GameRupiah"
 run/main_scene="uid://cue8l1xeyhcc7"
+config/quit_on_go_back=false
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -24,6 +25,7 @@ SaveManager="*uid://bpca4lrqmumom"
 GameData="*uid://dexcoryq8bwua"
 Weathermanager="*uid://vadld7mnbmea"
 BusinessData="*uid://c5r2toilhuowe"
+BackManager="*uid://dxlleyn8wlbda"
 
 [display]
 

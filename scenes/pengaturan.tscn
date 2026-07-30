@@ -21,7 +21,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w2tea")
 
-[node name="pengaturan" type="TextureRect" parent="." unique_id=226355488]
+[node name="Panel" type="Control" parent="." unique_id=1691189886]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="pengaturan" type="TextureRect" parent="Panel" unique_id=226355488]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,16 +39,20 @@ grow_vertical = 2
 texture = ExtResource("2_qltlc")
 expand_mode = 1
 
-[node name="keluar" type="Button" parent="." unique_id=279241835]
-layout_mode = 0
-offset_left = 991.0
-offset_top = 44.0
-offset_right = 1082.0
-offset_bottom = 143.0
+[node name="keluar" type="Button" parent="Panel" unique_id=279241835]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -262.0
+offset_top = 32.0
+offset_right = -171.0
+offset_bottom = 131.0
+grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_qltlc")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_w2tea")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_ineob")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_qp0ps")
 icon = ExtResource("3_w2tea")
 
-[connection signal="pressed" from="keluar" to="." method="_on_keluar_pressed"]
+[connection signal="pressed" from="Panel/keluar" to="." method="_on_keluar_pressed"]

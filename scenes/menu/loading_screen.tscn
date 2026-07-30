@@ -17,7 +17,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_76jna")
 
-[node name="Background" type="TextureRect" parent="." unique_id=860128373]
+[node name="MenuPanel" type="Panel" parent="." unique_id=1940906876]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="MenuPanel" unique_id=860128373]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,22 +36,7 @@ texture = ExtResource("2_l6aes")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="LoadingText" type="Label" parent="." unique_id=1493811622]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -39.5
-offset_top = -82.0
-offset_right = 39.5
-offset_bottom = -59.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Memuat..."
-
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1905648903]
+[node name="ProgressBar" type="ProgressBar" parent="MenuPanel" unique_id=1905648903]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -51,15 +44,15 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -300.0
-offset_top = -59.0
+offset_top = -57.0
 offset_right = 300.0
-offset_bottom = -19.0
+offset_bottom = -17.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxEmpty_l6aes")
 theme_override_styles/fill = SubResource("StyleBoxFlat_76jna")
 
-[node name="Coin" type="TextureRect" parent="." unique_id=360220747]
+[node name="Coin" type="TextureRect" parent="MenuPanel" unique_id=360220747]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 0
 offset_left = 276.0

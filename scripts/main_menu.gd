@@ -8,10 +8,10 @@ func _ready():
 	$PopupKeluar.hide()
 	
 	# Pivot di tengah card
-	$MulaiContainer/CardMulai.pivot_offset = $MulaiContainer/CardMulai.size / 2
-	$CaraMainContainer/CardCaraMain.pivot_offset = $CaraMainContainer/CardCaraMain.size / 2
-	$PengaturanContainer/CardPengaturan.pivot_offset = $PengaturanContainer/CardPengaturan.size / 2
-	$TentangGameContainer/CardTentangGame.pivot_offset = $TentangGameContainer/CardTentangGame.size / 2
+	$MenuPanel/MulaiContainer/CardMulai.pivot_offset = $MenuPanel/MulaiContainer/CardMulai.size / 2
+	$MenuPanel/CaraMainContainer/CardCaraMain.pivot_offset = $MenuPanel/CaraMainContainer/CardCaraMain.size / 2
+	$MenuPanel/PengaturanContainer/CardPengaturan.pivot_offset = $MenuPanel/PengaturanContainer/CardPengaturan.size / 2
+	$MenuPanel/TentangGameContainer/CardTentangGame.pivot_offset = $MenuPanel/TentangGameContainer/CardTentangGame.size / 2
 	$PopupKeluar/PopupImage.pivot_offset = $PopupKeluar/PopupImage.size / 2
 	$PopupKeluar/PopupImage/Iya.pivot_offset = $PopupKeluar/PopupImage/Iya.size / 2
 	$PopupKeluar/PopupImage/Tidak.pivot_offset = $PopupKeluar/PopupImage/Tidak.size / 2
