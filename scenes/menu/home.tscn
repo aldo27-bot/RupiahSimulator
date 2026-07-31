@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://ctll01rmqx14o"]
 
-[ext_resource type="AudioStream" uid="uid://ba1ys0m6hfphk" path="res://assets/audio/mainsound.ogg" id="1_g7t7q"]
-[ext_resource type="Texture2D" uid="uid://swgjjxwua44o" path="res://assets/images/bg_home.png" id="2_nm2ns"]
+[ext_resource type="AudioStream" uid="uid://dnm7xgpubucbd" path="res://assets/audio/mainsound.ogg" id="1_g7t7q"]
 
 [sub_resource type="GDScript" id="GDScript_nm2ns"]
 script/source = "extends Control
@@ -129,7 +128,6 @@ offset_right = 1106.0
 offset_bottom = 603.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_nm2ns")
 expand_mode = 1
 stretch_mode = 6
 

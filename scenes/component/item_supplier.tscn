@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ciebxwmpufb3a"]
+
+[node name="ItemSupplier" type="Panel" unique_id=1229176231]
+custom_minimum_size = Vector2(1153, 90)
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1.0
+offset_top = 118.0
+offset_right = 2.0
+offset_bottom = 208.0
+grow_horizontal = 2
+
+[node name="IconBarang" type="TextureRect" parent="." unique_id=715199123]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
