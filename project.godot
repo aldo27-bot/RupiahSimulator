@@ -11,10 +11,12 @@ config_version=5
 [application]
 
 config/name="GameRupiah"
-run/main_scene="uid://cue8l1xeyhcc7"
+run/main_scene="uid://c5frbwnqtvcw"
 config/quit_on_go_back=false
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/stretch_mode=5
+boot_splash/image="uid://cd3ysmthotbyk"
+config/icon="uid://saqe63jg30qg"
 
 [autoload]
 
