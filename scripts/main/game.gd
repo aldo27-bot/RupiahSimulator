@@ -1,35 +1,123 @@
-extends Control
+extends Node2D
 
-@onready var hari_label = $TopBar/Margin/TopHBox/HariPanel/HBoxContainer/HariLabel
-@onready var jam_label = $TopBar/Margin/TopHBox/JamPanel/HBoxContainer/JamLabel
-@onready var saldo_label = $TopBar/Margin/TopHBox/SaldoPanel/HBoxContainer/SaldoLabel
+@onready var timer = $Timer
+@onready var time = $TimeManager
+@onready var market = $MarketManager
+@onready var market_timer = $MarketTimer
+
+# ======================
+# Panel Hari & Jam
+# ======================
+@onready var hari_label = $CanvasLayer/TopBar/PanelHari/Value
+@onready var jam_label = $CanvasLayer/TopBar/PanelJam/Value
+
+# ======================
+# Panel Market
+# ======================
+@onready var value = $CanvasLayer/TopBar/PanelMarket/Value
+@onready var trend = $CanvasLayer/TopBar/PanelMarket/Trend
+# Panah besar
+@onready var arrow = $CanvasLayer/TopBar/PanelMarket/IconTrend
+# Grafik kecil
+@onready var trend_icon = $CanvasLayer/TopBar/PanelMarket/TrendIcon
+
+# ======================
+# Texture Market
+# ======================
+const ARROW_UP = preload("res://assets/warung/ui/Naik.png")
+const ARROW_DOWN = preload("res://assets/warung/ui/Turun.png")
+
+const TREND_UP = preload("res://assets/warung/ui/TrendNaik.png")
+const TREND_DOWN = preload("res://assets/warung/ui/TrendTurun.png")
+
 
 func _ready():
-	# Ambil waktu dari komputer
-	var waktu = Time.get_datetime_dict_from_system()
 
-	GameData.jam = waktu.hour
-	GameData.menit = waktu.minute
+	timer.wait_time = 1.0
+
+	time.update_waktu_device()
 
 	update_ui()
 
-	$GameTimer.timeout.connect(_on_game_timer_timeout)
+	update_market_ui()
+
+	timer.start()
 
 func update_ui():
-	hari_label.text = "Hari %d" % GameData.hari
+
+	hari_label.text = str(time.hari)
 
 	jam_label.text = "%02d:%02d" % [
-		GameData.jam,
-		GameData.menit
+		time.jam,
+		time.menit
 	]
 
-	saldo_label.text = str(GameData.coin) + " Coin"
 
+func _on_timer_timeout():
 
-func _on_game_timer_timeout() -> void:
-	var waktu = Time.get_datetime_dict_from_system()
-
-	GameData.jam = waktu.hour
-	GameData.menit = waktu.minute
+	time.update_waktu_device()
 
 	update_ui()
+
+func update_market_ui():
+
+	if market.trend == MarketManager.Trend.NAIK:
+
+		arrow.texture = ARROW_UP
+		trend_icon.texture = TREND_UP
+
+		value.text = "+" + str(market.persen) + "%"
+
+		value.add_theme_color_override(
+			"font_color",
+			Color("35A853")
+		)
+
+		trend.text = "NAIK"
+
+		trend.add_theme_color_override(
+			"font_color",
+			Color("35A853")
+		)
+
+	else:
+
+		arrow.texture = ARROW_DOWN
+		trend_icon.texture = TREND_DOWN
+
+		value.text = "-" + str(market.persen) + "%"
+
+		value.add_theme_color_override(
+			"font_color",
+			Color("E53935")
+		)
+
+		trend.text = "TURUN"
+
+		trend.add_theme_color_override(
+			"font_color",
+			Color("E53935")
+		)
+
+
+func _on_market_timer_timeout():
+
+	market.update_market()
+
+	update_market_ui()
+
+# Button Supplier
+func _on_btn_supplier_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/main/supplier.tscn")
+
+# Button Stok
+func _on_btn_stok_pressed() -> void:
+	pass # Replace with function body.
+
+# Button Laporan
+func _on_btn_laporan_pressed() -> void:
+	pass # Replace with function body.
+
+# Button Target
+func _on_btn_target_pressed() -> void:
+	pass # Replace with function body.

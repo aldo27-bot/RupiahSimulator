@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://c8glg1kybh2nf"]
 
-[ext_resource type="Texture2D" uid="uid://dojja6ycy8pq4" path="res://assets/images/bg_howtoplay.png" id="1_rbygi"]
 [ext_resource type="Script" uid="uid://dfyju2858eknh" path="res://scripts/ui/how_to_play.gd" id="1_rsre1"]
 
 [node name="Howtoplay" type="Node" unique_id=50625724]
@@ -16,7 +15,6 @@ script = ExtResource("1_rsre1")
 layout_mode = 0
 offset_right = 1153.0
 offset_bottom = 651.0
-texture = ExtResource("1_rbygi")
 expand_mode = 1
 stretch_mode = 6
 

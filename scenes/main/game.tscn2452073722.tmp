@@ -10,12 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://odk3u3a76ma1" path="res://assets/warung/ui/Coin.png" id="8_se30j"]
 [ext_resource type="Texture2D" uid="uid://0xbksbnvjdlf" path="res://assets/warung/ui/Market.png" id="9_ktwa8"]
 [ext_resource type="Script" uid="uid://c8gq8lcsofyx0" path="res://scripts/main/Manager/market_manager.gd" id="9_se30j"]
-[ext_resource type="Texture2D" uid="uid://ddo3fgwyu0oj0" path="res://assets/warung/ui/Naik.png" id="10_y58yt"]
-[ext_resource type="Texture2D" uid="uid://qvm0hdnsyqgx" path="res://assets/warung/ui/TrendNaik.png" id="11_5j5yt"]
-[ext_resource type="Texture2D" uid="uid://bdynu6vj3b1ol" path="res://assets/warung/ui/Supplier.png" id="13_5j5yt"]
-[ext_resource type="Texture2D" uid="uid://4cr0jjdqhwdg" path="res://assets/warung/ui/Stok.png" id="14_c8nfc"]
-[ext_resource type="Texture2D" uid="uid://k66jpnelnmfa" path="res://assets/warung/ui/Laporan.png" id="15_oxcik"]
-[ext_resource type="Texture2D" uid="uid://bkgkhcplbvfmy" path="res://assets/warung/ui/Target.png" id="16_obhq2"]
 
 [sub_resource type="FontVariation" id="FontVariation_em1bs"]
 base_font = ExtResource("5_gf1f2")
@@ -35,21 +29,11 @@ base_font = ExtResource("5_gf1f2")
 [sub_resource type="FontVariation" id="FontVariation_157ky"]
 base_font = ExtResource("5_gf1f2")
 
-[sub_resource type="FontVariation" id="FontVariation_y58yt"]
-base_font = ExtResource("5_gf1f2")
-
-[sub_resource type="FontVariation" id="FontVariation_5j5yt"]
-base_font = ExtResource("5_gf1f2")
-
-[sub_resource type="FontVariation" id="FontVariation_kb4no"]
-base_font = ExtResource("5_gf1f2")
-
 [node name="Game" type="Node2D" unique_id=323413365]
 script = ExtResource("1_gsayk")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1763391766]
-position = Vector2(575.5, 324.5)
-scale = Vector2(0.9991319, 1.0015432)
+position = Vector2(576, 324)
 texture = ExtResource("1_e3dby")
 
 [node name="Timer" type="Timer" parent="." unique_id=133958191]
@@ -57,25 +41,17 @@ texture = ExtResource("1_e3dby")
 [node name="TimeManager" type="Node2D" parent="." unique_id=1773294286]
 script = ExtResource("3_gsayk")
 
-[node name="MarketManager" type="Node" parent="." unique_id=1757434545]
-script = ExtResource("9_se30j")
-
-[node name="MarketTimer" type="Timer" parent="." unique_id=108655136]
-wait_time = 5.0
-autostart = true
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1315235087]
 
 [node name="TopBar" type="Control" parent="CanvasLayer" unique_id=1650601212]
 layout_mode = 3
-anchors_preset = 10
-anchor_right = 1.0
-grow_horizontal = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="PanelHari" type="Control" parent="CanvasLayer/TopBar" unique_id=72643872]
-layout_mode = 1
 anchors_preset = 0
-offset_right = 48.16
+offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Background" type="TextureRect" parent="CanvasLayer/TopBar/PanelHari" unique_id=843152742]
@@ -108,7 +84,6 @@ theme_override_font_sizes/font_size = 21
 text = "1"
 
 [node name="PanelJam" type="Control" parent="CanvasLayer/TopBar" unique_id=131137900]
-layout_mode = 1
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -133,7 +108,6 @@ theme_override_font_sizes/font_size = 21
 text = "08:00"
 
 [node name="PanelSaldo" type="Control" parent="CanvasLayer/TopBar" unique_id=786684174]
-layout_mode = 1
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -149,18 +123,18 @@ expand_mode = 1
 
 [node name="Coin2" type="TextureRect" parent="CanvasLayer/TopBar/PanelSaldo" unique_id=2052619124]
 layout_mode = 0
-offset_left = 904.0
-offset_top = 38.0
-offset_right = 939.0
-offset_bottom = 68.0
+offset_left = 921.0
+offset_top = 39.0
+offset_right = 956.0
+offset_bottom = 69.0
 texture = ExtResource("8_se30j")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="CanvasLayer/TopBar/PanelSaldo" unique_id=943994503]
 layout_mode = 0
-offset_left = 848.0
+offset_left = 855.0
 offset_top = 37.0
-offset_right = 904.0
+offset_right = 911.0
 offset_bottom = 67.0
 theme_override_fonts/font = SubResource("FontVariation_se30j")
 theme_override_font_sizes/font_size = 21
@@ -168,19 +142,19 @@ text = "Saldo"
 
 [node name="Value" type="Label" parent="CanvasLayer/TopBar/PanelSaldo" unique_id=115259293]
 layout_mode = 0
-offset_left = 947.0
-offset_top = 41.0
-offset_right = 1028.0
-offset_bottom = 71.0
+offset_left = 981.0
+offset_top = 39.0
+offset_right = 1025.0
+offset_bottom = 69.0
 theme_override_fonts/font = SubResource("FontVariation_ktwa8")
-theme_override_font_sizes/font_size = 18
-text = "100.000"
+theme_override_font_sizes/font_size = 21
+text = "0"
 
 [node name="Coin" type="Label" parent="CanvasLayer/TopBar/PanelSaldo" unique_id=1064557180]
 layout_mode = 0
-offset_left = 1027.0
+offset_left = 1024.0
 offset_top = 38.0
-offset_right = 1070.0
+offset_right = 1067.0
 offset_bottom = 101.0
 theme_override_fonts/font = SubResource("FontVariation_157ky")
 theme_override_font_sizes/font_size = 21
@@ -194,114 +168,49 @@ offset_bottom = 40.0
 
 [node name="Background" type="TextureRect" parent="CanvasLayer/TopBar/PanelMarket" unique_id=364256967]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 122.0
-offset_right = 232.0
-offset_bottom = 348.0
+offset_left = 12.0
+offset_top = 131.0
+offset_right = 234.0
+offset_bottom = 357.0
 texture = ExtResource("9_ktwa8")
 expand_mode = 1
 
 [node name="IconTrend" type="TextureRect" parent="CanvasLayer/TopBar/PanelMarket" unique_id=474669906]
 layout_mode = 0
-offset_left = 59.0
-offset_top = 194.0
-offset_right = 103.0
-offset_bottom = 245.0
-texture = ExtResource("10_y58yt")
-expand_mode = 1
+offset_left = 30.0
+offset_top = 68.0
+offset_right = 70.0
+offset_bottom = 108.0
 
 [node name="Value" type="Label" parent="CanvasLayer/TopBar/PanelMarket" unique_id=1111907745]
 layout_mode = 0
-offset_left = 121.0
-offset_top = 197.0
-offset_right = 183.0
-offset_bottom = 238.0
-theme_override_colors/font_color = Color(0.30980393, 0.56078434, 0.1764706, 1)
-theme_override_fonts/font = SubResource("FontVariation_y58yt")
-theme_override_font_sizes/font_size = 29
-text = "+0%"
+offset_left = 15.0
+offset_top = 60.0
+offset_right = 55.0
+offset_bottom = 83.0
 
 [node name="LabelTrend" type="Label" parent="CanvasLayer/TopBar/PanelMarket" unique_id=71363201]
 layout_mode = 0
-offset_left = 37.0
-offset_top = 275.0
-offset_right = 104.0
-offset_bottom = 305.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontVariation_5j5yt")
-theme_override_font_sizes/font_size = 18
-text = "Trend :"
+offset_left = 60.0
+offset_top = -5.0
+offset_right = 100.0
+offset_bottom = 18.0
 
 [node name="Trend" type="Label" parent="CanvasLayer/TopBar/PanelMarket" unique_id=1183832473]
 layout_mode = 0
-offset_left = 97.0
-offset_top = 277.0
-offset_right = 143.0
-offset_bottom = 303.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontVariation_kb4no")
-theme_override_font_sizes/font_size = 18
-text = "NAIK"
+offset_left = 102.0
+offset_top = 122.0
+offset_right = 142.0
+offset_bottom = 145.0
 
 [node name="TrendIcon" type="TextureRect" parent="CanvasLayer/TopBar/PanelMarket" unique_id=2111986406]
 layout_mode = 0
-offset_left = 167.0
-offset_top = 271.0
-offset_right = 198.0
-offset_bottom = 303.0
-texture = ExtResource("11_5j5yt")
-expand_mode = 1
+offset_left = 197.0
+offset_top = 99.0
+offset_right = 237.0
+offset_bottom = 139.0
 
-[node name="BottomBar" type="Control" parent="CanvasLayer" unique_id=397945904]
-layout_mode = 3
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 500.0
-offset_top = -78.0
-offset_right = -1420.0
-offset_bottom = -78.0
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(0.13, 0.13)
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/BottomBar" unique_id=2145893543]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -703.5762
-offset_top = -225.0
-offset_right = 5257.424
-offset_bottom = 375.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.3, 1.3)
-theme_override_constants/separation = 150
-alignment = 1
-
-[node name="BtnSupplier" type="TextureButton" parent="CanvasLayer/BottomBar/HBoxContainer" unique_id=563492536]
-custom_minimum_size = Vector2(300, 60)
-layout_mode = 2
-size_flags_horizontal = 3
-texture_normal = ExtResource("13_5j5yt")
-
-[node name="BtnStok" type="TextureButton" parent="CanvasLayer/BottomBar/HBoxContainer" unique_id=74907114]
-layout_mode = 2
-texture_normal = ExtResource("14_c8nfc")
-
-[node name="BtnLaporan" type="TextureButton" parent="CanvasLayer/BottomBar/HBoxContainer" unique_id=1374616107]
-layout_mode = 2
-texture_normal = ExtResource("15_oxcik")
-
-[node name="BtnTarget" type="TextureButton" parent="CanvasLayer/BottomBar/HBoxContainer" unique_id=1358681685]
-layout_mode = 2
-texture_normal = ExtResource("16_obhq2")
+[node name="MarketManager" type="Node" parent="." unique_id=1757434545]
+script = ExtResource("9_se30j")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="MarketTimer" to="." method="_on_market_timer_timeout"]
-[connection signal="pressed" from="CanvasLayer/BottomBar/HBoxContainer/BtnSupplier" to="." method="_on_btn_supplier_pressed"]
-[connection signal="pressed" from="CanvasLayer/BottomBar/HBoxContainer/BtnStok" to="." method="_on_btn_stok_pressed"]
-[connection signal="pressed" from="CanvasLayer/BottomBar/HBoxContainer/BtnLaporan" to="." method="_on_btn_laporan_pressed"]
-[connection signal="pressed" from="CanvasLayer/BottomBar/HBoxContainer/BtnTarget" to="." method="_on_btn_target_pressed"]

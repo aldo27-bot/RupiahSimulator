@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dc3h10gpup6if"]
+
+[ext_resource type="Texture2D" uid="uid://uc7x35ld6iai" path="res://assets/warung/backgorund/bg.png" id="1_128ii"]
+[ext_resource type="Texture2D" uid="uid://dvvcg3v5ojjuj" path="res://assets/warung/supplier/AMbil (28).png" id="2_cix5s"]
+
+[node name="Supplier" type="Control" unique_id=1177591488]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=2022898783]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_128ii")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SafeArea" type="MarginContainer" parent="." unique_id=1211373614]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="CenterContainer" type="CenterContainer" parent="SafeArea" unique_id=795706374]
+layout_mode = 2
+
+[node name="PapanContainer" type="Control" parent="SafeArea/CenterContainer" unique_id=2000245012]
+custom_minimum_size = Vector2(800, 600)
+layout_mode = 2
+
+[node name="Header" type="Control" parent="SafeArea/CenterContainer/PapanContainer" unique_id=534728458]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PapanSupplier" type="TextureRect" parent="SafeArea/CenterContainer/PapanContainer" unique_id=1919349545]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -22.0
+offset_right = -5.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cix5s")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Footer" type="Control" parent="SafeArea/CenterContainer/PapanContainer" unique_id=515657352]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

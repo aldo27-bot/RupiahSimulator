@@ -4,7 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://cxkxjm0duyiys" path="res://assets/images/background_desa.png" id="1_i0r7b"]
 [ext_resource type="Texture2D" uid="uid://dr7ja5xi5jnx5" path="res://assets/images/rumah.png" id="2_6jddu"]
 [ext_resource type="Script" uid="uid://cidg0263g1ksy" path="res://scripts/ui/camera.gd" id="2_ff3rr"]
+<<<<<<< HEAD
 [ext_resource type="AudioStream" uid="uid://gdod4i4v535v" path="res://assets/audio/audioutama.ogg" id="3_0r27t"]
+=======
+[ext_resource type="AudioStream" uid="uid://dnm7xgpubucbd" path="res://assets/audio/mainsound.ogg" id="2_kstxu"]
+>>>>>>> fae7121 (supplier)
 [ext_resource type="Texture2D" uid="uid://by0rfxp36dwtg" path="res://assets/images/warung.png" id="3_6jmnn"]
 [ext_resource type="Script" uid="uid://qmx04vuvg7bv" path="res://scripts/ui/warung.gd" id="3_fv1l2"]
 [ext_resource type="Texture2D" uid="uid://ct55uw73qtkbh" path="res://assets/images/bank.png" id="4_fv1l2"]
@@ -13,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://3amfnm4fnft2" path="res://assets/images/popup/popup_warung.png" id="8_t1xe0"]
 [ext_resource type="Texture2D" uid="uid://cvd3mfjp6r7ii" path="res://assets/images/popup/button_masukwarung.png" id="9_3wh46"]
 [ext_resource type="PackedScene" uid="uid://bet771eirqt4o" path="res://scenes/menu/npc_talk.tscn" id="10_jlftl"]
-[ext_resource type="Texture2D" uid="uid://3vyrgcx0846w" path="res://assets/images/CaraMain/keluar.png" id="10_t1xe0"]
+[ext_resource type="Texture2D" uid="uid://c80kr114k2kfi" path="res://assets/images/CaraMain/keluar.png" id="10_t1xe0"]
 [ext_resource type="Texture2D" uid="uid://jr04bghpmx1a" path="res://assets/images/assetbaru/kereta_kuda.png" id="11_wisia"]
 [ext_resource type="PackedScene" uid="uid://d2iddvysw5kba" path="res://scenes/desa2/travel_popup.tscn" id="12_1irik"]
 [ext_resource type="PackedScene" uid="uid://cdbfpii4ojbr2" path="res://scenes/menu/popup_bank.tscn" id="13_0r27t"]
@@ -158,6 +162,20 @@ position = Vector2(875, 186)
 position = Vector2(504, 382)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1700838898]
+<<<<<<< HEAD
+=======
+
+[node name="BtnTutup" type="TextureButton" parent="CanvasLayer" unique_id=691573232]
+custom_minimum_size = Vector2(48, 48)
+offset_left = 797.0
+offset_top = 146.0
+offset_right = 867.0
+offset_bottom = 215.0
+texture_normal = ExtResource("10_t1xe0")
+texture_pressed = ExtResource("10_t1xe0")
+ignore_texture_size = true
+stretch_mode = 0
+>>>>>>> fae7121 (supplier)
 
 [node name="Popup" parent="CanvasLayer" unique_id=915567038 instance=ExtResource("13_0r27t")]
 visible = false
@@ -207,18 +225,6 @@ offset_right = 696.0
 offset_bottom = 450.0
 texture_normal = ExtResource("9_3wh46")
 texture_pressed = ExtResource("9_3wh46")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="BtnTutup" type="TextureButton" parent="CanvasLayer/Popup2" unique_id=691573232]
-custom_minimum_size = Vector2(48, 48)
-layout_mode = 0
-offset_left = 681.0
-offset_top = 129.0
-offset_right = 751.0
-offset_bottom = 198.0
-texture_normal = ExtResource("10_t1xe0")
-texture_pressed = ExtResource("10_t1xe0")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -290,7 +296,6 @@ scale = Vector2(0.21990782, 0.2120968)
 texture = ExtResource("11_wisia")
 
 [node name="TravelPopup" parent="." unique_id=1672599754 instance=ExtResource("12_1irik")]
-visible = false
 
 [connection signal="input_event" from="House1" to="." method="_on_house_input_event"]
 [connection signal="input_event" from="House2" to="." method="_on_house_input_event"]
@@ -298,7 +303,7 @@ visible = false
 [connection signal="input_event" from="House4" to="." method="_on_house_input_event"]
 [connection signal="input_event" from="House5" to="." method="_on_house_input_event"]
 [connection signal="input_event" from="Bank" to="." method="_on_bank_input_event"]
+[connection signal="pressed" from="CanvasLayer/BtnTutup" to="Warung" method="_on_btn_tutup_pressed"]
 [connection signal="pressed" from="CanvasLayer/Popup2/BtnMasuk" to="Warung" method="_on_btn_masuk_pressed"]
-[connection signal="pressed" from="CanvasLayer/Popup2/BtnTutup" to="Warung" method="_on_btn_tutup_pressed"]
 [connection signal="pressed" from="CanvasLayer/Popup3/BtnTutup" to="." method="_on_btn_tutup_pressed"]
 [connection signal="pressed" from="CanvasLayer/Kembali" to="." method="_on_kembali_pressed"]
