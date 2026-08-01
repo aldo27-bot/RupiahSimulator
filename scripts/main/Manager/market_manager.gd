@@ -31,28 +31,48 @@ func update_market():
 	market_updated.emit()
 
 # Fungsi untuk mendapatkan harga unik per item berdasarkan base_price-nya
-func get_price(base_price: int) -> int:
-	# Jika item ini belum punya tren di periode waktu ini, buatkan secara acak khusus untuk item ini
-	if not item_markets.has(base_price):
+func get_price(item_name:String, base_price:int) -> int:
+
+	if not item_markets.has(item_name):
+
 		var item_trend = Trend.NAIK if randf() < 0.5 else Trend.TURUN
 		var item_persen = randi_range(MIN_PERCENT, MAX_PERCENT)
-		
-		item_markets[base_price] = {
+
+		item_markets[item_name] = {
 			"trend": item_trend,
 			"persen": item_persen
 		}
-	
-	var data = item_markets[base_price]
-	
+
+
+	var data = item_markets[item_name]
+
+
+	print(
+		item_name,
+		" | ",
+		"NAIK" if data.trend == Trend.NAIK else "TURUN",
+		" ",
+		data.persen,
+		"%"
+	)
+
+
 	if data.trend == Trend.NAIK:
-		return round(base_price * (1.0 + data.persen / 100.0))
+
+		return round(
+			base_price * (1.0 + data.persen / 100.0)
+		)
+
 	else:
-		return round(base_price * (1.0 - data.persen / 100.0))
+
+		return round(
+			base_price * (1.0 - data.persen / 100.0)
+		)
 
 # Fungsi tambahan untuk mengambil info tren & persen khusus item (untuk ikon naik/turun di item.gd)
-func get_item_trend_data(base_price: int) -> Dictionary:
-	if not item_markets.has(base_price):
-		# Panggil get_price agar otomatis ter-generate jika belum ada
-		get_price(base_price)
-		
-	return item_markets[base_price]
+func get_item_trend_data(item_name:String, base_price:int) -> Dictionary:
+
+	if not item_markets.has(item_name):
+		get_price(item_name, base_price)
+
+	return item_markets[item_name]

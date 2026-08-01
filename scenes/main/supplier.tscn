@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dc3h10gpup6if"]
 
 [ext_resource type="Script" uid="uid://bl60hjnp3lrk5" path="res://scripts/main/supplier/supplier.gd" id="1_54vvv"]
-[ext_resource type="Texture2D" uid="uid://uc7x35ld6iai" path="res://assets/warung/backgorund/bg.png" id="1_128ii"]
-[ext_resource type="Texture2D" uid="uid://bow8vpq2hm4hi" path="res://assets/warung/supplier/Back.png" id="2_7v2w4"]
-[ext_resource type="Texture2D" uid="uid://c6oph68jlqpqf" path="res://assets/warung/supplier/Header.png" id="3_82epg"]
+[ext_resource type="Texture2D" uid="uid://ln5l0xnulbqm" path="res://assets/warung/backgorund/bg.png" id="1_128ii"]
+[ext_resource type="Texture2D" uid="uid://cqasxxl0o7opu" path="res://assets/warung/supplier/Back.png" id="2_7v2w4"]
+[ext_resource type="Texture2D" uid="uid://wc6iihhti1cq" path="res://assets/warung/supplier/Header.png" id="3_82epg"]
 [ext_resource type="Texture2D" uid="uid://b7s3mfex2dfq2" path="res://assets/warung/supplier/AMbil (34).png" id="4_ks3hm"]
 [ext_resource type="Texture2D" uid="uid://c0tdah5356vqp" path="res://assets/warung/supplier/AMbil (33).png" id="5_54vvv"]
 [ext_resource type="Texture2D" uid="uid://b7p8gv7rfohq7" path="res://assets/warung/supplier/AMbil (41).png" id="7_54vvv"]

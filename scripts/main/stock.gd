@@ -1,5 +1,6 @@
 extends Control
 
+
 # ==========================
 # RINGKASAN
 # ==========================
@@ -8,8 +9,9 @@ extends Control
 @onready var label_stok = $Panel/Ringkasan/LabelStok
 
 
+
 # ==========================
-# JUMLAH SETIAP BARANG
+# JUMLAH BARANG
 # ==========================
 
 @onready var jumlah_beras = $Panel/Barang/Daftar/Beras/Jumlah
@@ -19,8 +21,9 @@ extends Control
 @onready var jumlah_tepung = $Panel/Barang/Daftar/Tepung/Jumlah
 
 
+
 # ==========================
-# ITEM
+# ITEM CONTAINER
 # ==========================
 
 @onready var beras = $Panel/Barang/Daftar/Beras
@@ -30,19 +33,15 @@ extends Control
 @onready var tepung = $Panel/Barang/Daftar/Tepung
 
 
+
 # ==========================
-# DATA DUMMY
+# LEVEL TOKO
 # ==========================
 
 var level_toko := 1
 
-var stok = {
-	"beras": 10,
-	"minyak": 6,
-	"telur": 8,
-	"gula": 0,
-	"tepung": 0
-}
+
+
 
 
 # ==========================
@@ -51,7 +50,36 @@ var stok = {
 
 func _ready():
 
+
+	# Ambil level dari save
+
+	var save_data = SaveManager.load_game()
+
+
+	if save_data != null:
+
+		level_toko = save_data.get(
+			"level_toko",
+			1
+		)
+
+
+	# Update ketika stok berubah
+
+	if !ItemDatabase.stock_changed.is_connected(
+		update_ui
+	):
+
+		ItemDatabase.stock_changed.connect(
+			update_ui
+		)
+
+
+
 	update_ui()
+
+
+
 
 
 # ==========================
@@ -60,14 +88,39 @@ func _ready():
 
 func update_ui():
 
-	jumlah_beras.text = str(stok["beras"])
-	jumlah_minyak.text = str(stok["minyak"])
-	jumlah_telur.text = str(stok["telur"])
-	jumlah_gula.text = str(stok["gula"])
-	jumlah_tepung.text = str(stok["tepung"])
+
+	jumlah_beras.text = str(
+		ItemDatabase.get_stock("beras")
+	)
+
+
+	jumlah_minyak.text = str(
+		ItemDatabase.get_stock("minyak")
+	)
+
+
+	jumlah_telur.text = str(
+		ItemDatabase.get_stock("telur")
+	)
+
+
+	jumlah_gula.text = str(
+		ItemDatabase.get_stock("gula")
+	)
+
+
+	jumlah_tepung.text = str(
+		ItemDatabase.get_stock("tepung")
+	)
+
+
 
 	update_ringkasan()
+
 	update_level()
+
+
+
 
 
 # ==========================
@@ -76,18 +129,21 @@ func update_ui():
 
 func update_ringkasan():
 
-	var total_jenis := 0
-	var total_stok := 0
 
-	for item in stok:
+	label_jenis.text = (
+		"Jenis Barang : %d"
+		% ItemDatabase.get_total_item_types()
+	)
 
-		total_stok += stok[item]
 
-		if stok[item] > 0:
-			total_jenis += 1
 
-	label_jenis.text = "Jenis Barang : %d" % total_jenis
-	label_stok.text = "Total Stok : %d" % total_stok
+	label_stok.text = (
+		"Total Stok : %d"
+		% ItemDatabase.get_player_total_stock()
+	)
+
+
+
 
 
 # ==========================
@@ -96,39 +152,41 @@ func update_ringkasan():
 
 func update_level():
 
-	# Level 1
+
 	beras.visible = true
 	minyak.visible = true
 	telur.visible = true
 
-	# Level 2
+
+
 	gula.visible = level_toko >= 2
 
-	# Level 3
 	tepung.visible = level_toko >= 3
 
 
+
+
+
 # ==========================
-# GANTI LEVEL (DUMMY)
+# SET LEVEL
 # ==========================
 
-func set_level(level:int):
+func set_level(
+	level:int
+):
 
 	level_toko = level
-	update_ui()
+
+	update_level()
+
+
+
 
 
 # ==========================
-# GANTI STOK (DUMMY)
+# TOMBOL KEMBALI
 # ==========================
-
-func set_stok(nama_barang:String, jumlah:int):
-
-	if stok.has(nama_barang):
-		stok[nama_barang] = jumlah
-
-	update_ui()
-
 
 func _on_kembali_pressed() -> void:
+
 	hide()

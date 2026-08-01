@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GameRupiah"
-run/main_scene="uid://c5frbwnqtvcw"
+run/main_scene="uid://wamyxho4e31k"
 config/quit_on_go_back=false
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/stretch_mode=5
@@ -29,6 +29,7 @@ BusinessData="*uid://c5r2toilhuowe"
 BackManager="*uid://dxlleyn8wlbda"
 Market="*uid://c8gq8lcsofyx0"
 PlayerData="*uid://cu327cbl3tyd1"
+ItemDatabase="*uid://cii26pis4l771"
 
 [display]
 

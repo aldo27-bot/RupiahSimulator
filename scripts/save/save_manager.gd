@@ -2,16 +2,25 @@ extends Node
 
 const SAVE_PATH = "user://savegame.json"
 
-
 # ======================
 # SAVE GAME
 # ======================
 func save_game(cart_data, level_toko):
 
 	var save_data = {
-		"uang": Economy.uang,
+		"uang": PlayerData.coin,
 		"rupiah": Economy.rupiah_strength,
-		"items": Market.items,
+
+		"items": Market.item_markets,
+
+		"stocks": {
+			"beras": ItemDatabase.get_stock("beras"),
+			"minyak": ItemDatabase.get_stock("minyak"),
+			"telur": ItemDatabase.get_stock("telur"),
+			"gula": ItemDatabase.get_stock("gula"),
+			"tepung": ItemDatabase.get_stock("tepung")
+		},
+
 		"cart": cart_data,
 		"level_toko": level_toko,
 
@@ -24,14 +33,8 @@ func save_game(cart_data, level_toko):
 		}
 	}
 
-	var file = FileAccess.open(
-		SAVE_PATH,
-		FileAccess.WRITE
-	)
-
-	file.store_string(
-		JSON.stringify(save_data)
-	)
+	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	file.store_string(JSON.stringify(save_data))
 
 	print("GAME SAVED")
 
@@ -41,15 +44,11 @@ func save_game(cart_data, level_toko):
 # ======================
 func load_game():
 
-	if not FileAccess.file_exists(SAVE_PATH):
+	if !FileAccess.file_exists(SAVE_PATH):
 		print("NO SAVE FILE")
 		return null
 
-	var file = FileAccess.open(
-		SAVE_PATH,
-		FileAccess.READ
-	)
-
+	var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
 	var content = file.get_as_text()
 
 	var data = JSON.parse_string(content)
@@ -61,13 +60,15 @@ func load_game():
 	print("GAME LOADED")
 
 	return data
-	
+
+
 # ======================
 # RESET SAVE
 # ======================
 func reset_save():
 
 	var save_data = {
+
 		"uang": 100000,
 		"rupiah": 1.0,
 		"level_toko": 1,
@@ -78,23 +79,16 @@ func reset_save():
 			"gula": 0
 		},
 
-		"items": {
-			"kopi": {
-				"stok": 0,
-				"base_price": 1000
-			},
+		"items": {},
 
-			"beras": {
-				"stok": 0,
-				"base_price": 15000
-			},
-
-			"gula": {
-				"stok": 0,
-				"base_price": 12000
-			}
+		"stocks": {
+			"beras": 0,
+			"minyak": 0,
+			"telur": 0,
+			"gula": 0,
+			"tepung": 0
 		},
-		
+
 		"businesses": {
 			"warung": {
 				"owned": false,
@@ -104,17 +98,12 @@ func reset_save():
 		}
 	}
 
-	var file = FileAccess.open(
-		SAVE_PATH,
-		FileAccess.WRITE
-	)
-
-	file.store_string(
-		JSON.stringify(save_data)
-	)
+	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	file.store_string(JSON.stringify(save_data))
 
 	print("GAME RESET")
-	
+
+
 # ======================
 # APPLY SAVE DATA
 # ======================
@@ -125,12 +114,29 @@ func apply_loaded_data():
 	if data == null:
 		return null
 
+	# Money
+	PlayerData.coin = data["uang"]
+	PlayerData.saldo_berubah.emit(PlayerData.coin)
+
 	# Economy
-	Economy.uang = data["uang"]
 	Economy.rupiah_strength = data["rupiah"]
 
 	# Market
-	Market.items = data["items"]
+	if data.has("items"):
+		Market.item_markets = data["items"]
+
+	# Stock
+	if data.has("stocks"):
+
+		var s = data["stocks"]
+
+		ItemDatabase.set_stock("beras", s.get("beras", 0))
+		ItemDatabase.set_stock("minyak", s.get("minyak", 0))
+		ItemDatabase.set_stock("telur", s.get("telur", 0))
+		ItemDatabase.set_stock("gula", s.get("gula", 0))
+		ItemDatabase.set_stock("tepung", s.get("tepung", 0))
+
+		ItemDatabase.stock_changed.emit()
 
 	# Business
 	if data.has("businesses"):
@@ -143,12 +149,14 @@ func apply_loaded_data():
 
 	return data
 
+
 # ======================
 # SAVE CURRENT GAME
 # ======================
 func save_current(cart_data, level_toko):
 
 	save_game(cart_data, level_toko)
+
 
 # ======================
 # SAVE BUSINESS ONLY
@@ -160,38 +168,55 @@ func save_business():
 	if data == null:
 
 		data = {
-			"uang": Economy.uang,
+			"uang": PlayerData.coin,
 			"rupiah": Economy.rupiah_strength,
-			"items": Market.items,
+			"items": Market.item_markets,
+			"stocks": {},
 			"cart": {},
 			"level_toko": 1
 		}
 
-	data["uang"] = Economy.uang
+	data["uang"] = PlayerData.coin
 
 	data["businesses"] = {
 
 		"warung": {
 
 			"owned": BusinessData.businesses["warung"]["owned"],
-
-			"stored_profit":
-			BusinessData.businesses["warung"]["stored_profit"],
-
-			"last_collect_time":
-			BusinessData.businesses["warung"]["last_collect_time"]
+			"stored_profit": BusinessData.businesses["warung"]["stored_profit"],
+			"last_collect_time": BusinessData.businesses["warung"]["last_collect_time"]
 
 		}
 
 	}
 
-	var file = FileAccess.open(
-		SAVE_PATH,
-		FileAccess.WRITE
-	)
-
-	file.store_string(
-		JSON.stringify(data)
-	)
+	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	file.store_string(JSON.stringify(data))
 
 	print("BUSINESS SAVED")
+
+
+# ======================
+# SAVE ITEM DATABASE
+# ======================
+func save_item_database():
+
+	var data = load_game()
+
+	if data == null:
+		data = {}
+
+	data["stocks"] = {
+
+		"beras": ItemDatabase.get_stock("beras"),
+		"minyak": ItemDatabase.get_stock("minyak"),
+		"telur": ItemDatabase.get_stock("telur"),
+		"gula": ItemDatabase.get_stock("gula"),
+		"tepung": ItemDatabase.get_stock("tepung")
+
+	}
+
+	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	file.store_string(JSON.stringify(data))
+
+	print("ITEM DATABASE SAVED")

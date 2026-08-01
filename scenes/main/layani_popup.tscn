@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://b7asie84rxmtp" path="res://assets/images/popup/PopupLayani.png" id="1_1tanv"]
 [ext_resource type="Script" uid="uid://wvw5d5j7ifpf" path="res://scripts/main/layani_popup.gd" id="1_c5fkk"]
 [ext_resource type="Texture2D" uid="uid://7idkql7vqigx" path="res://assets/images/stok/beras.png" id="2_gwc17"]
-[ext_resource type="Texture2D" uid="uid://dytnea10biq0d" path="res://assets/warung/ui/Turun.png" id="3_gwc17"]
 [ext_resource type="Texture2D" uid="uid://vh3clmdhqjry" path="res://assets/images/stok/minyakgoreng.png" id="3_ov7s4"]
 [ext_resource type="Texture2D" uid="uid://dnedh8tn8ftck" path="res://assets/images/stok/telur.png" id="4_c5fkk"]
+[ext_resource type="Texture2D" uid="uid://crk2oxs31x84v" path="res://assets/warung/supplier/min.png" id="4_ybvnn"]
 [ext_resource type="Texture2D" uid="uid://bqlxrm8687kjy" path="res://assets/images/stok/itemterkunci.png" id="5_ybvnn"]
 [ext_resource type="Texture2D" uid="uid://c10dwuu8c64ls" path="res://assets/images/popup/layani.png" id="6_1mtn5"]
 [ext_resource type="Texture2D" uid="uid://3vyrgcx0846w" path="res://assets/images/CaraMain/keluar.png" id="8_ov7s4"]
@@ -104,8 +104,8 @@ offset_left = 352.0
 offset_top = 2.0
 offset_right = 394.0
 offset_bottom = 33.0
-texture_normal = ExtResource("3_gwc17")
-texture_pressed = ExtResource("3_gwc17")
+texture_normal = ExtResource("4_ybvnn")
+texture_pressed = ExtResource("4_ybvnn")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -145,8 +145,8 @@ offset_left = 352.0
 offset_top = 5.0
 offset_right = 394.0
 offset_bottom = 36.0
-texture_normal = ExtResource("3_gwc17")
-texture_pressed = ExtResource("3_gwc17")
+texture_normal = ExtResource("4_ybvnn")
+texture_pressed = ExtResource("4_ybvnn")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -186,8 +186,8 @@ offset_left = 352.0
 offset_top = 2.0
 offset_right = 394.0
 offset_bottom = 33.0
-texture_normal = ExtResource("3_gwc17")
-texture_pressed = ExtResource("3_gwc17")
+texture_normal = ExtResource("4_ybvnn")
+texture_pressed = ExtResource("4_ybvnn")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -228,8 +228,8 @@ offset_left = 352.0
 offset_top = 2.0
 offset_right = 394.0
 offset_bottom = 33.0
-texture_normal = ExtResource("3_gwc17")
-texture_pressed = ExtResource("3_gwc17")
+texture_normal = ExtResource("4_ybvnn")
+texture_pressed = ExtResource("4_ybvnn")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -270,8 +270,8 @@ offset_left = 352.0
 offset_top = 3.0
 offset_right = 394.0
 offset_bottom = 34.0
-texture_normal = ExtResource("3_gwc17")
-texture_pressed = ExtResource("3_gwc17")
+texture_normal = ExtResource("4_ybvnn")
+texture_pressed = ExtResource("4_ybvnn")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -290,6 +290,23 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Total"
+
+[node name="Label" type="Label" parent="Popup" unique_id=294044482]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = 105.0
+offset_bottom = 187.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "!! saat gambar ditekan dan 
+jumlah tidak naik berarti 
+stok kosong"
 
 [node name="LayaniButton" type="TextureButton" parent="Popup" unique_id=2039170742]
 layout_mode = 1
@@ -326,3 +343,16 @@ texture_normal = ExtResource("8_ov7s4")
 texture_pressed = ExtResource("8_ov7s4")
 ignore_texture_size = true
 stretch_mode = 0
+
+[connection signal="pressed" from="Popup/ItemContainer/Item1" to="." method="_on_item_1_pressed"]
+[connection signal="pressed" from="Popup/ItemContainer/Item1/TombolKurang" to="." method="_on_tombol_kurang_pressed"]
+[connection signal="pressed" from="Popup/ItemContainer/Item2" to="." method="_on_item_2_pressed"]
+[connection signal="pressed" from="Popup/ItemContainer/Item2/TombolKurang2" to="." method="_on_tombol_kurang_2_pressed"]
+[connection signal="pressed" from="Popup/ItemContainer/Item3" to="." method="_on_item_3_pressed"]
+[connection signal="pressed" from="Popup/ItemContainer/Item3/TombolKurang3" to="." method="_on_tombol_kurang_3_pressed"]
+[connection signal="pressed" from="Popup/ItemContainer/Item4" to="." method="_on_item_4_pressed"]
+[connection signal="pressed" from="Popup/ItemContainer/Item4/TombolKurang4" to="." method="_on_tombol_kurang_4_pressed"]
+[connection signal="pressed" from="Popup/ItemContainer/Item5" to="." method="_on_item_5_pressed"]
+[connection signal="pressed" from="Popup/ItemContainer/Item5/TombolKurang5" to="." method="_on_tombol_kurang_5_pressed"]
+[connection signal="pressed" from="Popup/LayaniButton" to="." method="_on_layani_button_pressed"]
+[connection signal="pressed" from="Popup/Keluar" to="." method="_on_keluar_pressed"]

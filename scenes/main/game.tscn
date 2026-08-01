@@ -17,6 +17,10 @@
 [ext_resource type="Texture2D" uid="uid://bgfc6gtjrfpin" path="res://assets/warung/ui/Laporan.png" id="15_oxcik"]
 [ext_resource type="Texture2D" uid="uid://lxs7x8aet3ye" path="res://assets/warung/ui/Target.png" id="16_obhq2"]
 [ext_resource type="PackedScene" uid="uid://c5l6ms6aneiaw" path="res://scenes/main/Stock.tscn" id="17_oxcik"]
+[ext_resource type="Texture2D" uid="uid://c10dwuu8c64ls" path="res://assets/images/popup/layani.png" id="18_obhq2"]
+[ext_resource type="PackedScene" uid="uid://dsd7vpoa6rsqr" path="res://scenes/main/layani_popup.tscn" id="18_oxav3"]
+[ext_resource type="PackedScene" uid="uid://f1bdrpm6w30h" path="res://scenes/menu/customer.tscn" id="20_6lv7u"]
+[ext_resource type="Texture2D" uid="uid://dlhybta8irmy7" path="res://assets/images/popup/tolak.png" id="20_8k4wh"]
 
 [sub_resource type="FontVariation" id="FontVariation_em1bs"]
 base_font = ExtResource("5_gf1f2")
@@ -176,34 +180,20 @@ text = "Saldo"
 
 [node name="Value" type="Label" parent="CanvasLayer/TopBar/PanelSaldo" unique_id=115259293]
 layout_mode = 0
-<<<<<<< HEAD
 offset_left = 105.0
 offset_top = 8.0
 offset_right = 186.0
 offset_bottom = 38.0
-=======
-offset_left = 947.0
-offset_top = 40.0
-offset_right = 1028.0
-offset_bottom = 70.0
->>>>>>> c4aa59b (supplier done)
 theme_override_fonts/font = SubResource("FontVariation_ktwa8")
 theme_override_font_sizes/font_size = 18
 text = "100.000"
 
 [node name="Coin" type="Label" parent="CanvasLayer/TopBar/PanelSaldo" unique_id=1064557180]
 layout_mode = 0
-<<<<<<< HEAD
 offset_left = 190.0
 offset_top = 6.0
 offset_right = 233.0
 offset_bottom = 69.0
-=======
-offset_left = 1019.0
-offset_top = 38.0
-offset_right = 1062.0
-offset_bottom = 101.0
->>>>>>> c4aa59b (supplier done)
 theme_override_fonts/font = SubResource("FontVariation_157ky")
 theme_override_font_sizes/font_size = 21
 text = "Coin
@@ -328,9 +318,44 @@ offset_top = 4.0
 offset_right = 2.0
 offset_bottom = 4.0
 
+[node name="LayaniPopup" parent="." unique_id=94551294 instance=ExtResource("18_oxav3")]
+visible = false
+
+[node name="Layani" type="TextureButton" parent="." unique_id=2137482410]
+offset_left = 230.0
+offset_top = 450.0
+offset_right = 401.0
+offset_bottom = 514.0
+texture_normal = ExtResource("18_obhq2")
+texture_pressed = ExtResource("18_obhq2")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Tolak" type="TextureButton" parent="." unique_id=924146724]
+offset_left = 419.0
+offset_top = 454.0
+offset_right = 554.0
+offset_bottom = 512.0
+texture_normal = ExtResource("20_8k4wh")
+texture_pressed = ExtResource("20_8k4wh")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=1531254231]
+position = Vector2(1174, 506)
+
+[node name="CashierPoint" type="Marker2D" parent="." unique_id=315830617]
+position = Vector2(779, 506)
+
+[node name="Customer" parent="." unique_id=215069646 instance=ExtResource("20_6lv7u")]
+position = Vector2(1237.0001, 510)
+scale = Vector2(7, 7)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="MarketTimer" to="." method="_on_market_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/BottomBar/HBoxContainer/BtnSupplier" to="." method="_on_btn_supplier_pressed"]
 [connection signal="pressed" from="CanvasLayer/BottomBar/HBoxContainer/BtnStok" to="." method="_on_btn_stok_pressed"]
 [connection signal="pressed" from="CanvasLayer/BottomBar/HBoxContainer/BtnLaporan" to="." method="_on_btn_laporan_pressed"]
 [connection signal="pressed" from="CanvasLayer/BottomBar/HBoxContainer/BtnTarget" to="." method="_on_btn_target_pressed"]
+[connection signal="pressed" from="Layani" to="." method="_on_layani_pressed"]
+[connection signal="pressed" from="Tolak" to="." method="_on_tolak_pressed"]
