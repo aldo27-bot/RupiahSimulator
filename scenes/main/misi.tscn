@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b3b4dhb4g8pka"]
+
+[ext_resource type="Texture2D" uid="uid://uc7x35ld6iai" path="res://assets/warung/backgorund/bg.png" id="1_yux0u"]
+
+[node name="Misi" type="Control" unique_id=1901809890]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=72022809]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yux0u")
+expand_mode = 1
+stretch_mode = 5

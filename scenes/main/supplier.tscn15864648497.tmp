@@ -7,9 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b7s3mfex2dfq2" path="res://assets/warung/supplier/AMbil (34).png" id="4_ks3hm"]
 [ext_resource type="Texture2D" uid="uid://c0tdah5356vqp" path="res://assets/warung/supplier/AMbil (33).png" id="5_54vvv"]
 [ext_resource type="Texture2D" uid="uid://b7p8gv7rfohq7" path="res://assets/warung/supplier/AMbil (41).png" id="7_54vvv"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ks3hm"]
-load_path = "res://.godot/imported/abu.png-2ffeb986a9e084279a54fde42e13af4b.ctex"
+[ext_resource type="Texture2D" uid="uid://cinmqovnmapg8" path="res://assets/warung/supplier/AMbil (42).png" id="8_ylwud"]
 
 [node name="Supplier" type="Control" unique_id=2133646821]
 layout_mode = 3
@@ -33,14 +31,12 @@ stretch_mode = 6
 
 [node name="BtnBack" type="TextureButton" parent="." unique_id=406689249]
 layout_mode = 0
-offset_left = 25.0
-offset_top = 36.0
-offset_right = 974.9999
-offset_bottom = 570.99994
+offset_left = 42.999996
+offset_top = 20.999998
+offset_right = 749.0
+offset_bottom = 299.0
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("2_7v2w4")
-ignore_texture_size = true
-stretch_mode = 5
 
 [node name="Table" type="TextureRect" parent="." unique_id=436102357]
 layout_mode = 0
@@ -69,20 +65,20 @@ offset_bottom = 40.0
 
 [node name="CoinIcon" type="TextureRect" parent="CoinPanel" unique_id=584008962]
 layout_mode = 0
-offset_left = 856.0
-offset_top = 57.0
-offset_right = 1127.0
-offset_bottom = 124.0
+offset_left = 849.0
+offset_top = 26.0
+offset_right = 1120.0
+offset_bottom = 93.0
 texture = ExtResource("4_ks3hm")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="CoinLabel" type="Label" parent="CoinPanel" unique_id=1218401690]
 layout_mode = 0
-offset_left = 1011.0
-offset_top = 75.0
-offset_right = 1051.0
-offset_bottom = 98.0
+offset_left = 1008.0
+offset_top = 46.0
+offset_right = 1048.0
+offset_bottom = 69.0
 text = "245"
 
 [node name="ItemContainer" type="Control" parent="." unique_id=655843673]
@@ -118,19 +114,10 @@ offset_bottom = 79.0
 
 [node name="BuyButton" type="TextureButton" parent="BottomBar" unique_id=2063873721]
 layout_mode = 0
-offset_left = 525.0
-offset_top = -15.0
-offset_right = 674.0
-offset_bottom = 137.0
-texture_normal = SubResource("CompressedTexture2D_ks3hm")
+offset_left = 530.0
+offset_top = -14.0
+offset_right = 660.0
+offset_bottom = 136.0
+texture_normal = ExtResource("8_ylwud")
 ignore_texture_size = true
 stretch_mode = 5
-
-[node name="Label" type="Label" parent="BottomBar/BuyButton" unique_id=801430136]
-layout_mode = 0
-offset_left = 64.0
-offset_top = 64.0
-offset_right = 104.0
-offset_bottom = 87.0
-
-[connection signal="pressed" from="BtnBack" to="." method="_on_btn_back_pressed"]

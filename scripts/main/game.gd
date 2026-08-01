@@ -27,6 +27,11 @@ extends Node2D
 @onready var stock = $CanvasLayer/Stock
 
 # ======================
+# Panel Saldo
+# ======================
+@onready var saldo_label = $CanvasLayer/TopBar/PanelSaldo/Value
+
+# ======================
 # Texture Market
 # ======================
 const ARROW_UP = preload("res://assets/warung/ui/Naik.png")
@@ -37,19 +42,24 @@ const TREND_DOWN = preload("res://assets/warung/ui/TrendTurun.png")
 
 
 func _ready():
+<<<<<<< HEAD
 
 	await get_tree().process_frame
 
 	resize_background()
 
+=======
+>>>>>>> c4aa59b (supplier done)
 	timer.wait_time = 1.0
-
 	time.update_waktu_device()
 
+	# --- KODE BARU: Menyambungkan uang ke tampilan ---
+	PlayerData.saldo_berubah.connect(update_saldo_ui)
+	update_saldo_ui(PlayerData.coin) # Tampilkan saldo 100.000 saat pertama buka
+	# -------------------------------------------------
+
 	update_ui()
-
 	update_market_ui()
-
 	timer.start()
 
 	stock.hide()
@@ -93,13 +103,16 @@ func _on_timer_timeout():
 
 
 func update_market_ui():
+	# Karena market sekarang unik per item, kita ambil contoh data dari item pertama (misal: base_price 120 / Beras)
+	# untuk merepresentasikan status di panel atas utama.
+	var sample_trend_data = Market.get_item_trend_data(120)
 
-	if Market.trend == Market.Trend.NAIK:
+	if sample_trend_data.trend == Market.Trend.NAIK:
 
 		arrow.texture = ARROW_UP
 		trend_icon.texture = TREND_UP
 
-		value.text = "+" + str(Market.persen) + "%"
+		value.text = "+" + str(sample_trend_data.persen) + "%"
 
 		value.add_theme_color_override(
 			"font_color",
@@ -118,7 +131,7 @@ func update_market_ui():
 		arrow.texture = ARROW_DOWN
 		trend_icon.texture = TREND_DOWN
 
-		value.text = "-" + str(Market.persen) + "%"
+		value.text = "-" + str(sample_trend_data.persen) + "%"
 
 		value.add_theme_color_override(
 			"font_color",
@@ -132,6 +145,9 @@ func update_market_ui():
 			Color("E53935")
 		)
 
+# Fungsi ini akan otomatis dipanggil jika saldo berubah
+func update_saldo_ui(saldo_baru: int):
+	saldo_label.text = str(saldo_baru)
 
 func _on_market_timer_timeout():
 
@@ -157,4 +173,8 @@ func _on_btn_laporan_pressed() -> void:
 
 # Button Target
 func _on_btn_target_pressed() -> void:
+<<<<<<< HEAD
 	pass
+=======
+	get_tree().change_scene_to_file("res://scenes/main/misi.tscn")
+>>>>>>> c4aa59b (supplier done)

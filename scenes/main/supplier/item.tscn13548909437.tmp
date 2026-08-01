@@ -4,26 +4,10 @@
 [ext_resource type="Script" uid="uid://cf5fu4f4mmhiw" path="res://scripts/main/supplier/item.gd" id="1_r1rch"]
 [ext_resource type="Texture2D" uid="uid://odk3u3a76ma1" path="res://assets/warung/ui/Coin.png" id="2_r1rch"]
 [ext_resource type="Texture2D" uid="uid://ddo3fgwyu0oj0" path="res://assets/warung/ui/Naik.png" id="3_bj2xf"]
-[ext_resource type="FontFile" uid="uid://cctiam76em7bh" path="res://assets/font/Nunito-Bold.ttf" id="3_cxlyx"]
 [ext_resource type="Texture2D" uid="uid://b5j5ehc7gq4aj" path="res://assets/warung/supplier/min.png" id="4_cpfwb"]
 [ext_resource type="Texture2D" uid="uid://ci7ykcyr1mg4d" path="res://assets/warung/supplier/kunci.png" id="5_cpfwb"]
 [ext_resource type="Texture2D" uid="uid://bdm2k0uot7bg1" path="res://assets/warung/supplier/plus.png" id="5_cxlyx"]
 [ext_resource type="Texture2D" uid="uid://bkwp0ed2qiwmf" path="res://assets/warung/supplier/papankunci.png" id="8_cxlyx"]
-
-[sub_resource type="FontVariation" id="FontVariation_uo0s0"]
-base_font = ExtResource("3_cxlyx")
-
-[sub_resource type="FontVariation" id="FontVariation_mmhm5"]
-base_font = ExtResource("3_cxlyx")
-
-[sub_resource type="FontVariation" id="FontVariation_5nydt"]
-base_font = ExtResource("3_cxlyx")
-
-[sub_resource type="FontVariation" id="FontVariation_emj3o"]
-base_font = ExtResource("3_cxlyx")
-
-[sub_resource type="FontVariation" id="FontVariation_wgcon"]
-base_font = ExtResource("3_cxlyx")
 
 [node name="ItemRow" type="Control" unique_id=729969105]
 layout_mode = 3
@@ -55,18 +39,16 @@ offset_top = 24.0
 offset_right = 102.0
 offset_bottom = 47.0
 theme_override_colors/font_color = Color(0.01, 0.01, 0.01, 1)
-theme_override_fonts/font = SubResource("FontVariation_uo0s0")
 theme_override_font_sizes/font_size = 12
 text = "Beras"
 
 [node name="PriceLabel" type="Label" parent="." unique_id=274932585]
 layout_mode = 0
-offset_left = 213.0
-offset_top = 20.0
-offset_right = 286.0
-offset_bottom = 54.0
+offset_left = 223.0
+offset_top = 18.0
+offset_right = 296.0
+offset_bottom = 52.0
 theme_override_colors/font_color = Color(0.011764706, 0.011764706, 0.011764706, 1)
-theme_override_fonts/font = SubResource("FontVariation_mmhm5")
 text = "120"
 
 [node name="CoinIcon" type="TextureRect" parent="." unique_id=2070609380]
@@ -95,7 +77,6 @@ offset_left = 291.0
 offset_top = 18.0
 offset_right = 331.0
 offset_bottom = 41.0
-theme_override_fonts/font = SubResource("FontVariation_5nydt")
 text = "+8%"
 
 [node name="LockIcon" type="TextureRect" parent="." unique_id=2026223847]
@@ -115,7 +96,6 @@ offset_top = 21.0
 offset_right = 453.0
 offset_bottom = 44.0
 theme_override_colors/font_color = Color(0.011764706, 0.011764706, 0.011764706, 1)
-theme_override_fonts/font = SubResource("FontVariation_emj3o")
 text = "10"
 
 [node name="MinusButton" type="TextureButton" parent="." unique_id=727511407]
@@ -135,7 +115,6 @@ offset_top = 19.0
 offset_right = 614.0
 offset_bottom = 42.0
 theme_override_colors/font_color = Color(0.011764706, 0.011764706, 0.011764706, 1)
-theme_override_fonts/font = SubResource("FontVariation_wgcon")
 text = "0"
 
 [node name="PlusButton" type="TextureButton" parent="." unique_id=1363172537]
