@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://dc3h10gpup6if"]
+
+[ext_resource type="Script" uid="uid://bl60hjnp3lrk5" path="res://scripts/main/supplier/supplier.gd" id="1_54vvv"]
+[ext_resource type="Texture2D" uid="uid://uc7x35ld6iai" path="res://assets/warung/backgorund/bg.png" id="1_128ii"]
+[ext_resource type="Texture2D" uid="uid://bow8vpq2hm4hi" path="res://assets/warung/supplier/Back.png" id="2_7v2w4"]
+[ext_resource type="Texture2D" uid="uid://dw7vyxrmg1fcj" path="res://assets/warung/supplier/background.png" id="2_ks3hm"]
+[ext_resource type="Texture2D" uid="uid://c6oph68jlqpqf" path="res://assets/warung/supplier/Header.png" id="3_82epg"]
+[ext_resource type="Texture2D" uid="uid://fnmxjufwvef8" path="res://assets/warung/supplier/Papan.png" id="4_boxxo"]
+[ext_resource type="Texture2D" uid="uid://odk3u3a76ma1" path="res://assets/warung/ui/Coin.png" id="5_ks3hm"]
+[ext_resource type="FontFile" uid="uid://cctiam76em7bh" path="res://assets/font/Nunito-Bold.ttf" id="6_54vvv"]
+
+[sub_resource type="FontVariation" id="FontVariation_ylwud"]
+base_font = ExtResource("6_54vvv")
+
+[node name="Supplier" type="Control" unique_id=2133646821]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_54vvv")
+
+[node name="Background" type="TextureRect" parent="." unique_id=650559671]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_128ii")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Footer" type="Control" parent="Background" unique_id=907402139]
+anchors_preset = 0
+offset_left = 241.0
+offset_top = 542.0
+offset_right = 951.0
+offset_bottom = 609.0
+
+[node name="Header" type="Control" parent="." unique_id=53631761]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 200.0
+grow_horizontal = 2
+
+[node name="BtnBack" type="TextureButton" parent="Header" unique_id=1581150323]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 24.0
+offset_right = 720.0
+offset_bottom = 302.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("2_7v2w4")
+stretch_mode = 5
+
+[node name="TitleBoard" type="TextureRect" parent="Header" unique_id=185097894]
+layout_mode = 0
+offset_left = 280.0
+offset_top = -87.0
+offset_right = 884.0
+offset_bottom = 247.0
+texture = ExtResource("3_82epg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CoinPanel" type="Control" parent="Header" unique_id=84942372]
+anchors_preset = 0
+offset_left = 848.0
+offset_top = 6.0
+offset_right = 1148.0
+offset_bottom = 96.0
+
+[node name="Background" type="TextureRect" parent="Header/CoinPanel" unique_id=1830776830]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 71.0
+offset_top = 16.0
+offset_right = -25.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_boxxo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CoinIcon" type="TextureRect" parent="Header/CoinPanel" unique_id=1795652690]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 34.0
+offset_right = 133.0
+offset_bottom = 74.0
+texture = ExtResource("5_ks3hm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CoinLabel" type="Label" parent="Header/CoinPanel" unique_id=244029207]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 42.0
+offset_right = 237.0
+offset_bottom = 65.0
+theme_override_fonts/font = SubResource("FontVariation_ylwud")
+text = "100.000 Coin"
+
+[node name="Board" type="TextureRect" parent="." unique_id=513593219]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 126.0
+offset_right = 973.0
+offset_bottom = 656.0
+texture = ExtResource("2_ks3hm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ItemContainer" type="Control" parent="Board" unique_id=1169312351]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

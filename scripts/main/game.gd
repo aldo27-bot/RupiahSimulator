@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var timer = $Timer
 @onready var time = $TimeManager
-@onready var market = $MarketManager
 @onready var market_timer = $MarketTimer
 
 # ======================
@@ -95,12 +94,12 @@ func _on_timer_timeout():
 
 func update_market_ui():
 
-	if market.trend == MarketManager.Trend.NAIK:
+	if Market.trend == Market.Trend.NAIK:
 
 		arrow.texture = ARROW_UP
 		trend_icon.texture = TREND_UP
 
-		value.text = "+" + str(market.persen) + "%"
+		value.text = "+" + str(Market.persen) + "%"
 
 		value.add_theme_color_override(
 			"font_color",
@@ -119,7 +118,7 @@ func update_market_ui():
 		arrow.texture = ARROW_DOWN
 		trend_icon.texture = TREND_DOWN
 
-		value.text = "-" + str(market.persen) + "%"
+		value.text = "-" + str(Market.persen) + "%"
 
 		value.add_theme_color_override(
 			"font_color",
@@ -136,7 +135,7 @@ func update_market_ui():
 
 func _on_market_timer_timeout():
 
-	market.update_market()
+	Market.update_market()
 
 	update_market_ui()
 
