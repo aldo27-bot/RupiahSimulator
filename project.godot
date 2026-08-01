@@ -14,7 +14,9 @@ config/name="GameRupiah"
 run/main_scene="uid://wamyxho4e31k"
 config/quit_on_go_back=false
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/stretch_mode=5
+boot_splash/image="uid://cd3ysmthotbyk"
+config/icon="uid://saqe63jg30qg"
 
 [autoload]
 

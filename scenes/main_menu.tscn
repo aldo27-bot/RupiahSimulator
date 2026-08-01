@@ -237,7 +237,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="PopupImage" type="TextureRect" parent="PopupKeluar" unique_id=1793021548]
-visible = false
 layout_mode = 0
 offset_left = 207.0
 offset_top = 131.0
