@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://dsd7vpoa6rsqr" path="res://scenes/main/layani_popup.tscn" id="18_oxav3"]
 [ext_resource type="PackedScene" uid="uid://f1bdrpm6w30h" path="res://scenes/menu/customer.tscn" id="20_6lv7u"]
 [ext_resource type="Texture2D" uid="uid://dlhybta8irmy7" path="res://assets/images/popup/tolak.png" id="20_8k4wh"]
+[ext_resource type="Texture2D" uid="uid://cvdutdmk7c1op" path="res://assets/images/CaraMain/kembali.png" id="21_mg4hm"]
 
 [sub_resource type="FontVariation" id="FontVariation_em1bs"]
 base_font = ExtResource("5_gf1f2")
@@ -332,14 +333,29 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Tolak" type="TextureButton" parent="." unique_id=924146724]
-offset_left = 419.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 417.0
 offset_top = 454.0
-offset_right = 554.0
-offset_bottom = 512.0
+offset_right = 578.5
+offset_bottom = 509.0
+grow_horizontal = 2
+grow_vertical = 2
 texture_normal = ExtResource("20_8k4wh")
 texture_pressed = ExtResource("20_8k4wh")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="Kembali" type="TextureButton" parent="." unique_id=219357888]
+offset_left = 22.0
+offset_top = 453.0
+offset_right = 182.0
+offset_bottom = 505.0
+texture_normal = ExtResource("21_mg4hm")
+texture_pressed = ExtResource("21_mg4hm")
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=1531254231]
 position = Vector2(1174, 506)
@@ -359,3 +375,4 @@ scale = Vector2(7, 7)
 [connection signal="pressed" from="CanvasLayer/BottomBar/HBoxContainer/BtnTarget" to="." method="_on_btn_target_pressed"]
 [connection signal="pressed" from="Layani" to="." method="_on_layani_pressed"]
 [connection signal="pressed" from="Tolak" to="." method="_on_tolak_pressed"]
+[connection signal="pressed" from="Kembali" to="." method="_on_kembali_pressed"]

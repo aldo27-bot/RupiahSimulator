@@ -206,21 +206,15 @@ func update_market_ui():
 			Color("E53935")
 		)
 
-
-
 func update_saldo_ui(saldo_baru:int):
 
 	saldo_label.text = str(saldo_baru)
-
-
 
 func _on_market_timer_timeout():
 
 	Market.update_market()
 
 	update_market_ui()
-
-
 
 # ======================
 # BUTTON
@@ -232,27 +226,19 @@ func _on_btn_supplier_pressed():
 		"res://scenes/main/supplier.tscn"
 	)
 
-
-
 func _on_btn_stok_pressed():
 
 	stock.show()
 
-
-
 func _on_btn_laporan_pressed():
 
 	pass
-
-
 
 func _on_btn_target_pressed():
 
 	get_tree().change_scene_to_file(
 		"res://scenes/main/misi.tscn"
 	)
-
-
 
 func _on_layani_pressed():
 
@@ -268,3 +254,9 @@ func _on_tolak_pressed() -> void:
 	if customer:
 
 		customer.customer_rejected()
+
+
+func _on_kembali_pressed() -> void:
+	get_tree().change_scene_to_file(
+		"res://scenes/menu/desa.tscn"
+	)

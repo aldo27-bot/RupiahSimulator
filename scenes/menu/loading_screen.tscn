@@ -9,6 +9,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76jna"]
 
 [node name="LoadingScreen" type="Control" unique_id=1276262710]
+z_index = 100
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
