@@ -1,0 +1,241 @@
+[gd_scene format=3 uid="uid://bdlhyo8cr3cmm"]
+
+[ext_resource type="Texture2D" uid="uid://gn8b35kmyyo" path="res://assets/warung/supplier/beras.png" id="1_jqv5v"]
+[ext_resource type="Script" uid="uid://cf5fu4f4mmhiw" path="res://scripts/main/supplier/item.gd" id="1_r1rch"]
+[ext_resource type="Texture2D" uid="uid://odk3u3a76ma1" path="res://assets/warung/ui/Coin.png" id="2_r1rch"]
+[ext_resource type="Texture2D" uid="uid://ddo3fgwyu0oj0" path="res://assets/warung/ui/Naik.png" id="3_bj2xf"]
+[ext_resource type="Texture2D" uid="uid://b5j5ehc7gq4aj" path="res://assets/warung/supplier/min.png" id="4_cpfwb"]
+[ext_resource type="Texture2D" uid="uid://bdm2k0uot7bg1" path="res://assets/warung/supplier/plus.png" id="5_cxlyx"]
+
+[node name="ItemRow" type="Control" unique_id=729969105]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 82.0
+offset_right = 2.0
+offset_bottom = -386.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r1rch")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=1768999864]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 54.0
+offset_bottom = 53.0
+texture = ExtResource("1_jqv5v")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NamaLabel" type="Label" parent="." unique_id=984286232]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 24.0
+offset_right = 102.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(0.01, 0.01, 0.01, 1)
+theme_override_font_sizes/font_size = 12
+text = "Beras"
+
+[node name="PriceLabel" type="Label" parent="." unique_id=274932585]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 18.0
+offset_right = 296.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0.011764706, 0.011764706, 0.011764706, 1)
+text = "120"
+
+[node name="CoinIcon" type="TextureRect" parent="." unique_id=2070609380]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 16.0
+offset_right = 211.0
+offset_bottom = 46.0
+texture = ExtResource("2_r1rch")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TrendIcon" type="TextureRect" parent="." unique_id=95302628]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 17.0
+offset_right = 285.0
+offset_bottom = 41.0
+texture = ExtResource("3_bj2xf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TrendLabel" type="Label" parent="." unique_id=1246553724]
+layout_mode = 0
+offset_left = 291.0
+offset_top = 18.0
+offset_right = 331.0
+offset_bottom = 41.0
+text = "+8%"
+
+[node name="StockLabel" type="Label" parent="." unique_id=1301915759]
+layout_mode = 0
+offset_left = 413.0
+offset_top = 21.0
+offset_right = 453.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(0.011764706, 0.011764706, 0.011764706, 1)
+text = "10"
+
+[node name="MinusButton" type="TextureButton" parent="." unique_id=727511407]
+layout_mode = 0
+offset_left = 527.0
+offset_top = 14.999999
+offset_right = 847.0
+offset_bottom = 345.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("4_cpfwb")
+stretch_mode = 5
+
+[node name="AmountLabel" type="Label" parent="." unique_id=1215877619]
+layout_mode = 0
+offset_left = 574.0
+offset_top = 19.0
+offset_right = 614.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0.011764706, 0.011764706, 0.011764706, 1)
+text = "0"
+
+[node name="PlusButton" type="TextureButton" parent="." unique_id=1363172537]
+layout_mode = 0
+offset_left = 601.0
+offset_top = 16.999998
+offset_right = 911.0
+offset_bottom = 337.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("5_cxlyx")
+stretch_mode = 5
+
+[node name="Container" type="MarginContainer" parent="." unique_id=409640669]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Row" type="HBoxContainer" parent="Container" unique_id=1637789184]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="BarangColumn" type="MarginContainer" parent="Container/Row" unique_id=1733211824]
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/Row/BarangColumn" unique_id=1914000808]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Icon" type="TextureRect" parent="Container/Row/BarangColumn/HBoxContainer" unique_id=786748091]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("1_jqv5v")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="Name" type="Label" parent="Container/Row/BarangColumn/HBoxContainer" unique_id=1343796643]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_stretch_ratio = 0.01
+text = "Beras"
+vertical_alignment = 1
+
+[node name="HargaColumn" type="MarginContainer" parent="Container/Row" unique_id=1990458095]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="VBoxHarga" type="VBoxContainer" parent="Container/Row/HargaColumn" unique_id=1544212664]
+layout_mode = 2
+
+[node name="PriceContainer" type="HBoxContainer" parent="Container/Row/HargaColumn/VBoxHarga" unique_id=2047817930]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="TextureRect" type="TextureRect" parent="Container/Row/HargaColumn/VBoxHarga/PriceContainer" unique_id=153015494]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("2_r1rch")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Price" type="Label" parent="Container/Row/HargaColumn/VBoxHarga/PriceContainer" unique_id=361809160]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+text = "120"
+
+[node name="MarketContainer" type="HBoxContainer" parent="Container/Row/HargaColumn/VBoxHarga" unique_id=1465130966]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ArrowIcon" type="TextureRect" parent="Container/Row/HargaColumn/VBoxHarga/MarketContainer" unique_id=2142730630]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("3_bj2xf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarketLabel" type="Label" parent="Container/Row/HargaColumn/VBoxHarga/MarketContainer" unique_id=1666323932]
+layout_mode = 2
+text = "-5%"
+
+[node name="StokColumn" type="MarginContainer" parent="Container/Row" unique_id=1740925151]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Stock" type="Label" parent="Container/Row/StokColumn" unique_id=726003741]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_stretch_ratio = 7.0
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BeliColumn" type="MarginContainer" parent="Container/Row" unique_id=2051586613]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+
+[node name="BuyPanel" type="HBoxContainer" parent="Container/Row/BeliColumn" unique_id=1089128496]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Plus" type="TextureButton" parent="Container/Row/BeliColumn/BuyPanel" unique_id=1640546441]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture_normal = ExtResource("4_cpfwb")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Amount" type="Label" parent="Container/Row/BeliColumn/BuyPanel" unique_id=2112606424]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Minus" type="TextureButton" parent="Container/Row/BeliColumn/BuyPanel" unique_id=107332486]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture_normal = ExtResource("5_cxlyx")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="MinusButton" to="." method="_on_minus_button_pressed"]
+[connection signal="pressed" from="PlusButton" to="." method="_on_plus_button_pressed"]

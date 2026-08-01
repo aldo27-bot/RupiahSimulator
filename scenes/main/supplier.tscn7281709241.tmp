@@ -3,16 +3,10 @@
 [ext_resource type="Script" uid="uid://bl60hjnp3lrk5" path="res://scripts/main/supplier/supplier.gd" id="1_54vvv"]
 [ext_resource type="Texture2D" uid="uid://uc7x35ld6iai" path="res://assets/warung/backgorund/bg.png" id="1_128ii"]
 [ext_resource type="Texture2D" uid="uid://bow8vpq2hm4hi" path="res://assets/warung/supplier/Back.png" id="2_7v2w4"]
+[ext_resource type="Texture2D" uid="uid://dw7vyxrmg1fcj" path="res://assets/warung/supplier/background.png" id="2_ks3hm"]
 [ext_resource type="Texture2D" uid="uid://c6oph68jlqpqf" path="res://assets/warung/supplier/Header.png" id="3_82epg"]
-[ext_resource type="Texture2D" uid="uid://b7s3mfex2dfq2" path="res://assets/warung/supplier/AMbil (34).png" id="4_ks3hm"]
-[ext_resource type="Texture2D" uid="uid://c0tdah5356vqp" path="res://assets/warung/supplier/AMbil (33).png" id="5_54vvv"]
+[ext_resource type="Texture2D" uid="uid://fnmxjufwvef8" path="res://assets/warung/supplier/Papan.png" id="4_boxxo"]
 [ext_resource type="Texture2D" uid="uid://odk3u3a76ma1" path="res://assets/warung/ui/Coin.png" id="5_ks3hm"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ylwud"]
-load_path = "res://.godot/imported/Papan.png-b0e81fe4adb9377b2ecacab3d4d8d90b.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vsoiu"]
-load_path = "res://.godot/imported/background.png-4c27f6a4673b9559e477e6130868c1cd.ctex"
 
 [node name="Supplier" type="Control" unique_id=2133646821]
 layout_mode = 3
@@ -34,67 +28,7 @@ texture = ExtResource("1_128ii")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="BtnBack" type="TextureButton" parent="." unique_id=406689249]
-layout_mode = 0
-offset_left = 42.999996
-offset_top = 20.999998
-offset_right = 749.0
-offset_bottom = 299.0
-scale = Vector2(0.2, 0.2)
-texture_normal = ExtResource("2_7v2w4")
-
-[node name="Table" type="TextureRect" parent="." unique_id=436102357]
-layout_mode = 0
-offset_left = 122.0
-offset_top = 131.0
-offset_right = 1012.0
-offset_bottom = 627.0
-texture = ExtResource("5_54vvv")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="TitleBoard" type="TextureRect" parent="." unique_id=1663018248]
-layout_mode = 0
-offset_left = 281.0
-offset_top = -71.0
-offset_right = 828.0
-offset_bottom = 226.0
-texture = ExtResource("3_82epg")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="CoinPanel" type="Control" parent="." unique_id=499235286]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="CoinIcon" type="TextureRect" parent="CoinPanel" unique_id=584008962]
-layout_mode = 0
-offset_left = 849.0
-offset_top = 26.0
-offset_right = 1120.0
-offset_bottom = 93.0
-texture = ExtResource("4_ks3hm")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="CoinLabel" type="Label" parent="CoinPanel" unique_id=1218401690]
-layout_mode = 0
-offset_left = 1008.0
-offset_top = 46.0
-offset_right = 1048.0
-offset_bottom = 69.0
-text = "245"
-
-[node name="ItemContainer" type="Control" parent="." unique_id=655843673]
-anchors_preset = 0
-offset_left = 244.0
-offset_top = 202.0
-offset_right = 897.0
-offset_bottom = 510.0
-
 [node name="Header" type="Control" parent="." unique_id=165006234]
-visible = false
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -125,7 +59,7 @@ offset_top = 24.000002
 offset_right = 1595.0
 offset_bottom = 277.0
 scale = Vector2(0.3, 0.3)
-texture = SubResource("CompressedTexture2D_ylwud")
+texture = ExtResource("4_boxxo")
 
 [node name="Coin" type="TextureRect" parent="Header/CoinPanel" unique_id=1677062051]
 layout_mode = 1
@@ -149,13 +83,12 @@ theme_override_font_sizes/font_size = 50
 text = "Coin : 245"
 
 [node name="MainPanel" type="TextureRect" parent="." unique_id=876139252]
-visible = false
 layout_mode = 0
 offset_left = 205.0
 offset_top = 107.0
 offset_right = 1017.0
 offset_bottom = 637.0
-texture = SubResource("CompressedTexture2D_vsoiu")
+texture = ExtResource("2_ks3hm")
 expand_mode = 1
 stretch_mode = 6
 
@@ -167,7 +100,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 44
-theme_override_constants/margin_top = 35
+theme_override_constants/margin_top = 39
 theme_override_constants/margin_right = 35
 theme_override_constants/margin_bottom = 70
 
@@ -181,32 +114,39 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="BarangLabel" type="Label" parent="MainPanel/MarginContainer/ItemContainer/HeaderRow/BarangColumn" unique_id=1034348015]
-custom_minimum_size = Vector2(250, 0)
+custom_minimum_size = Vector2(190, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Barang"
+horizontal_alignment = 1
 
 [node name="HargaColumn" type="MarginContainer" parent="MainPanel/MarginContainer/ItemContainer/HeaderRow" unique_id=347199796]
+custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 
 [node name="HargaLabel" type="Label" parent="MainPanel/MarginContainer/ItemContainer/HeaderRow/HargaColumn" unique_id=1177057312]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Harga"
+text = "Harga (Market Coin)"
+horizontal_alignment = 1
 
 [node name="StokColumn" type="MarginContainer" parent="MainPanel/MarginContainer/ItemContainer/HeaderRow" unique_id=238226625]
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 
 [node name="StokLabel" type="Label" parent="MainPanel/MarginContainer/ItemContainer/HeaderRow/StokColumn" unique_id=698265211]
-custom_minimum_size = Vector2(70, 0)
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 text = "Stok"
+horizontal_alignment = 1
 
 [node name="BeliColumn" type="MarginContainer" parent="MainPanel/MarginContainer/ItemContainer/HeaderRow" unique_id=259244630]
+custom_minimum_size = Vector2(170, 0)
 layout_mode = 2
 
 [node name="BeliLabel" type="Label" parent="MainPanel/MarginContainer/ItemContainer/HeaderRow/BeliColumn" unique_id=1451873443]
-custom_minimum_size = Vector2(130, 0)
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 text = "Beli"
+horizontal_alignment = 1

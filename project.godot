@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GameRupiah"
-run/main_scene="uid://cue8l1xeyhcc7"
+run/main_scene="uid://wamyxho4e31k"
 config/quit_on_go_back=false
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -19,13 +19,13 @@ config/icon="res://icon.svg"
 [autoload]
 
 Economy="*uid://c5s1r05xnebjp"
-Market="*uid://crdeo5ffsofo0"
 Supplier="*uid://djqh56vttsgcf"
 SaveManager="*uid://bpca4lrqmumom"
 GameData="*uid://dexcoryq8bwua"
 Weathermanager="*uid://vadld7mnbmea"
 BusinessData="*uid://c5r2toilhuowe"
 BackManager="*uid://dxlleyn8wlbda"
+Market="*uid://c8gq8lcsofyx0"
 
 [display]
 
