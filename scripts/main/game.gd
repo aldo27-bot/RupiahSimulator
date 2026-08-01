@@ -6,6 +6,11 @@ extends Node2D
 @onready var market_timer = $MarketTimer
 
 # ======================
+# BACKGROUND
+# ======================
+@onready var background = $Background
+
+# ======================
 # Panel Hari & Jam
 # ======================
 @onready var hari_label = $CanvasLayer/TopBar/PanelHari/Value
@@ -16,10 +21,11 @@ extends Node2D
 # ======================
 @onready var value = $CanvasLayer/TopBar/PanelMarket/Value
 @onready var trend = $CanvasLayer/TopBar/PanelMarket/Trend
-# Panah besar
 @onready var arrow = $CanvasLayer/TopBar/PanelMarket/IconTrend
-# Grafik kecil
 @onready var trend_icon = $CanvasLayer/TopBar/PanelMarket/TrendIcon
+
+# Panel Stok
+@onready var stock = $CanvasLayer/Stock
 
 # ======================
 # Texture Market
@@ -33,6 +39,10 @@ const TREND_DOWN = preload("res://assets/warung/ui/TrendTurun.png")
 
 func _ready():
 
+	await get_tree().process_frame
+
+	resize_background()
+
 	timer.wait_time = 1.0
 
 	time.update_waktu_device()
@@ -42,6 +52,29 @@ func _ready():
 	update_market_ui()
 
 	timer.start()
+
+	stock.hide()
+
+
+# ======================
+# BACKGROUND
+# ======================
+func resize_background():
+
+	if background.texture == null:
+		return
+
+	var viewport_size = get_viewport().get_visible_rect().size
+	var tex_size = background.texture.get_size()
+
+	var scale_factor = max(
+		viewport_size.x / tex_size.x,
+		viewport_size.y / tex_size.y
+	)
+
+	background.scale = Vector2(scale_factor, scale_factor)
+	background.position = viewport_size / 2
+
 
 func update_ui():
 
@@ -58,6 +91,7 @@ func _on_timer_timeout():
 	time.update_waktu_device()
 
 	update_ui()
+
 
 func update_market_ui():
 
@@ -106,18 +140,22 @@ func _on_market_timer_timeout():
 
 	update_market_ui()
 
+
 # Button Supplier
 func _on_btn_supplier_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/main/supplier.tscn")
 
+
 # Button Stok
 func _on_btn_stok_pressed() -> void:
-	pass # Replace with function body.
+	stock.show()
+
 
 # Button Laporan
 func _on_btn_laporan_pressed() -> void:
-	pass # Replace with function body.
+	pass
+
 
 # Button Target
 func _on_btn_target_pressed() -> void:
-	pass # Replace with function body.
+	pass

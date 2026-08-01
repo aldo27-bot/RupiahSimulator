@@ -1,0 +1,229 @@
+[gd_scene format=3 uid="uid://c5l6ms6aneiaw"]
+
+[ext_resource type="Script" uid="uid://u78qkktuejjm" path="res://scripts/main/stock.gd" id="1_mtklr"]
+[ext_resource type="Texture2D" uid="uid://bgobbhkd8u383" path="res://assets/images/stok/framestok.png" id="2_cloua"]
+[ext_resource type="Texture2D" uid="uid://c1sybl0ouwiht" path="res://assets/images/stok/ringkasan_stok.png" id="3_b7jn3"]
+[ext_resource type="Texture2D" uid="uid://bf5g4ks5krrq2" path="res://assets/images/stok/daftar_stok.png" id="4_mo66t"]
+[ext_resource type="Texture2D" uid="uid://bv1js37yuwg6v" path="res://assets/images/stok/tipsstok.png" id="5_3nwwc"]
+[ext_resource type="Texture2D" uid="uid://7idkql7vqigx" path="res://assets/images/stok/beras.png" id="6_tpheq"]
+[ext_resource type="Texture2D" uid="uid://vh3clmdhqjry" path="res://assets/images/stok/minyakgoreng.png" id="7_v8tu2"]
+[ext_resource type="Texture2D" uid="uid://dnedh8tn8ftck" path="res://assets/images/stok/telur.png" id="8_wwalr"]
+[ext_resource type="Texture2D" uid="uid://bqlxrm8687kjy" path="res://assets/images/stok/itemterkunci.png" id="9_62yhy"]
+[ext_resource type="Texture2D" uid="uid://3vyrgcx0846w" path="res://assets/images/CaraMain/keluar.png" id="10_cloua"]
+
+[node name="Stock" type="Control" unique_id=1731750534]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mtklr")
+
+[node name="Bg" type="TextureRect" parent="." unique_id=1829503885]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -427.5
+offset_top = -240.25
+offset_right = 427.5
+offset_bottom = 242.25
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cloua")
+expand_mode = 1
+
+[node name="Panel" type="Control" parent="." unique_id=1099510975]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Ringkasan" type="Control" parent="Panel" unique_id=1796110371]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -145.5
+offset_right = 288.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Ringkasanstok" type="TextureRect" parent="Panel/Ringkasan" unique_id=589045766]
+layout_mode = 1
+offset_left = 74.0
+offset_top = -0.5
+offset_right = 216.0
+offset_bottom = 22.5
+texture = ExtResource("3_b7jn3")
+expand_mode = 1
+
+[node name="Daftarstok" type="TextureRect" parent="Panel/Ringkasan" unique_id=143586406]
+layout_mode = 1
+offset_left = 207.0
+offset_top = 120.5
+offset_right = 359.0
+offset_bottom = 143.5
+texture = ExtResource("4_mo66t")
+expand_mode = 1
+
+[node name="LabelJenis" type="Label" parent="Panel/Ringkasan" unique_id=380221209]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 35.5
+offset_right = 187.0
+offset_bottom = 58.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="LabelStok" type="Label" parent="Panel/Ringkasan" unique_id=861067748]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 71.5
+offset_right = 215.0
+offset_bottom = 94.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Tips" type="Control" parent="Panel" unique_id=415443374]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -571.0
+offset_top = -321.5
+offset_right = 571.0
+offset_bottom = 321.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="tipsstok" type="TextureRect" parent="Panel/Tips" unique_id=868244851]
+layout_mode = 1
+offset_left = 596.0
+offset_top = 190.0
+offset_right = 836.0
+offset_bottom = 279.0
+texture = ExtResource("5_3nwwc")
+expand_mode = 1
+
+[node name="Kembali" type="TextureButton" parent="Panel/Tips" unique_id=94373998]
+layout_mode = 0
+offset_left = 815.0
+offset_top = 118.5
+offset_right = 892.0
+offset_bottom = 209.5
+texture_normal = ExtResource("10_cloua")
+texture_pressed = ExtResource("10_cloua")
+
+[node name="Barang" type="Control" parent="Panel" unique_id=1414142556]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -269.0
+offset_top = 40.0
+offset_right = 279.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Daftar" type="HBoxContainer" parent="Panel/Barang" unique_id=1242437898]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = -6.0
+offset_right = -17.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="Beras" type="TextureRect" parent="Panel/Barang/Daftar" unique_id=1579977332]
+custom_minimum_size = Vector2(90, 120)
+layout_mode = 2
+texture = ExtResource("6_tpheq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Jumlah" type="Label" parent="Panel/Barang/Daftar/Beras" unique_id=1449776488]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 99.0
+offset_right = 67.0
+offset_bottom = 122.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Minyak" type="TextureRect" parent="Panel/Barang/Daftar" unique_id=1836743310]
+custom_minimum_size = Vector2(90, 120)
+layout_mode = 2
+texture = ExtResource("7_v8tu2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Jumlah" type="Label" parent="Panel/Barang/Daftar/Minyak" unique_id=1415281435]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 101.0
+offset_right = 67.0
+offset_bottom = 124.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Telur" type="TextureRect" parent="Panel/Barang/Daftar" unique_id=702245972]
+custom_minimum_size = Vector2(90, 120)
+layout_mode = 2
+texture = ExtResource("8_wwalr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Jumlah" type="Label" parent="Panel/Barang/Daftar/Telur" unique_id=212071886]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 101.0
+offset_right = 68.0
+offset_bottom = 124.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Gula" type="TextureRect" parent="Panel/Barang/Daftar" unique_id=1838891188]
+custom_minimum_size = Vector2(90, 120)
+layout_mode = 2
+texture = ExtResource("9_62yhy")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Jumlah" type="Label" parent="Panel/Barang/Daftar/Gula" unique_id=1874573937]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 101.0
+offset_right = 67.0
+offset_bottom = 124.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Tepung" type="TextureRect" parent="Panel/Barang/Daftar" unique_id=1184446064]
+custom_minimum_size = Vector2(90, 120)
+layout_mode = 2
+texture = ExtResource("9_62yhy")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Jumlah" type="Label" parent="Panel/Barang/Daftar/Tepung" unique_id=184786784]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 98.0
+offset_right = 68.0
+offset_bottom = 121.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="Panel/Tips/Kembali" to="." method="_on_kembali_pressed"]

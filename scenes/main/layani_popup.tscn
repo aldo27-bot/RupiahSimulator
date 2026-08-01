@@ -1,0 +1,328 @@
+[gd_scene format=3 uid="uid://dsd7vpoa6rsqr"]
+
+[ext_resource type="Texture2D" uid="uid://b7asie84rxmtp" path="res://assets/images/popup/PopupLayani.png" id="1_1tanv"]
+[ext_resource type="Script" uid="uid://wvw5d5j7ifpf" path="res://scripts/main/layani_popup.gd" id="1_c5fkk"]
+[ext_resource type="Texture2D" uid="uid://7idkql7vqigx" path="res://assets/images/stok/beras.png" id="2_gwc17"]
+[ext_resource type="Texture2D" uid="uid://dytnea10biq0d" path="res://assets/warung/ui/Turun.png" id="3_gwc17"]
+[ext_resource type="Texture2D" uid="uid://vh3clmdhqjry" path="res://assets/images/stok/minyakgoreng.png" id="3_ov7s4"]
+[ext_resource type="Texture2D" uid="uid://dnedh8tn8ftck" path="res://assets/images/stok/telur.png" id="4_c5fkk"]
+[ext_resource type="Texture2D" uid="uid://bqlxrm8687kjy" path="res://assets/images/stok/itemterkunci.png" id="5_ybvnn"]
+[ext_resource type="Texture2D" uid="uid://c10dwuu8c64ls" path="res://assets/images/popup/layani.png" id="6_1mtn5"]
+[ext_resource type="Texture2D" uid="uid://3vyrgcx0846w" path="res://assets/images/CaraMain/keluar.png" id="8_ov7s4"]
+
+[node name="LayaniPopup" type="CanvasLayer" unique_id=94551294]
+script = ExtResource("1_c5fkk")
+
+[node name="Popup" type="Control" parent="." unique_id=1697574232]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Popup" unique_id=1943138001]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -311.0
+offset_top = -240.75
+offset_right = 311.0
+offset_bottom = 240.75
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1tanv")
+
+[node name="Title" type="Label" parent="Popup" unique_id=2027019854]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -235.0
+offset_right = 96.0
+offset_bottom = -191.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9490196, 0.8627451, 0.7176471, 1)
+theme_override_font_sizes/font_size = 31
+text = "Panel Layani"
+
+[node name="ItemContainer" type="VBoxContainer" parent="Popup" unique_id=1804043282]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.0
+offset_top = -168.0
+offset_right = -159.0
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Item1" type="TextureButton" parent="Popup/ItemContainer" unique_id=2040611314]
+custom_minimum_size = Vector2(17, 35)
+layout_mode = 2
+texture_normal = ExtResource("2_gwc17")
+texture_pressed = ExtResource("2_gwc17")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Popup/ItemContainer/Item1" unique_id=1160325359]
+layout_mode = 0
+offset_left = 61.0
+offset_right = 253.0
+offset_bottom = 40.0
+theme_override_constants/separation = 20
+
+[node name="Nama" type="Label" parent="Popup/ItemContainer/Item1/HBoxContainer" unique_id=1766601117]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Beras"
+
+[node name="Harga" type="Label" parent="Popup/ItemContainer/Item1/HBoxContainer" unique_id=656802593]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "harga"
+
+[node name="Jumlah" type="Label" parent="Popup/ItemContainer/Item1/HBoxContainer" unique_id=623490334]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Jumlah"
+
+[node name="TombolKurang" type="TextureButton" parent="Popup/ItemContainer/Item1" unique_id=1229811364]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 2.0
+offset_right = 394.0
+offset_bottom = 33.0
+texture_normal = ExtResource("3_gwc17")
+texture_pressed = ExtResource("3_gwc17")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Item2" type="TextureButton" parent="Popup/ItemContainer" unique_id=146974110]
+custom_minimum_size = Vector2(17, 35)
+layout_mode = 2
+texture_normal = ExtResource("3_ov7s4")
+texture_pressed = ExtResource("3_ov7s4")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Popup/ItemContainer/Item2" unique_id=752490335]
+layout_mode = 0
+offset_left = 61.0
+offset_right = 276.0
+offset_bottom = 40.0
+theme_override_constants/separation = 20
+
+[node name="Nama" type="Label" parent="Popup/ItemContainer/Item2/HBoxContainer" unique_id=1099799548]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Minyak"
+
+[node name="Harga" type="Label" parent="Popup/ItemContainer/Item2/HBoxContainer" unique_id=1713568583]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "harga"
+
+[node name="Jumlah" type="Label" parent="Popup/ItemContainer/Item2/HBoxContainer" unique_id=780171413]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Jumlah"
+
+[node name="TombolKurang2" type="TextureButton" parent="Popup/ItemContainer/Item2" unique_id=1255720074]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 5.0
+offset_right = 394.0
+offset_bottom = 36.0
+texture_normal = ExtResource("3_gwc17")
+texture_pressed = ExtResource("3_gwc17")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Item3" type="TextureButton" parent="Popup/ItemContainer" unique_id=185431068]
+custom_minimum_size = Vector2(17, 35)
+layout_mode = 2
+texture_normal = ExtResource("4_c5fkk")
+texture_pressed = ExtResource("4_c5fkk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Popup/ItemContainer/Item3" unique_id=1835188637]
+layout_mode = 0
+offset_left = 62.0
+offset_right = 260.0
+offset_bottom = 40.0
+theme_override_constants/separation = 20
+
+[node name="Nama" type="Label" parent="Popup/ItemContainer/Item3/HBoxContainer" unique_id=1059397847]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Telur"
+
+[node name="Harga" type="Label" parent="Popup/ItemContainer/Item3/HBoxContainer" unique_id=120966859]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "harga"
+
+[node name="Jumlah" type="Label" parent="Popup/ItemContainer/Item3/HBoxContainer" unique_id=701630929]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Jumlah"
+
+[node name="TombolKurang3" type="TextureButton" parent="Popup/ItemContainer/Item3" unique_id=585264715]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 2.0
+offset_right = 394.0
+offset_bottom = 33.0
+texture_normal = ExtResource("3_gwc17")
+texture_pressed = ExtResource("3_gwc17")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Item4" type="TextureButton" parent="Popup/ItemContainer" unique_id=2098823581]
+custom_minimum_size = Vector2(17, 35)
+layout_mode = 2
+texture_normal = ExtResource("5_ybvnn")
+texture_pressed = ExtResource("5_ybvnn")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Popup/ItemContainer/Item4" unique_id=363277212]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 1.0
+offset_right = 269.0
+offset_bottom = 41.0
+theme_override_constants/separation = 20
+
+[node name="Nama" type="Label" parent="Popup/ItemContainer/Item4/HBoxContainer" unique_id=1184158505]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Terkunci"
+
+[node name="Harga" type="Label" parent="Popup/ItemContainer/Item4/HBoxContainer" unique_id=171761507]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "harga"
+
+[node name="Jumlah" type="Label" parent="Popup/ItemContainer/Item4/HBoxContainer" unique_id=478000326]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Jumlah"
+
+[node name="TombolKurang4" type="TextureButton" parent="Popup/ItemContainer/Item4" unique_id=516679864]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 2.0
+offset_right = 394.0
+offset_bottom = 33.0
+texture_normal = ExtResource("3_gwc17")
+texture_pressed = ExtResource("3_gwc17")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Item5" type="TextureButton" parent="Popup/ItemContainer" unique_id=877942766]
+custom_minimum_size = Vector2(17, 35)
+layout_mode = 2
+texture_normal = ExtResource("5_ybvnn")
+texture_pressed = ExtResource("5_ybvnn")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Popup/ItemContainer/Item5" unique_id=1556994313]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 2.0
+offset_right = 268.0
+offset_bottom = 42.0
+theme_override_constants/separation = 20
+
+[node name="Nama" type="Label" parent="Popup/ItemContainer/Item5/HBoxContainer" unique_id=1229132128]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Terkunci"
+
+[node name="Harga" type="Label" parent="Popup/ItemContainer/Item5/HBoxContainer" unique_id=573351933]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "harga"
+
+[node name="Jumlah" type="Label" parent="Popup/ItemContainer/Item5/HBoxContainer" unique_id=1727948961]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Jumlah"
+
+[node name="TombolKurang5" type="TextureButton" parent="Popup/ItemContainer/Item5" unique_id=94220276]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 3.0
+offset_right = 394.0
+offset_bottom = 34.0
+texture_normal = ExtResource("3_gwc17")
+texture_pressed = ExtResource("3_gwc17")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TotalLabel" type="Label" parent="Popup" unique_id=2038826913]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 110.0
+offset_top = 110.0
+offset_right = 158.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Total"
+
+[node name="LayaniButton" type="TextureButton" parent="Popup" unique_id=2039170742]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 67.0
+offset_top = 149.0
+offset_right = 208.0
+offset_bottom = 189.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_1mtn5")
+texture_pressed = ExtResource("6_1mtn5")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Keluar" type="TextureButton" parent="Popup" unique_id=2065899020]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 205.0
+offset_top = -248.0
+offset_right = 273.0
+offset_bottom = -185.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("8_ov7s4")
+texture_pressed = ExtResource("8_ov7s4")
+ignore_texture_size = true
+stretch_mode = 0

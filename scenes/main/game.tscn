@@ -1,21 +1,22 @@
 [gd_scene format=3 uid="uid://wamyxho4e31k"]
 
-[ext_resource type="Texture2D" uid="uid://dvffpg6p83ycn" path="res://assets/warung/backgorund/warung.png" id="1_e3dby"]
+[ext_resource type="Texture2D" uid="uid://js27186buidv" path="res://assets/warung/backgorund/warung.png" id="1_e3dby"]
 [ext_resource type="Script" uid="uid://be7s35y4uwj5v" path="res://scripts/main/game.gd" id="1_gsayk"]
-[ext_resource type="Texture2D" uid="uid://f5ajvn3qs0fl" path="res://assets/warung/ui/Hari.png" id="2_e3dby"]
+[ext_resource type="Texture2D" uid="uid://bme0fc8ed3xml" path="res://assets/warung/ui/Hari.png" id="2_e3dby"]
 [ext_resource type="Script" uid="uid://berjc2au503nc" path="res://scripts/main/Manager/time_manager.gd" id="3_gsayk"]
 [ext_resource type="FontFile" uid="uid://cctiam76em7bh" path="res://assets/font/Nunito-Bold.ttf" id="5_gf1f2"]
-[ext_resource type="Texture2D" uid="uid://djaulkt1u5ksu" path="res://assets/warung/ui/Jam.png" id="6_em1bs"]
-[ext_resource type="Texture2D" uid="uid://bk31sdn7jhggn" path="res://assets/warung/ui/Papan.png" id="7_kjrfb"]
-[ext_resource type="Texture2D" uid="uid://odk3u3a76ma1" path="res://assets/warung/ui/Coin.png" id="8_se30j"]
-[ext_resource type="Texture2D" uid="uid://0xbksbnvjdlf" path="res://assets/warung/ui/Market.png" id="9_ktwa8"]
+[ext_resource type="Texture2D" uid="uid://6ybt6ux7eqo" path="res://assets/warung/ui/Jam.png" id="6_em1bs"]
+[ext_resource type="Texture2D" uid="uid://dogmsq1glcdf8" path="res://assets/warung/ui/Papan.png" id="7_kjrfb"]
+[ext_resource type="Texture2D" uid="uid://dpqyhgfomf1ws" path="res://assets/warung/ui/Coin.png" id="8_se30j"]
+[ext_resource type="Texture2D" uid="uid://behydsgyj0wpw" path="res://assets/warung/ui/Market.png" id="9_ktwa8"]
 [ext_resource type="Script" uid="uid://c8gq8lcsofyx0" path="res://scripts/main/Manager/market_manager.gd" id="9_se30j"]
-[ext_resource type="Texture2D" uid="uid://ddo3fgwyu0oj0" path="res://assets/warung/ui/Naik.png" id="10_y58yt"]
-[ext_resource type="Texture2D" uid="uid://qvm0hdnsyqgx" path="res://assets/warung/ui/TrendNaik.png" id="11_5j5yt"]
-[ext_resource type="Texture2D" uid="uid://bdynu6vj3b1ol" path="res://assets/warung/ui/Supplier.png" id="13_5j5yt"]
-[ext_resource type="Texture2D" uid="uid://4cr0jjdqhwdg" path="res://assets/warung/ui/Stok.png" id="14_c8nfc"]
-[ext_resource type="Texture2D" uid="uid://k66jpnelnmfa" path="res://assets/warung/ui/Laporan.png" id="15_oxcik"]
-[ext_resource type="Texture2D" uid="uid://bkgkhcplbvfmy" path="res://assets/warung/ui/Target.png" id="16_obhq2"]
+[ext_resource type="Texture2D" uid="uid://cr285qorsrgt4" path="res://assets/warung/ui/Naik.png" id="10_y58yt"]
+[ext_resource type="Texture2D" uid="uid://ddhcmgh72qd0m" path="res://assets/warung/ui/TrendNaik.png" id="11_5j5yt"]
+[ext_resource type="Texture2D" uid="uid://rhw616kehmdn" path="res://assets/warung/ui/Supplier.png" id="13_5j5yt"]
+[ext_resource type="Texture2D" uid="uid://b3ub1e68pyufo" path="res://assets/warung/ui/Stok.png" id="14_c8nfc"]
+[ext_resource type="Texture2D" uid="uid://bgfc6gtjrfpin" path="res://assets/warung/ui/Laporan.png" id="15_oxcik"]
+[ext_resource type="Texture2D" uid="uid://lxs7x8aet3ye" path="res://assets/warung/ui/Target.png" id="16_obhq2"]
+[ext_resource type="PackedScene" uid="uid://c5l6ms6aneiaw" path="res://scenes/main/Stock.tscn" id="17_oxcik"]
 
 [sub_resource type="FontVariation" id="FontVariation_em1bs"]
 base_font = ExtResource("5_gf1f2")
@@ -49,7 +50,6 @@ script = ExtResource("1_gsayk")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1763391766]
 position = Vector2(575.5, 324.5)
-scale = Vector2(0.9991319, 1.0015432)
 texture = ExtResource("1_e3dby")
 
 [node name="Timer" type="Timer" parent="." unique_id=133958191]
@@ -134,54 +134,62 @@ text = "08:00"
 
 [node name="PanelSaldo" type="Control" parent="CanvasLayer/TopBar" unique_id=786684174]
 layout_mode = 1
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -295.0
+offset_top = 21.0
+offset_right = -38.0
+offset_bottom = 74.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [node name="Background" type="TextureRect" parent="CanvasLayer/TopBar/PanelSaldo" unique_id=837945488]
 layout_mode = 0
-offset_left = 825.0
-offset_top = 24.0
-offset_right = 1095.0
-offset_bottom = 84.0
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 264.0
+offset_bottom = 54.0
 texture = ExtResource("7_kjrfb")
 expand_mode = 1
 
 [node name="Coin2" type="TextureRect" parent="CanvasLayer/TopBar/PanelSaldo" unique_id=2052619124]
 layout_mode = 0
-offset_left = 904.0
-offset_top = 38.0
-offset_right = 939.0
-offset_bottom = 68.0
+offset_left = 64.0
+offset_top = 8.0
+offset_right = 99.0
+offset_bottom = 38.0
 texture = ExtResource("8_se30j")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="CanvasLayer/TopBar/PanelSaldo" unique_id=943994503]
 layout_mode = 0
-offset_left = 848.0
-offset_top = 37.0
-offset_right = 904.0
-offset_bottom = 67.0
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 64.0
+offset_bottom = 35.0
 theme_override_fonts/font = SubResource("FontVariation_se30j")
 theme_override_font_sizes/font_size = 21
 text = "Saldo"
 
 [node name="Value" type="Label" parent="CanvasLayer/TopBar/PanelSaldo" unique_id=115259293]
 layout_mode = 0
-offset_left = 947.0
-offset_top = 41.0
-offset_right = 1028.0
-offset_bottom = 71.0
+offset_left = 105.0
+offset_top = 8.0
+offset_right = 186.0
+offset_bottom = 38.0
 theme_override_fonts/font = SubResource("FontVariation_ktwa8")
 theme_override_font_sizes/font_size = 18
 text = "100.000"
 
 [node name="Coin" type="Label" parent="CanvasLayer/TopBar/PanelSaldo" unique_id=1064557180]
 layout_mode = 0
-offset_left = 1027.0
-offset_top = 38.0
-offset_right = 1070.0
-offset_bottom = 101.0
+offset_left = 190.0
+offset_top = 6.0
+offset_right = 233.0
+offset_bottom = 69.0
 theme_override_fonts/font = SubResource("FontVariation_157ky")
 theme_override_font_sizes/font_size = 21
 text = "Coin
@@ -298,6 +306,13 @@ texture_normal = ExtResource("15_oxcik")
 [node name="BtnTarget" type="TextureButton" parent="CanvasLayer/BottomBar/HBoxContainer" unique_id=1358681685]
 layout_mode = 2
 texture_normal = ExtResource("16_obhq2")
+
+[node name="Stock" parent="CanvasLayer" unique_id=1731750534 instance=ExtResource("17_oxcik")]
+visible = false
+offset_left = 2.0
+offset_top = 4.0
+offset_right = 2.0
+offset_bottom = 4.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="MarketTimer" to="." method="_on_market_timer_timeout"]
